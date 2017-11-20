@@ -1,0 +1,14 @@
+Temp/
+Library/
+Obj/
+
+*.csproj
+*.unityproj
+*.sln
+*.user
+*.userprefs
+*.DS_store
+*.David
+.vs/SourceTree/v14/.suo
+Greybox/Clients call greybox/Assets/JMO Assets/Editor.meta
+Greybox/Clients call greybox/TempBuilds/

@@ -9,12 +9,15 @@ public class MovementMaybe : MonoBehaviour
     public float hookVelocity = 3.0f;
 
     private int _jumps = 2;
+    private bool _grounded = false;
     private bool _hooked = false;
+    private float _gravityScale = 1.0f;
     private Rigidbody2D _rigidbody;
 
     private void Start()
     {
         _rigidbody = gameObject.GetComponent<Rigidbody2D>();
+        _gravityScale = _rigidbody.gravityScale;
     }
 
     private void Update()
@@ -34,15 +37,41 @@ public class MovementMaybe : MonoBehaviour
                 _rigidbody.velocity = new Vector3(_rigidbody.velocity.x, 0, 0);
                 _rigidbody.AddForce(Vector2.up * jumpHeight);
             }
-            if (Input.GetKeyDown(KeyCode.A)) _rigidbody.AddForce(Vector2.left * movementSpeed);
-            if (Input.GetKeyDown(KeyCode.S))
+            //if (Input.GetKeyDown(KeyCode.S))
+            //{
+            //    _rigidbody.AddForce(Vector2.down * jumpHeight * 2);
+            //}
+            //Horizontal
+            if (!_grounded && Input.GetKey(KeyCode.D) && _rigidbody.velocity.x < movementSpeed)
             {
-                _rigidbody.AddForce(Vector2.down * jumpHeight * 2);
+                _rigidbody.AddForce(Vector2.right);
             }
-            if (Input.GetKeyDown(KeyCode.D)) _rigidbody.AddForce(Vector2.right * movementSpeed);
+            if (!_grounded && Input.GetKey(KeyCode.A) && _rigidbody.velocity.x > -movementSpeed)
+            {
+                _rigidbody.AddForce(Vector2.left);
+            }
 
             Vector2 vel = _rigidbody.velocity;
-            if (!Input.GetKey(KeyCode.A) && !Input.GetKey(KeyCode.D)) vel.x = 0;
+            if (Input.GetKey(KeyCode.A) && _rigidbody.velocity.x > -movementSpeed && _grounded)
+            {
+                vel.x -= 1;
+                if (vel.x < -movementSpeed)
+                    vel.x = -movementSpeed;
+            }
+            if (Input.GetKey(KeyCode.D) && _rigidbody.velocity.x < movementSpeed && _grounded)
+            {
+                vel.x += 1;
+                if (vel.x > movementSpeed)
+                    vel.x = movementSpeed;
+            }
+
+            if (!Input.GetKey(KeyCode.A) && !Input.GetKey(KeyCode.D))
+            {
+                if (_grounded)
+                    vel.x = 0.0f;
+                else
+                    vel.x *= 0.8f;
+            }
             _rigidbody.velocity = vel;
         }
     }
@@ -60,7 +89,7 @@ public class MovementMaybe : MonoBehaviour
         if (other.tag == "Hook")
         {
             _hooked = false;
-            _rigidbody.gravityScale = 1.0f;
+            _rigidbody.gravityScale = _gravityScale;
             _rigidbody.velocity = new Vector2(0.0f, 0.0f);
             Destroy(other.gameObject);
         }
@@ -68,9 +97,10 @@ public class MovementMaybe : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D coll)
     {
-        if(coll.collider.tag == "Terrain")
+        if (coll.collider.tag == "Terrain")
         {
             _jumps = 2;
+            _grounded = true;
         }
     }
 
@@ -79,6 +109,7 @@ public class MovementMaybe : MonoBehaviour
         if (coll.collider.tag == "Terrain")
         {
             _jumps--;
+            _grounded = false;
         }
     }
 }

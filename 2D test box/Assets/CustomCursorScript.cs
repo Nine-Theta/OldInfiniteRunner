@@ -7,6 +7,7 @@ public class CustomCursorScript : MonoBehaviour
     public MovementMaybe player;
     public GameObject hookPrefab;
     public GameObject potionPrefab;
+    public float hookRange = 7.0f;
     //Distance between mouse and player
     private Vector2 _mouseDistance;
     private GameObject _prevHook;
@@ -22,7 +23,10 @@ public class CustomCursorScript : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             ThrowPotion();
-            //HookTarget();
+        }
+        if (Input.GetMouseButtonDown(1))
+        {
+            HookTarget();
         }
     }
 
@@ -48,11 +52,26 @@ public class CustomCursorScript : MonoBehaviour
     {
         if (_prevHook != null)
             Destroy(_prevHook);
-        RaycastHit2D info = Physics2D.Raycast(player.transform.position, _mouseDistance.normalized, _mouseDistance.magnitude);
+        RaycastHit2D info = Physics2D.Raycast(player.transform.position, _mouseDistance.normalized, hookRange);
         if (info.point != Vector2.zero)
+        {
             _prevHook = Instantiate(hookPrefab, info.point, transform.rotation);
+            player.Hook(_mouseDistance);
+            SetCursorColor(1.0f, 1.0f, 1.0f);
+        }
         else
-            _prevHook = Instantiate(hookPrefab, transform.position, transform.rotation);
-        player.Hook(_mouseDistance);
+        {
+            SetCursorColor(1.0f, 0.0f, 0.0f);
+        }
+    }
+
+    private void SetCursorColor(float r, float g, float b, float a = 1.0f)
+    {
+        Color color = GetComponent<SpriteRenderer>().color;
+        color.r = r;
+        color.g = g;
+        color.b = b;
+        color.a = a;
+        GetComponent<SpriteRenderer>().color = color;
     }
 }

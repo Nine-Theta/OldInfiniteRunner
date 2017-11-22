@@ -100,6 +100,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectileSpeed: 5
+  explosion: {fileID: 1768809669708774, guid: 59b66655bf0cb7b4da4822595fa42883, type: 2}
 --- !u!212 &212900342340946958
 SpriteRenderer:
   m_ObjectHideFlags: 1

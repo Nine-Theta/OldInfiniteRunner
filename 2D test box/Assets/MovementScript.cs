@@ -83,8 +83,11 @@ public class MovementScript : MonoBehaviour
         _rigidbody.velocity = new Vector2(0.0f, 0.0f);
         _rigidbody.AddForce(direction.normalized * hookVelocity);
         _rigidbody.gravityScale = 0;
-        _lifeline.doLineUpdate = false;
-        _lifeline.AddPoint(hook.transform.position);
+        if (_lifeline != null)
+        {
+            _lifeline.doLineUpdate = false;
+            _lifeline.AddPoint(hook.transform.position);
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -94,8 +97,11 @@ public class MovementScript : MonoBehaviour
             _hooked = false;
             _rigidbody.gravityScale = _gravityScale;
             _rigidbody.velocity = new Vector2(0.0f, 0.0f);
-            _lifeline.AddPoint(transform.position);
-            _lifeline.doLineUpdate = true;
+            if (_lifeline != null)
+            {
+                _lifeline.AddPoint(transform.position);
+                _lifeline.doLineUpdate = true;
+            }
             Destroy(other.gameObject);
         }
     }

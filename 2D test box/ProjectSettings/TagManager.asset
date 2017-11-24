@@ -8,6 +8,7 @@ TagManager:
   - Potion
   - Hook
   - Explosion
+  - Bullet
   layers:
   - Default
   - TransparentFX

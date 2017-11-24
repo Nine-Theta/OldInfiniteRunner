@@ -22,7 +22,7 @@ public class CustomCursorScript : MonoBehaviour
         TrackMouse();
         if (Input.GetMouseButtonDown(0))
         {
-            ThrowPotion();
+            //ThrowPotion();
         }
         if (Input.GetMouseButtonDown(1))
         {

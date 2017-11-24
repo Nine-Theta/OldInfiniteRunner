@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CustomCursorScript : MonoBehaviour
 {
-    public MovementMaybe player;
+    public MovementScript player;
     public GameObject hookPrefab;
     public GameObject potionPrefab;
     public float hookRange = 7.0f;
@@ -57,7 +57,7 @@ public class CustomCursorScript : MonoBehaviour
         if (info.point != Vector2.zero)
         {
             _prevHook = Instantiate(hookPrefab, info.point, transform.rotation);
-            player.Hook(_mouseDistance);
+            player.Hook(_mouseDistance, _prevHook);
             SetCursorColor(1.0f, 1.0f, 1.0f);
         }
         else

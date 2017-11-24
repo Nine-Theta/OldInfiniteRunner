@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MovementMaybe : MonoBehaviour
+public class MovementScript : MonoBehaviour
 {
     public float jumpHeight = 5.0f;
     public float movementSpeed = 3.0f;
@@ -13,6 +13,7 @@ public class MovementMaybe : MonoBehaviour
     private bool _hooked = false;
     private float _gravityScale = 1.0f;
     private Rigidbody2D _rigidbody;
+    private LifelineScript _lifeline;
 
     private void Start()
     {
@@ -76,12 +77,14 @@ public class MovementMaybe : MonoBehaviour
         }
     }
 
-    public void Hook(Vector2 direction)
+    public void Hook(Vector2 direction, GameObject hook)
     {
         _hooked = true;
         _rigidbody.velocity = new Vector2(0.0f, 0.0f);
         _rigidbody.AddForce(direction.normalized * hookVelocity);
         _rigidbody.gravityScale = 0;
+        _lifeline.doLineUpdate = false;
+        _lifeline.AddPoint(hook.transform.position);
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -91,6 +94,8 @@ public class MovementMaybe : MonoBehaviour
             _hooked = false;
             _rigidbody.gravityScale = _gravityScale;
             _rigidbody.velocity = new Vector2(0.0f, 0.0f);
+            _lifeline.AddPoint(transform.position);
+            _lifeline.doLineUpdate = true;
             Destroy(other.gameObject);
         }
     }
@@ -111,5 +116,10 @@ public class MovementMaybe : MonoBehaviour
             _jumps--;
             _grounded = false;
         }
+    }
+
+    public void SetLifeLine(LifelineScript life)
+    {
+        _lifeline = life;
     }
 }

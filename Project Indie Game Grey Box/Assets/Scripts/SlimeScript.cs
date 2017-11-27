@@ -18,7 +18,7 @@ public class SlimeScript : MonoBehaviour
     private void jumpAttack(Vector3 pTarget, float pXVelocity = 1.0f, float pYVelocity = 1.0f)
     {
         Vector3 normalized = (pTarget - gameObject.transform.position).normalized;
-        this.gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector3(normalized.x * pXVelocity, normalized.y + 1.0f * pYVelocity));
+        gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector3(normalized.x * pXVelocity, normalized.y + 1.0f * pYVelocity));
     }
 
     private void Step()
@@ -32,14 +32,13 @@ public class SlimeScript : MonoBehaviour
             else
                 jumpAttack(player.position, jumpDistance, jumpHeight);
         }
-
-        Debug.Log("called step");
+        
         _thinkTimer = thinkSpeed;
     }
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.J)) jumpAttack(player.position, jumpDistance, jumpHeight);
+        //if (Input.GetKeyDown(KeyCode.J)) jumpAttack(player.position, jumpDistance, jumpHeight);
 
         if (_thinkTimer <= 0) Step();
         else _thinkTimer -= Time.deltaTime;

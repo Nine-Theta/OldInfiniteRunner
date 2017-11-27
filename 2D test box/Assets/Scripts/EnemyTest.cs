@@ -96,8 +96,6 @@ public class EnemyTest : MonoBehaviour {
                 break;
         }
 
-        
-
         p.transform.position = new Vector3(this.gameObject.transform.position.x - 10, this.gameObject.transform.position.y, 0);
     }
 }

@@ -22,7 +22,7 @@ public class CustomCursorScript : MonoBehaviour
         TrackMouse();
         if (Input.GetMouseButtonDown(0))
         {
-            //ThrowPotion();
+            ThrowPotion();
         }
         if (Input.GetMouseButtonDown(1))
         {
@@ -53,7 +53,7 @@ public class CustomCursorScript : MonoBehaviour
     {
         if (_prevHook != null)
             Destroy(_prevHook);
-        RaycastHit2D info = Physics2D.Raycast(player.transform.position, _mouseDistance.normalized, hookRange);
+        RaycastHit2D info = Physics2D.Raycast(player.transform.position, _mouseDistance.normalized, hookRange, 2);
         if (info.point != Vector2.zero)
         {
             _prevHook = Instantiate(hookPrefab, info.point, transform.rotation);

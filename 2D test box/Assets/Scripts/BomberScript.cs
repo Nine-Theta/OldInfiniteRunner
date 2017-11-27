@@ -61,9 +61,9 @@ public class BomberScript : MonoBehaviour
         {
             if (usePlayerDirection)
             {
-                if (_playerBody.velocity.x < -2)
+                if ((player.position.x - gameObject.transform.position.x) < -1)
                     _offset.x = -followOffset.x;
-                else if(_playerBody.velocity.x > 2)
+                else if((player.position.x - gameObject.transform.position.x) > 1)
                     _offset.x = followOffset.x;
             }
 

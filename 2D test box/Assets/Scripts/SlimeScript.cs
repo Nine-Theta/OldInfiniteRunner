@@ -15,16 +15,20 @@ public class SlimeScript : MonoBehaviour
 
     private float _thinkTimer = 3.0f;
 
+    private void Start()
+    {
+        _thinkTimer = thinkSpeed + Random.Range(0.0f, 3.0f);
+    }
+
     private void jumpAttack(Vector3 pTarget, float pXVelocity = 1.0f, float pYVelocity = 1.0f)
     {
-        Vector3 normalized = new Vector3(pTarget.x - gameObject.transform.position.x, pTarget.y - gameObject.transform.position.y, 0).normalized;
-        this.gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector3(normalized.x * pXVelocity, normalized.y + 1.0f * pYVelocity));
+        Vector3 normalized = (pTarget - gameObject.transform.position).normalized;
+        gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector3(normalized.x * pXVelocity, normalized.y + 1.0f * pYVelocity));
     }
 
     private void Step()
     {
         float distance = (player.position - gameObject.transform.position).magnitude;
-        Debug.Log(distance);
 
         if (distance < detectionRange)
         {
@@ -33,8 +37,7 @@ public class SlimeScript : MonoBehaviour
             else
                 jumpAttack(player.position, jumpDistance, jumpHeight);
         }
-
-        Debug.Log("called step");
+        
         _thinkTimer = thinkSpeed;
     }
 

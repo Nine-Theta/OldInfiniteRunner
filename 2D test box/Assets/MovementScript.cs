@@ -14,6 +14,7 @@ public class MovementScript : MonoBehaviour
     private float _gravityScale = 1.0f;
     private Rigidbody2D _rigidbody;
     private LifelineScript _lifeline;
+    private bool _safe = false;
 
     private void Start()
     {
@@ -103,6 +104,29 @@ public class MovementScript : MonoBehaviour
                 _lifeline.doLineUpdate = true;
             }
             Destroy(other.gameObject);
+        }
+        if(other.tag == "SafeZone")
+        {
+            _safe = true;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if(other.tag == "SafeZone")
+        {
+            _safe = false;
+        }
+    }
+
+    private void OnTriggerStay2D(Collider2D other)
+    {
+        if (other.tag == "AllSeeingEye" && !_safe)
+        {
+            if (other.GetComponent<SeeingEyeScript>() != null)
+                other.GetComponent<SeeingEyeScript>().DetectPlayer(transform);
+            else
+                other.GetComponentInParent<SeeingEyeScript>().DetectPlayer(transform);
         }
     }
 

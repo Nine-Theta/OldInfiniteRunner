@@ -45,5 +45,4 @@ public class LifelineScript : MonoBehaviour
         }
         _lineRenderer.positionCount--;
     }
-
 }

@@ -59,10 +59,10 @@ public class GroundEnemyScript : MonoBehaviour
 
     private void DetectPlayer()
     {
-        RaycastHit2D infoR = Physics2D.Raycast(transform.position, Vector2.right);
+        RaycastHit2D infoR = Physics2D.Raycast(transform.position, Vector2.right, 20.0f, 1);
         if (infoR.collider != null && infoR.collider.tag == "Player")
             _player = infoR.transform;
-        RaycastHit2D infoL = Physics2D.Raycast(transform.position, Vector2.left);
+        RaycastHit2D infoL = Physics2D.Raycast(transform.position, Vector2.left, 20.0f, 1);
         if (infoL.collider != null && infoL.collider.tag == "Player")
             _player = infoR.transform;
     }
@@ -77,6 +77,7 @@ public class GroundEnemyScript : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D coll)
     {
-        if (coll.collider.tag == "Explosion") Destroy(gameObject);
+        if (coll.collider.tag == "Explosion")
+            Destroy(gameObject);
     }
 }

@@ -38,9 +38,7 @@ public class PotionScript : MonoBehaviour
             case "Potion":
                 Physics2D.IgnoreCollision(coll.collider, gameObject.GetComponent<Collider2D>());
                 break;
-
         }
-
     }
 
     public void SetForce(Vector2 pDirection)

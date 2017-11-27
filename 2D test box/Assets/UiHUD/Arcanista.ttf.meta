@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: dd6eb96f0cf0459488f50aa9b2d9974e
+timeCreated: 1511531790
+licenseType: Free
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Arcanista
+  fontNames:
+  - Arcanista
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class HealthBarScript : MonoBehaviour
 {
-    public int maxHP = 3;
-    private int _hp = 3;
+    public int maxHP = 10;
+    private int _hp = 10;
     private float maxWidth = 0.4f;
 
     private void Start()

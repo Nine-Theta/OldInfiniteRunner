@@ -100,7 +100,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectileSpeed: 5
-  explosion: {fileID: 1768809669708774, guid: 59b66655bf0cb7b4da4822595fa42883, type: 2}
+  explosion: {fileID: 1400134059964942, guid: 6b444381c2b8a904692dea7fce3f35c1, type: 2}
 --- !u!212 &212900342340946958
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -110,6 +110,7 @@ SpriteRenderer:
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -125,6 +126,7 @@ SpriteRenderer:
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
   m_SelectedEditorRenderState: 0
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
@@ -134,7 +136,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 10911, guid: 0000000000000000f000000000000000, type: 0}
-  m_Color: {r: 0, g: 1, b: 0.07352948, a: 1}
+  m_Color: {r: 0, g: 0.2037526, b: 0.60294116, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

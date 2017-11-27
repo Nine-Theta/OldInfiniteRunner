@@ -15,11 +15,14 @@ public class MovementScript : MonoBehaviour
     private Rigidbody2D _rigidbody;
     private LifelineScript _lifeline;
     private bool _safe = false;
+    private HealthBarScript healthBar;
+    
 
     private void Start()
     {
         _rigidbody = gameObject.GetComponent<Rigidbody2D>();
         _gravityScale = _rigidbody.gravityScale;
+        healthBar = gameObject.GetComponentInChildren<HealthBarScript>();
     }
 
     private void Update()
@@ -136,6 +139,12 @@ public class MovementScript : MonoBehaviour
         {
             _jumps = 2;
             _grounded = true;
+        }
+
+        if (coll.collider.tag == "Enemy")
+        {
+            healthBar.TakeDamage(1);
+
         }
     }
 

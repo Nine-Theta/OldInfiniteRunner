@@ -17,14 +17,13 @@ public class SlimeScript : MonoBehaviour
 
     private void jumpAttack(Vector3 pTarget, float pXVelocity = 1.0f, float pYVelocity = 1.0f)
     {
-        Vector3 normalized = new Vector3(pTarget.x - gameObject.transform.position.x, pTarget.y - gameObject.transform.position.y, 0).normalized;
+        Vector3 normalized = (pTarget - gameObject.transform.position).normalized;
         this.gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector3(normalized.x * pXVelocity, normalized.y + 1.0f * pYVelocity));
     }
 
     private void Step()
     {
         float distance = (player.position - gameObject.transform.position).magnitude;
-        Debug.Log(distance);
 
         if (distance < detectionRange)
         {

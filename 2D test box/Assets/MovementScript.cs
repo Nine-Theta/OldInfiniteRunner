@@ -19,9 +19,9 @@ public class MovementScript : MonoBehaviour
     private static GameObject _singletonInstance;
 
 
-    private void Start()
+    private void Awake()
     {
-        if (_singletonInstance != null)
+        if (_singletonInstance != null && _singletonInstance != this.gameObject)
             Destroy(gameObject);
         else
             _singletonInstance = this.gameObject;
@@ -157,7 +157,6 @@ public class MovementScript : MonoBehaviour
         if (coll.collider.tag == "Enemy")
         {
             healthBar.TakeDamage(1);
-
         }
     }
 

@@ -24,12 +24,15 @@ public class SeeingEyeScript : MonoBehaviour
 
     private void Update()
     {
-        _cooldownTimer -= Time.deltaTime;
-        if (_detected && _cooldownTimer <= 0.0f)
+        if (spawnEnemies)
         {
-            _cooldownTimer = checkTime;
-            SpawnEnemies();
-            //CheckForPlayer();
+            _cooldownTimer -= Time.deltaTime;
+            if (_detected && _cooldownTimer <= 0.0f)
+            {
+                _cooldownTimer = checkTime;
+                SpawnEnemies();
+                //CheckForPlayer();
+            }
         }
     }
 
@@ -47,7 +50,6 @@ public class SeeingEyeScript : MonoBehaviour
     {
         Vector3 diffVec = _player.transform.position - transform.position;
         RaycastHit2D info = Physics2D.Raycast(transform.position, diffVec, eyeRange, 1);
-        Debug.Log(info.collider.tag);
         if (info.transform == _player)
         {
             _detected = true;
@@ -59,6 +61,10 @@ public class SeeingEyeScript : MonoBehaviour
     {
         _player = pTransform;
         _detected = true;
+        if(!spawnEnemies)
+        {
+            fogField.ActivateFog();
+        }
         GetComponent<SpriteRenderer>().color = Color.magenta;
     }
 }

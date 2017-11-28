@@ -17,6 +17,9 @@ public class BomberScript : MonoBehaviour
 
     public bool throwArc = true;
 
+    private enum EnemyStates { PATROL, CHASE }
+    private EnemyStates behaviourState = EnemyStates.PATROL;
+
     private Rigidbody2D _body;
     private Rigidbody2D _playerBody;
     private Vector3 _offset;
@@ -25,6 +28,9 @@ public class BomberScript : MonoBehaviour
 
     private void Start()
     {
+        if (player == null)
+            player = MovementScript.GetPlayer().transform;
+
         _thinkTimer = Random.Range(0.0f, thinkSpeed);
         _body = this.gameObject.GetComponent<Rigidbody2D>();
         _playerBody = player.gameObject.GetComponent<Rigidbody2D>();
@@ -50,7 +56,7 @@ public class BomberScript : MonoBehaviour
 
             Vector2 normalized = new Vector2(pTarget.x - gameObject.transform.position.x, y).normalized;
 
-            projBody.AddForce(new Vector2(normalized.x * x * pXVelocity, normalized.y * (y+x) * pYVelocity), ForceMode2D.Impulse);
+            projBody.AddForce(new Vector2(normalized.x * x * pXVelocity, normalized.y * (y + x) * pYVelocity), ForceMode2D.Impulse);
         }
         else
         {

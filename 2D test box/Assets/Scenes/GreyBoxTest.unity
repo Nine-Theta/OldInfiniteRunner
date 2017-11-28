@@ -2242,12 +2242,12 @@ Prefab:
     - target: {fileID: 114010439036305548, guid: 33645360c4a4fc041863e69efbc3e174,
         type: 2}
       propertyPath: followOffset.y
-      value: 5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114010439036305548, guid: 33645360c4a4fc041863e69efbc3e174,
         type: 2}
       propertyPath: followOffset.x
-      value: 5
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 33645360c4a4fc041863e69efbc3e174, type: 2}

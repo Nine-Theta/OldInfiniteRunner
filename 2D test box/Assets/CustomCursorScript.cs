@@ -8,9 +8,13 @@ public class CustomCursorScript : MonoBehaviour
     public GameObject hookPrefab;
     public GameObject potionPrefab;
     public float hookRange = 7.0f;
+    public float hookCooldown = 1.0f;
+    public float potionCooldown = 1.0f;
     //Distance between mouse and player
     private Vector2 _mouseDistance;
     private GameObject _prevHook;
+    private float _hookTimer = 0.0f;
+    private float _potionTimer = 0.0f;
 
     private void Start()
     {
@@ -19,14 +23,18 @@ public class CustomCursorScript : MonoBehaviour
 
     private void Update()
     {
+        _potionTimer -= Time.deltaTime;
+        _hookTimer -= Time.deltaTime;
         TrackMouse();
         if (Input.GetMouseButtonDown(0))
         {
-            ThrowPotion();
+            if (_potionTimer <= 0.0f)
+                ThrowPotion();
         }
         if (Input.GetMouseButtonDown(1))
         {
-            HookTarget();
+            if (_hookTimer <= 0.0f)
+                HookTarget();
         }
     }
 
@@ -43,6 +51,7 @@ public class CustomCursorScript : MonoBehaviour
 
     private void ThrowPotion()
     {
+        _potionTimer = potionCooldown;
         GameObject potion = Instantiate(potionPrefab, player.transform.position, transform.rotation);
         potion.GetComponent<PotionScript>().SetForce(_mouseDistance.normalized);
         potion.GetComponent<PotionScript>().SetPlayer(player.gameObject);
@@ -59,6 +68,7 @@ public class CustomCursorScript : MonoBehaviour
             _prevHook = Instantiate(hookPrefab, info.point, transform.rotation);
             player.Hook(_mouseDistance, _prevHook);
             SetCursorColor(1.0f, 1.0f, 1.0f);
+            _hookTimer = hookCooldown;
         }
         else
         {

@@ -145,6 +145,10 @@ public class MovementScript : MonoBehaviour
             else
                 other.GetComponentInParent<SeeingEyeScript>().DetectPlayer(transform);
         }
+        if (other.tag == "SafeZone" && !_safe)
+        {
+            _safe = true;
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D coll)

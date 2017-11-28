@@ -64,6 +64,7 @@ public class SeeingEyeScript : MonoBehaviour
         if(!spawnEnemies)
         {
             fogField.ActivateFog();
+            GetComponent<Animator>().speed = 0.0f;
         }
         GetComponent<SpriteRenderer>().color = Color.magenta;
     }

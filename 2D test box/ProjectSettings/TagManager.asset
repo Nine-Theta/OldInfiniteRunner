@@ -11,6 +11,8 @@ TagManager:
   - Bullet
   - AllSeeingEye
   - FogField
+  - Enemy
+  - Mist
   layers:
   - Default
   - TransparentFX

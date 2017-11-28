@@ -4,16 +4,18 @@ using UnityEngine;
 
 public class BomberScript : MonoBehaviour
 {
-    public GameObject item;
+    public GameObject thrownItem;
     public Transform player;
     public Vector2 followOffset = new Vector2(0, 0);
 
     public float thinkSpeed = 3.0f;
     public float detectionRange = 5.0f;
-    public float useMagnitudeRange = 2.5f;
-    public float speedMultiplier = 1.0f;
-    [Tooltip("Causes the player's Direction to influence the enemy's x offset")]
-    public bool usePlayerDirection = true;
+    public float followSpeedMult = 1.0f;
+    public float throwSpeedMult = 1.0f;
+    public float throwHeightMult = 1.0f;
+    public float gravityScale = 1.0f;
+
+    public bool throwArc = true;
 
     private Rigidbody2D _body;
     private Rigidbody2D _playerBody;
@@ -23,6 +25,7 @@ public class BomberScript : MonoBehaviour
 
     private void Start()
     {
+        _thinkTimer = Random.Range(0.0f, thinkSpeed);
         _body = this.gameObject.GetComponent<Rigidbody2D>();
         _playerBody = player.gameObject.GetComponent<Rigidbody2D>();
         _offset = new Vector3(followOffset.x, followOffset.y, 0);
@@ -31,20 +34,23 @@ public class BomberScript : MonoBehaviour
     /// <summary> Creates a copy of an Object and flings it at the target. </summary>
     /// <param name="pObject">The original GameObject to be copied. Requires a Rigidbody2D.</param>
     /// <param name="pTarget">The position of the target.</param>
-    /// <param name="pVelocity">The velocity given to the Object.</param>
-    /// <param name="arch">If the object should be thrown in an arch or not False by default.</param>
-    public void flingItem(GameObject pObject, Vector3 pTarget, float pXVelocity = 1.0f, float pYVelocity = 1.0f, bool arch = false, float pGravityScale = 1.0f)
+    /// <param name="arc">If the object should be thrown in an arc or not. False by default.</param>
+    public void flingItem(GameObject pObject, Vector3 pTarget, float pXVelocity = 1.0f, float pYVelocity = 1.0f, bool arc = false, float pGravityScale = 1.0f)
     {
         GameObject projectile = Instantiate(pObject);
         projectile.transform.position = gameObject.transform.position;
         Rigidbody2D projBody = projectile.GetComponent<Rigidbody2D>();
 
-        if (arch)
+        if (arc)
         {
             projectile.GetComponent<Rigidbody2D>().gravityScale = pGravityScale;
-            Vector3 normalized = new Vector3(new Vector3(pTarget.x - gameObject.transform.position.x, 0, 0).normalized.x, 1).normalized;
-            Debug.Log(normalized);
-            projBody.AddForce(new Vector3(normalized.x * (pXVelocity), normalized.y * (pYVelocity)), ForceMode2D.Impulse);
+
+            float x = Mathf.Abs(pTarget.x - gameObject.transform.position.x);
+            float y = Mathf.Abs(pTarget.y - gameObject.transform.position.y);
+
+            Vector2 normalized = new Vector2(pTarget.x - gameObject.transform.position.x, y).normalized;
+
+            projBody.AddForce(new Vector2(normalized.x * x * pXVelocity, normalized.y * (y+x) * pYVelocity), ForceMode2D.Impulse);
         }
         else
         {
@@ -55,45 +61,33 @@ public class BomberScript : MonoBehaviour
 
     private void UpdatePosition()
     {
-        float distance = (player.position - gameObject.transform.position).magnitude;
+        Vector2 subtracted = new Vector2(player.position.x - gameObject.transform.position.x + _offset.x, player.position.y - gameObject.transform.position.y + _offset.y);
 
-        if (distance < detectionRange && _playerBody.velocity.magnitude > 0.1f)
-        {
-            if (usePlayerDirection)
-            {
-                if ((player.position.x - gameObject.transform.position.x) < -1)
-                    _offset.x = -followOffset.x;
-                else if((player.position.x - gameObject.transform.position.x) > 1)
-                    _offset.x = followOffset.x;
-            }
+        if (Mathf.Abs(player.position.x - gameObject.transform.position.x) < _offset.x)
+            subtracted.x = 0;
 
-            Vector3 subtracted = (player.position - gameObject.transform.position + _offset);
-            _body.velocity = (subtracted.normalized * speedMultiplier);
-        }
+        _body.AddForce(new Vector2(subtracted.normalized.x * followSpeedMult, 0), ForceMode2D.Force);
+        _body.velocity = new Vector2(_body.velocity.x, subtracted.normalized.y * subtracted.magnitude);
     }
 
     private void Step()
     {
-        float distance = (player.position - gameObject.transform.position).magnitude;
-        Debug.Log(distance);
+        if (throwArc)
+            flingItem(thrownItem, new Vector2(player.position.x + _playerBody.velocity.x, player.position.y), throwSpeedMult, throwHeightMult, true, gravityScale);
+        else
+            flingItem(thrownItem, new Vector2(player.position.x + _playerBody.velocity.x, player.position.y), throwSpeedMult);
 
-        if (distance < detectionRange)
-        {
-            if (distance < useMagnitudeRange) { }
-
-            else { }
-
-        }
-
-        Debug.Log("called step");
         _thinkTimer = thinkSpeed;
     }
 
     private void Update()
     {
-        UpdatePosition();
+        if ((player.position - gameObject.transform.position).magnitude < detectionRange)
+        {
+            UpdatePosition();
 
-        if (_thinkTimer <= 0) Step();
-        else _thinkTimer -= Time.deltaTime;
+            if (_thinkTimer <= 0) Step();
+            else _thinkTimer -= Time.deltaTime;
+        }
     }
 }

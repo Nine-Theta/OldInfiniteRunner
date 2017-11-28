@@ -13,7 +13,7 @@ public class GroundEnemyScript : MonoBehaviour
     private float _attackCooldown;
     private Vector2 _startPosition;
     private bool _startToEnd = true;
-    private Transform _player;
+    public Transform _player;
 
     private void Start()
     {

@@ -16,10 +16,15 @@ public class MovementScript : MonoBehaviour
     private LifelineScript _lifeline;
     private bool _safe = false;
     private HealthBarScript healthBar;
-    
+    private static GameObject _singletonInstance;
+
 
     private void Start()
     {
+        if (_singletonInstance != null)
+            Destroy(gameObject);
+        else
+            _singletonInstance = this.gameObject;
         _rigidbody = gameObject.GetComponent<Rigidbody2D>();
         _gravityScale = _rigidbody.gravityScale;
         healthBar = gameObject.GetComponentInChildren<HealthBarScript>();
@@ -112,6 +117,10 @@ public class MovementScript : MonoBehaviour
         {
             _safe = true;
         }
+        if(other.tag == "FogField")
+        {
+            other.GetComponent<FogFieldScript>().EnterFog(healthBar);
+        }
     }
 
     private void OnTriggerExit2D(Collider2D other)
@@ -119,6 +128,10 @@ public class MovementScript : MonoBehaviour
         if(other.tag == "SafeZone")
         {
             _safe = false;
+        }
+        if (other.tag == "FogField")
+        {
+            other.GetComponent<FogFieldScript>().LeaveFog();
         }
     }
 
@@ -160,5 +173,10 @@ public class MovementScript : MonoBehaviour
     public void SetLifeLine(LifelineScript life)
     {
         _lifeline = life;
+    }
+
+    public static GameObject GetPlayer()
+    {
+        return _singletonInstance;
     }
 }

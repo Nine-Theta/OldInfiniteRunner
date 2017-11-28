@@ -14,10 +14,14 @@ public class SlimeScript : MonoBehaviour
     public float jumpHeight = 1.0f;
 
     private float _thinkTimer = 3.0f;
+    private Animator _animator;
 
     private void Start()
     {
         _thinkTimer = thinkSpeed + Random.Range(0.0f, 3.0f);
+        _animator = GetComponent<Animator>();
+        if (player == null)
+            player = MovementScript.GetPlayer().transform;
     }
 
     private void jumpAttack(Vector3 pTarget, float pXVelocity = 1.0f, float pYVelocity = 1.0f)
@@ -26,10 +30,13 @@ public class SlimeScript : MonoBehaviour
         gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector3(normalized.x * pXVelocity, normalized.y + 1.0f * pYVelocity));
     }
 
-    private void Step()
+    /// <summary>
+    /// Public function for the animator, calling the private function internally
+    /// </summary>
+    public void JumpAttack()
     {
         float distance = (player.position - gameObject.transform.position).magnitude;
-
+        _animator.SetBool("JumpWindup", false);
         if (distance < detectionRange)
         {
             if (distance < useMagnitudeRange)
@@ -37,15 +44,32 @@ public class SlimeScript : MonoBehaviour
             else
                 jumpAttack(player.position, jumpDistance, jumpHeight);
         }
-        
+    }
+
+    private void Step()
+    {
+        _animator.SetBool("JumpWindup", true);
+        _animator.SetBool("Land", false);
+
         _thinkTimer = thinkSpeed;
     }
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.J)) jumpAttack(player.position, jumpDistance, jumpHeight);
-
-        if (_thinkTimer <= 0) Step();
-        else _thinkTimer -= Time.deltaTime;
+        //if (Input.GetKeyDown(KeyCode.J)) jumpAttack(player.position, jumpDistance, jumpHeight);
+        if (_thinkTimer <= 0)
+            Step();
+        else
+            _thinkTimer -= Time.deltaTime;
+        if(_animator.GetBool("JumpWindup") && gameObject.GetComponent<Rigidbody2D>().velocity.y < 0.0f)
+        {
+            _animator.SetBool("JumpWindup", false);
+            _animator.SetBool("Fall", true);
+        }
+        if (_animator.GetBool("Fall") && gameObject.GetComponent<Rigidbody2D>().velocity.y >= 0.0f)
+        {
+            _animator.SetBool("Fall", false);
+            _animator.SetBool("Land", true);
+        }
     }
 }

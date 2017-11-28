@@ -18,6 +18,7 @@ public class MovementScript : MonoBehaviour
     private HealthBarScript healthBar;
     private static GameObject _singletonInstance;
 
+    public bool isHooked { get { return _hooked; } }
 
     private void Awake()
     {

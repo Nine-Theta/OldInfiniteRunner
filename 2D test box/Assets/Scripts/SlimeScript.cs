@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SlimeScript : MonoBehaviour
 {
-    public GameObject player;
+    public Transform player;
 
     public float thinkSpeed = 3.0f;
     public float detectionRange = 5.0f;
@@ -24,7 +24,7 @@ public class SlimeScript : MonoBehaviour
         _animator = GetComponent<Animator>();
         if (player == null)
         {
-            player = MovementScript.GetPlayer();
+            player = MovementScript.GetPlayer().transform;
         }
     }
 
@@ -39,15 +39,15 @@ public class SlimeScript : MonoBehaviour
     /// </summary>
     public void JumpAttack()
     {
-        float distance = (player.transform.position - gameObject.transform.position).magnitude;
+        float distance = (player.position - gameObject.transform.position).magnitude;
         _animator.SetBool("JumpWindup", false);
         _woundUp = true;
         if (distance < detectionRange)
         {
             if (distance < useMagnitudeRange)
-                jumpAttack(player.transform.position, distance, jumpHeight);
+                jumpAttack(player.position, distance, jumpHeight);
             else
-                jumpAttack(player.transform.position, jumpDistance, jumpHeight);
+                jumpAttack(player.position, jumpDistance, jumpHeight);
         }
     }
 
@@ -61,7 +61,7 @@ public class SlimeScript : MonoBehaviour
 
     private void Update()
     {
-        float distance = (player.transform.position - gameObject.transform.position).magnitude;
+        float distance = (player.position - gameObject.transform.position).magnitude;
         if (!_jumping && distance < detectionRange)
         {
             if (_thinkTimer <= 0)

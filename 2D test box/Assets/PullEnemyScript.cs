@@ -9,9 +9,12 @@ public class PullEnemyScript : MonoBehaviour
     public float pullModifier = 1.0f;
     public Transform player;
 
+    private HealthBarScript _healthBar;
+
     private void Start()
     {
         player = MovementScript.GetPlayer().transform;
+        _healthBar = GetComponentInChildren<HealthBarScript>();
     }
 
     private void Update()
@@ -29,6 +32,15 @@ public class PullEnemyScript : MonoBehaviour
         if(!player.GetComponent<MovementScript>().isHooked && distance < pullRange)
         {
             player.GetComponent<Rigidbody2D>().AddForce((transform.position - player.position).normalized * pullModifier);
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D coll)
+    {
+        if (coll.collider.tag == "Explosion")
+        {
+            if (!_healthBar.TakeDamage())
+                Destroy(gameObject);
         }
     }
 }

@@ -29,7 +29,7 @@ public class PotionScript : MonoBehaviour
         {
             case "Terrain":
                 GameObject go = Instantiate(explosion, transform.position, Quaternion.Euler(0.0f, 0.0f, 0.0f));
-                Physics2D.IgnoreCollision(go.GetComponent<Collider2D>(), _player.GetComponent<Collider2D>());
+                Physics2D.IgnoreCollision(go.GetComponent<Collider2D>(), MovementScript.GetPlayer().GetComponent<Collider2D>());
                 Destroy(gameObject);
                 break;
             case "Explosion":
@@ -37,6 +37,9 @@ public class PotionScript : MonoBehaviour
                 break;
             case "Potion":
                 Physics2D.IgnoreCollision(coll.collider, gameObject.GetComponent<Collider2D>());
+                break;
+            case "":
+
                 break;
         }
     }

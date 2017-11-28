@@ -15,6 +15,7 @@ public class SlimeScript : MonoBehaviour
 
     private float _thinkTimer = 3.0f;
     private Animator _animator;
+    private HealthBarScript _healthBar;
     private bool _woundUp = false;
     private bool _jumping = false;
 
@@ -26,6 +27,7 @@ public class SlimeScript : MonoBehaviour
         {
             player = MovementScript.GetPlayer().transform;
         }
+        _healthBar = GetComponentInChildren<HealthBarScript>();
     }
 
     private void jumpAttack(Vector3 pTarget, float pXVelocity = 1.0f, float pYVelocity = 1.0f)
@@ -81,13 +83,13 @@ public class SlimeScript : MonoBehaviour
             _jumping = false;
         }
     }
+
     private void OnCollisionEnter2D(Collision2D coll)
     {
-
         if (coll.collider.tag == "Explosion")
         {
-            gameObject.SetActive(false);
-
+            if (!_healthBar.TakeDamage())
+                Destroy(gameObject);
         }
     }
 }

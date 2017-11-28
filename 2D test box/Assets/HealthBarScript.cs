@@ -19,20 +19,22 @@ public class HealthBarScript : MonoBehaviour
 
     }
 
-    public void TakeDamage()
+    public bool TakeDamage()
     {
         _hp--;
         if (_hp < 0)
             _hp = 0;
         AdjustBar();
+        return _hp > 0;
     }
 
-    public void TakeDamage(int damage)
+    public bool TakeDamage(int damage)
     {
         _hp -= damage;
         if (_hp < 0)
             _hp = 0;
         AdjustBar();
+        return _hp > 0;
     }
 
     public void Heal()

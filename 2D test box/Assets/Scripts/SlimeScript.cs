@@ -81,4 +81,13 @@ public class SlimeScript : MonoBehaviour
             _jumping = false;
         }
     }
+    private void OnCollisionEnter2D(Collision2D coll)
+    {
+
+        if (coll.collider.tag == "Explosion")
+        {
+            gameObject.SetActive(false);
+
+        }
+    }
 }

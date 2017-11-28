@@ -22,11 +22,11 @@ GameObject:
   - component: {fileID: 198531502115096760}
   - component: {fileID: 199117962779146636}
   - component: {fileID: 114987025577380310}
-  - component: {fileID: 70555455789342536}
   - component: {fileID: 50459551206094982}
+  - component: {fileID: 70434584210731520}
   m_Layer: 0
   m_Name: Blue_Explosion
-  m_TagString: Untagged
+  m_TagString: Explosion
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -37,13 +37,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1400134059964942}
-  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -38.135452, y: 4.051988, z: -10.549049}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &50459551206094982
 Rigidbody2D:
   serializedVersion: 4
@@ -64,7 +64,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 7
---- !u!70 &70555455789342536
+--- !u!70 &70434584210731520
 CapsuleCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -73,11 +73,11 @@ CapsuleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.7149592, y: 0.08226289}
-  m_Size: {x: 3.295877, y: 5.1296177}
+  m_Offset: {x: 0.016498566, y: 0.07634926}
+  m_Size: {x: 2.701912, y: 2.7701025}
   m_Direction: 0
 --- !u!114 &114987025577380310
 MonoBehaviour:
@@ -151,7 +151,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 32520595
+  randomSeed: -1370263509
   InitialModule:
     serializedVersion: 3
     enabled: 1

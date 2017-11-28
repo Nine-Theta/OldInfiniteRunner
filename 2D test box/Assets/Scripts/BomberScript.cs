@@ -23,6 +23,7 @@ public class BomberScript : MonoBehaviour
     private Rigidbody2D _body;
     private Rigidbody2D _playerBody;
     private Vector3 _offset;
+    private HealthBarScript _healthBar;
 
     private float _thinkTimer = 3.0f;
 
@@ -35,6 +36,7 @@ public class BomberScript : MonoBehaviour
         _body = this.gameObject.GetComponent<Rigidbody2D>();
         _playerBody = player.gameObject.GetComponent<Rigidbody2D>();
         _offset = new Vector3(followOffset.x, followOffset.y, 0);
+        _healthBar = GetComponentInChildren<HealthBarScript>();
     }
 
     /// <summary> Creates a copy of an Object and flings it at the target. </summary>
@@ -94,6 +96,15 @@ public class BomberScript : MonoBehaviour
 
             if (_thinkTimer <= 0) Step();
             else _thinkTimer -= Time.deltaTime;
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D coll)
+    {
+        if (coll.collider.tag == "Explosion")
+        {
+            if (!_healthBar.TakeDamage())
+                Destroy(gameObject);
         }
     }
 }

@@ -204,11 +204,11 @@ Tilemap:
       e33: 1
   m_TileColorArray:
   - m_RefCount: 1
-    m_Data: {r: 0.9542827, g: 0.5131094, b: 0.5535499, a: 1}
+    m_Data: {r: 0.90115494, g: 0.3659937, b: 0.4461018, a: 1}
   - m_RefCount: 1
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   - m_RefCount: 1
-    m_Data: {r: 0.73131144, g: 0.45502704, b: 0.47287053, a: 1}
+    m_Data: {r: 0.8864113, g: 0.5928022, b: 0.63917017, a: 1}
   m_AnimationFrameRate: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Origin: {x: -7, y: 0, z: 0}

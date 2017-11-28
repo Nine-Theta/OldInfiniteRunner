@@ -14,6 +14,7 @@ TagManager:
   - Mist
   - Explosion
   - SafeZone
+  - EnemyExplosion
   layers:
   - Default
   - TransparentFX

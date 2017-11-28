@@ -20,7 +20,7 @@ public class SlimeScript : MonoBehaviour
 
     private void Start()
     {
-        _thinkTimer = thinkSpeed + Random.Range(0.0f, 3.0f);
+        _thinkTimer = Random.Range(0.0f, thinkSpeed);
         _animator = GetComponent<Animator>();
         if (player == null)
         {

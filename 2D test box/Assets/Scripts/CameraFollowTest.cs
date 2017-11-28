@@ -5,6 +5,7 @@ using UnityEngine;
 public class CameraFollowTest : MonoBehaviour
 {
     public Transform _player;
+    public Vector2 followOffset = new Vector2(0, 0);
 
     public float speedMultiplier = 1.0f;
 
@@ -17,7 +18,8 @@ public class CameraFollowTest : MonoBehaviour
 
     private void Update()
     {
-        Vector3 subtracted = (_player.position - gameObject.transform.position);
+        Vector2 subtracted = (_player.position - gameObject.transform.position);
+        subtracted += followOffset;
         _body.velocity = (subtracted.normalized * subtracted.magnitude * speedMultiplier);
     }
 }

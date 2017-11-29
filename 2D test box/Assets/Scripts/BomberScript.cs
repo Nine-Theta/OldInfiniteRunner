@@ -22,7 +22,7 @@ public class BomberScript : MonoBehaviour
 
     private Rigidbody2D _body;
     private Rigidbody2D _playerBody;
-    private Vector3 _offset;
+    private Vector2 _offset;
     private HealthBarScript _healthBar;
 
     private float _thinkTimer = 3.0f;
@@ -35,7 +35,7 @@ public class BomberScript : MonoBehaviour
         _thinkTimer = Random.Range(0.0f, thinkSpeed);
         _body = this.gameObject.GetComponent<Rigidbody2D>();
         _playerBody = player.gameObject.GetComponent<Rigidbody2D>();
-        _offset = new Vector3(followOffset.x, followOffset.y, 0);
+        _offset = new Vector2(followOffset.x, followOffset.y);
         _healthBar = GetComponentInChildren<HealthBarScript>();
     }
 

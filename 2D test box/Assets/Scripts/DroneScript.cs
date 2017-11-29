@@ -6,22 +6,20 @@ public class DroneScript : MonoBehaviour
 {
     public GameObject thrownItem;
     public Transform player;
-    public Vector2 followOffset = new Vector2(0, 0);
 
     public float thinkSpeed = 3.0f;
     public float detectionRange = 5.0f;
     public float followSpeedMult = 1.0f;
     public float throwSpeedMult = 1.0f;
+    public float radiusOffset = 0.0f;
+    public float rotateSpeed = 1.0f;
 
     private Rigidbody2D _body;
     private Rigidbody2D _playerBody;
-    private Vector3 _offset;
 
     private float _thinkTimer = 3.0f;
-
-    private Vector3 a = new Vector2(5,0);
-    private Vector3 b = new Vector2(0,0);
-    private Vector3 c = new Vector2(0,0);
+    private float _rotateSpeed = 0.0f;
+    private float _angle = 0;
 
     private void Start()
     {
@@ -31,7 +29,8 @@ public class DroneScript : MonoBehaviour
         _thinkTimer = Random.Range(0.0f, thinkSpeed);
         _body = this.gameObject.GetComponent<Rigidbody2D>();
         _playerBody = player.gameObject.GetComponent<Rigidbody2D>();
-        _offset = new Vector3(followOffset.x, followOffset.y, 0);
+
+        _rotateSpeed = rotateSpeed * (Mathf.PI / 180);
     }
 
     /// <summary> Creates a copy of an Object and flings it at the target. </summary>
@@ -49,32 +48,38 @@ public class DroneScript : MonoBehaviour
 
     private void UpdatePosition()
     {
-        //Vector2 subtracted = new Vector2(player.position.x - gameObject.transform.position.x + _offset.x, player.position.y - gameObject.transform.position.y + _offset.y);
+        Vector2 subtracted = new Vector2(player.position.x - gameObject.transform.position.x, player.position.y - gameObject.transform.position.y);
         //_body.AddForce(new Vector2(subtracted.normalized.x * followSpeedMult, 0), ForceMode2D.Force);
         //_body.velocity = new Vector2(_body.velocity.x, subtracted.normalized.y * subtracted.magnitude);
 
-        //this.gameObject.transform.position = new Vector2(0, 0);
+        _angle += _rotateSpeed;
 
-        gameObject.transform.position = a;
-        a += b;
-        b = new Vector3((c - a).magnitude, 0);
+        float s = Mathf.Sin(_angle);
+        float sy = Mathf.Cos(_angle);
+
+        _body.velocity = new Vector2(subtracted.x + radiusOffset*s, subtracted.y + radiusOffset*sy);
+
     }
 
     private void Step()
     {
-        flingItem(thrownItem, new Vector2(player.position.x + _playerBody.velocity.x, player.position.y), throwSpeedMult);
+        //flingItem(thrownItem, new Vector2(player.position.x + _playerBody.velocity.x, player.position.y), throwSpeedMult);
+
+        //UpdatePosition();
 
         _thinkTimer = thinkSpeed;
     }
 
     private void Update()
     {
-        if ((player.position - gameObject.transform.position).magnitude < detectionRange)
+        UpdatePosition();
+        /**/
+        //if ((player.position - gameObject.transform.position).magnitude < detectionRange)
         {
-            UpdatePosition();
+            //UpdatePosition();
 
             if (_thinkTimer <= 0) Step();
             else _thinkTimer -= Time.deltaTime;
-        }
+        }/**/
     }
 }

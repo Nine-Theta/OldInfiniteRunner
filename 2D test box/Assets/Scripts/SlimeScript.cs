@@ -53,6 +53,11 @@ public class SlimeScript : MonoBehaviour
         //}
     }
 
+    public void DestroyObject()
+    {
+        Destroy(gameObject);
+    }
+
     private void Step()
     {
         _animator.SetBool("JumpWindup", true);
@@ -89,7 +94,7 @@ public class SlimeScript : MonoBehaviour
         if (coll.collider.tag == "Explosion")
         {
             if (!_healthBar.TakeDamage())
-                Destroy(gameObject);
+                _animator.SetBool("Dead", true);
         }
     }
 }

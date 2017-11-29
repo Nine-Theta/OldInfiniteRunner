@@ -57,7 +57,14 @@ public class DroneScript : MonoBehaviour
         float s = Mathf.Sin(_angle);
         float sy = Mathf.Cos(_angle);
 
-        _body.velocity = new Vector2(subtracted.x + radiusOffset*s, subtracted.y + radiusOffset*sy);
+        //gameObject.transform.position = new Vector2(player.position.x + radiusOffset * s, player.position.y + radiusOffset * sy);
+
+        //Debug.Log("submag: " +subtracted.magnitude );
+
+        //_body.velocity = new Vector2(subtracted.x + radiusOffset * s, subtracted.y + radiusOffset * sy);
+        _body.velocity = new Vector2(subtracted.x + _playerBody.velocity.x + radiusOffset * s, subtracted.y + _playerBody.velocity.y + radiusOffset * sy);
+        //_body.velocity += new Vector2();
+
 
     }
 

@@ -106,8 +106,8 @@ public class MovementScript : MonoBehaviour
             _hookLine.SetPosition(1, hook.transform.position);
         if (_lifeline != null)
         {
-            //_lifeline.doLineUpdate = false;
-            //_lifeline.AddPoint(hook.transform.position);
+            _lifeline.doLineUpdate = false;
+            _lifeline.AddPoint(hook.transform.position);
         }
     }
 
@@ -128,6 +128,10 @@ public class MovementScript : MonoBehaviour
         if (other.tag == "SafeZone")
         {
             _safe = true;
+        }
+        if (other.tag == "EnemyExplosion")
+        {
+            healthBar.TakeDamage();
         }
         if (other.tag == "FogField")
         {
@@ -163,21 +167,15 @@ public class MovementScript : MonoBehaviour
     }
 
     private void OnCollisionEnter2D(Collision2D coll)
-    {
+    { 
         if (coll.collider.tag == "Terrain")
         {
-            _jumps = 2;
-            _grounded = true;
             if (_hooked)
             {
                 _hooked = false;
                 _rigidbody.gravityScale = _gravityScale;
                 _rigidbody.velocity = new Vector2(0.0f, 0.0f);
             }
-        }
-        if (coll.collider.tag == "EnemyExplosion")
-        {
-            healthBar.TakeDamage();
         }
         if (coll.collider.tag == "Enemy")
         {
@@ -202,5 +200,11 @@ public class MovementScript : MonoBehaviour
     public static GameObject GetPlayer()
     {
         return _singletonInstance;
+    }
+
+    public void Ground()
+    {
+        _jumps = 2;
+        _grounded = true;
     }
 }

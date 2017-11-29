@@ -99,9 +99,9 @@ public class BomberScript : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter2D(Collision2D coll)
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        if (coll.collider.tag == "Explosion")
+        if (other.tag == "Explosion")
         {
             if (!_healthBar.TakeDamage())
                 Destroy(gameObject);

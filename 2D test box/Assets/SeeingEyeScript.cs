@@ -31,7 +31,6 @@ public class SeeingEyeScript : MonoBehaviour
             {
                 _cooldownTimer = checkTime;
                 SpawnEnemies();
-                //CheckForPlayer();
             }
         }
     }

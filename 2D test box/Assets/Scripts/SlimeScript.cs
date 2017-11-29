@@ -44,13 +44,13 @@ public class SlimeScript : MonoBehaviour
         float distance = (player.position - gameObject.transform.position).magnitude;
         _animator.SetBool("JumpWindup", false);
         _woundUp = true;
-        if (distance < detectionRange)
-        {
+        //if (distance < detectionRange)
+        //{
             if (distance < useMagnitudeRange)
                 jumpAttack(player.position, distance, jumpHeight);
             else
                 jumpAttack(player.position, jumpDistance, jumpHeight);
-        }
+        //}
     }
 
     private void Step()

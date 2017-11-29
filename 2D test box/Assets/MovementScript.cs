@@ -14,6 +14,7 @@ public class MovementScript : MonoBehaviour
     private float _gravityScale = 1.0f;
     private Rigidbody2D _rigidbody;
     private LifelineScript _lifeline;
+    private LineRenderer _hookLine; //And sinker
     private bool _safe = false;
     private HealthBarScript healthBar;
     private static GameObject _singletonInstance;
@@ -29,11 +30,18 @@ public class MovementScript : MonoBehaviour
         _rigidbody = gameObject.GetComponent<Rigidbody2D>();
         _gravityScale = _rigidbody.gravityScale;
         healthBar = gameObject.GetComponentInChildren<HealthBarScript>();
+        _hookLine = gameObject.GetComponentInChildren<LineRenderer>();
     }
 
     private void Update()
     {
         MovementUpdate();
+        if(_hookLine != null)
+        {
+            _hookLine.SetPosition(0, transform.position);
+            if(!_hooked)
+                _hookLine.SetPosition(1, transform.position);
+        }
     }
 
     private void MovementUpdate()
@@ -87,16 +95,19 @@ public class MovementScript : MonoBehaviour
         }
     }
 
+
     public void Hook(Vector2 direction, GameObject hook)
     {
         _hooked = true;
         _rigidbody.velocity = new Vector2(0.0f, 0.0f);
         _rigidbody.AddForce(direction.normalized * hookVelocity);
         _rigidbody.gravityScale = 0;
+        if (_hookLine != null)
+            _hookLine.SetPosition(1, hook.transform.position);
         if (_lifeline != null)
         {
-            _lifeline.doLineUpdate = false;
-            _lifeline.AddPoint(hook.transform.position);
+            //_lifeline.doLineUpdate = false;
+            //_lifeline.AddPoint(hook.transform.position);
         }
     }
 
@@ -114,11 +125,11 @@ public class MovementScript : MonoBehaviour
             }
             Destroy(other.gameObject);
         }
-        if(other.tag == "SafeZone")
+        if (other.tag == "SafeZone")
         {
             _safe = true;
         }
-        if(other.tag == "FogField")
+        if (other.tag == "FogField")
         {
             other.GetComponent<FogFieldScript>().EnterFog(healthBar);
         }
@@ -126,7 +137,7 @@ public class MovementScript : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        if(other.tag == "SafeZone")
+        if (other.tag == "SafeZone")
         {
             _safe = false;
         }
@@ -138,16 +149,16 @@ public class MovementScript : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D other)
     {
+        if (other.tag == "SafeZone" && !_safe)
+        {
+            _safe = true;
+        }
         if (other.tag == "AllSeeingEye" && !_safe)
         {
             if (other.GetComponent<SeeingEyeScript>() != null)
                 other.GetComponent<SeeingEyeScript>().DetectPlayer(transform);
             else
                 other.GetComponentInParent<SeeingEyeScript>().DetectPlayer(transform);
-        }
-        if (other.tag == "SafeZone" && !_safe)
-        {
-            _safe = true;
         }
     }
 
@@ -157,8 +168,17 @@ public class MovementScript : MonoBehaviour
         {
             _jumps = 2;
             _grounded = true;
+            if (_hooked)
+            {
+                _hooked = false;
+                _rigidbody.gravityScale = _gravityScale;
+                _rigidbody.velocity = new Vector2(0.0f, 0.0f);
+            }
         }
-
+        if (coll.collider.tag == "EnemyExplosion")
+        {
+            healthBar.TakeDamage();
+        }
         if (coll.collider.tag == "Enemy")
         {
             healthBar.TakeDamage(1);

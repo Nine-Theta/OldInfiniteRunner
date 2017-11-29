@@ -16,6 +16,7 @@ public class MovementScript : MonoBehaviour
     private LifelineScript _lifeline;
     private LineRenderer _hookLine; //And sinker
     private bool _safe = false;
+    private GameObject _lastHook;
     private HealthBarScript healthBar;
     private static GameObject _singletonInstance;
 
@@ -102,6 +103,7 @@ public class MovementScript : MonoBehaviour
         _rigidbody.velocity = new Vector2(0.0f, 0.0f);
         _rigidbody.AddForce(direction.normalized * hookVelocity);
         _rigidbody.gravityScale = 0;
+        _lastHook = hook;
         if (_hookLine != null)
             _hookLine.SetPosition(1, hook.transform.position);
         if (_lifeline != null)
@@ -175,6 +177,7 @@ public class MovementScript : MonoBehaviour
                 _hooked = false;
                 _rigidbody.gravityScale = _gravityScale;
                 _rigidbody.velocity = new Vector2(0.0f, 0.0f);
+                Destroy(_lastHook);
             }
         }
         if (coll.collider.tag == "Enemy")

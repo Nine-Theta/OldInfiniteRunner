@@ -58,6 +58,11 @@ public class SlimeScript : MonoBehaviour
         Destroy(gameObject);
     }
 
+    public void SetAnimFalse()
+    {
+        _animator.SetBool("Dead", false);
+    }
+
     private void Step()
     {
         _animator.SetBool("JumpWindup", true);
@@ -89,12 +94,17 @@ public class SlimeScript : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter2D(Collision2D coll)
+    private void OnTriggerEnter2D(Collider2D coll)
     {
-        if (coll.collider.tag == "Explosion")
+        if (coll.tag == "Explosion")
         {
             if (!_healthBar.TakeDamage())
+            {
+                _animator.SetBool("Fall", false);
+                _animator.SetBool("Land", false);
+                _animator.SetBool("JumpWindup", false);
                 _animator.SetBool("Dead", true);
+            }
         }
     }
 }

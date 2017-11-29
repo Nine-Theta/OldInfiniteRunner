@@ -33,15 +33,26 @@ public class PotionScript : MonoBehaviour
                 Destroy(gameObject);
                 break;
             case "Enemy":
-                GameObject go1 = Instantiate(explosion, transform.position, Quaternion.Euler(0.0f, 0.0f, 0.0f));
-                Physics2D.IgnoreCollision(go1.GetComponent<Collider2D>(), MovementScript.GetPlayer().GetComponent<Collider2D>());
-                Destroy(gameObject);
+                if (gameObject.tag == "Potion")
+                {
+                    GameObject go1 = Instantiate(explosion, transform.position, Quaternion.Euler(0.0f, 0.0f, 0.0f));
+                    Physics2D.IgnoreCollision(go1.GetComponent<Collider2D>(), MovementScript.GetPlayer().GetComponent<Collider2D>());
+                    Destroy(gameObject);
+                }
                 break;
             case "Explosion":
                 Physics2D.IgnoreCollision(coll.collider, gameObject.GetComponent<Collider2D>());
                 break;
             case "Potion":
                 Physics2D.IgnoreCollision(coll.collider, gameObject.GetComponent<Collider2D>());
+                break;
+            case "Player":
+                if(gameObject.tag == "EnemyPotion")
+                {
+                    GameObject go2 = Instantiate(explosion, transform.position, Quaternion.Euler(0.0f, 0.0f, 0.0f));
+                    Physics2D.IgnoreCollision(go2.GetComponent<Collider2D>(), MovementScript.GetPlayer().GetComponent<Collider2D>());
+                    Destroy(gameObject);
+                }
                 break;
         }
     }

@@ -43,9 +43,9 @@ public class BomberScript : MonoBehaviour
     /// <param name="pObject">The original GameObject to be copied. Requires a Rigidbody2D.</param>
     /// <param name="pTarget">The position of the target.</param>
     /// <param name="arc">If the object should be thrown in an arc or not. False by default.</param>
-    public void flingItem(GameObject pObject, Vector3 pTarget, float pXVelocity = 1.0f, float pYVelocity = 1.0f, bool arc = false, float pGravityScale = 1.0f)
+    public void flingItem(Vector3 pTarget, float pXVelocity = 1.0f, float pYVelocity = 1.0f, bool arc = false, float pGravityScale = 1.0f)
     {
-        GameObject projectile = Instantiate(pObject);
+        GameObject projectile = Instantiate(thrownItem);
         projectile.transform.position = gameObject.transform.position;
         Rigidbody2D projBody = projectile.GetComponent<Rigidbody2D>();
 
@@ -81,9 +81,9 @@ public class BomberScript : MonoBehaviour
     private void Step()
     {
         if (throwArc)
-            flingItem(thrownItem, new Vector2(player.position.x + _playerBody.velocity.x, player.position.y), throwSpeedMult, throwHeightMult, true, gravityScale);
+            flingItem( new Vector2(player.position.x + _playerBody.velocity.x, player.position.y), throwSpeedMult, throwHeightMult, true, gravityScale);
         else
-            flingItem(thrownItem, new Vector2(player.position.x + _playerBody.velocity.x, player.position.y), throwSpeedMult);
+            flingItem( new Vector2(player.position.x + _playerBody.velocity.x, player.position.y), throwSpeedMult);
 
         _thinkTimer = thinkSpeed;
     }

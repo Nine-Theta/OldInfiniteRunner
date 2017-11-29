@@ -16,7 +16,8 @@ public class CameraFollowTest : MonoBehaviour
         _body = this.gameObject.GetComponent<Rigidbody2D>();
     }
 
-    private void Update()
+    //https://docs.unity3d.com/ScriptReference/MonoBehaviour.LateUpdate.html
+    private void LateUpdate()
     {
         Vector2 subtracted = (_player.position - gameObject.transform.position);
         subtracted += followOffset;

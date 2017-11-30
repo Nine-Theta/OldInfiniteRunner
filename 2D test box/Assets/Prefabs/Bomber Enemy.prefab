@@ -55,9 +55,9 @@ GameObject:
   - component: {fileID: 4103309963591002}
   - component: {fileID: 212299308429048968}
   - component: {fileID: 50389907678516504}
-  - component: {fileID: 61254296572821676}
   - component: {fileID: 114907861020078074}
   - component: {fileID: 95149129992129462}
+  - component: {fileID: 58384914421690348}
   m_Layer: 2
   m_Name: Bomber Enemy
   m_TagString: Enemy
@@ -72,7 +72,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1930964740515184}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10, y: 1, z: 0}
+  m_LocalPosition: {x: 343.89548, y: 32.31213, z: 0}
   m_LocalScale: {x: 0.8, y: 0.8, z: 1}
   m_Children:
   - {fileID: 4267356631690804}
@@ -125,9 +125,9 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 4
---- !u!61 &61254296572821676
-BoxCollider2D:
+  m_Constraints: 0
+--- !u!58 &58384914421690348
+CircleCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -139,18 +139,8 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2, y: 2}
-    newSize: {x: 2, y: 2}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
-  m_EdgeRadius: 0
+  m_Radius: 1
 --- !u!95 &95149129992129462
 Animator:
   serializedVersion: 3

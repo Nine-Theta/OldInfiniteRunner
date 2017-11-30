@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class LifelineScript : MonoBehaviour
 {
-    public Transform player;
+    private Transform _player;
     private LineRenderer _lineRenderer;
     private bool doUpdate = true;
 
@@ -17,14 +17,14 @@ public class LifelineScript : MonoBehaviour
     private void Start()
     {
         _lineRenderer = gameObject.GetComponent<LineRenderer>();
-        _lineRenderer.SetPosition(0, player.transform.position);
-        player.GetComponent<MovementScript>().SetLifeLine(this);
+        _player = MovementScript.GetPlayer().transform;
+        _lineRenderer.SetPosition(0, _player.transform.position);
     }
 
     private void Update()
     {
         if (doUpdate)
-            _lineRenderer.SetPosition(_lineRenderer.positionCount - 1, player.transform.position);
+            _lineRenderer.SetPosition(_lineRenderer.positionCount - 1, _player.transform.position);
     }
 
     public void AddPoint(Vector3 point)
@@ -33,16 +33,8 @@ public class LifelineScript : MonoBehaviour
         _lineRenderer.SetPosition(_lineRenderer.positionCount - 1, point);
     }
 
-    ///Not yet done TODO: fix
-    private void RemovePoint(int index)
+    public void RemoveLastPoint()
     {
-        Debug.Log(_lineRenderer.positionCount);
-        if (_lineRenderer.positionCount <= 2)
-            return;
-        for (int i = index; i < _lineRenderer.positionCount - 2; i++)
-        {
-            _lineRenderer.SetPosition(i, _lineRenderer.GetPosition(i + 1));
-        }
         _lineRenderer.positionCount--;
     }
 }

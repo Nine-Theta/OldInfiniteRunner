@@ -14,7 +14,7 @@ public class MovementScript : MonoBehaviour
     private float _gravityScale = 1.0f;
     private Rigidbody2D _rigidbody;
     private LifelineScript _lifeline;
-    private LineRenderer _hookLine; //And sinker
+    //private LineRenderer _hookLine; //And sinker
     private bool _safe = false;
     private GameObject _lastHook;
     private HealthBarScript healthBar;
@@ -31,19 +31,25 @@ public class MovementScript : MonoBehaviour
         _rigidbody = gameObject.GetComponent<Rigidbody2D>();
         _gravityScale = _rigidbody.gravityScale;
         healthBar = gameObject.GetComponentInChildren<HealthBarScript>();
-        _hookLine = gameObject.GetComponentInChildren<LineRenderer>();
+        _lifeline = gameObject.GetComponentInChildren<LifelineScript>();
+        //_hookLine = gameObject.GetComponentInChildren<LineRenderer>();
     }
 
     private void Update()
     {
         MovementUpdate();
-        if(_hookLine != null)
-        {
-            _hookLine.SetPosition(0, transform.position);
-            if(!_hooked)
-                _hookLine.SetPosition(1, transform.position);
-        }
+        //FixHookLine();
     }
+
+    //private void FixHookLine()
+    //{
+    //    //if (_hookLine != null)
+    //    //{
+    //    //    _hookLine.SetPosition(0, transform.position);
+    //    //    if (!_hooked)
+    //    //        _hookLine.SetPosition(1, transform.position);
+    //    //}
+    //}
 
     private void MovementUpdate()
     {
@@ -104,8 +110,8 @@ public class MovementScript : MonoBehaviour
         _rigidbody.AddForce(direction.normalized * hookVelocity);
         _rigidbody.gravityScale = 0;
         _lastHook = hook;
-        if (_hookLine != null)
-            _hookLine.SetPosition(1, hook.transform.position);
+        //if (_hookLine != null)
+        //_hookLine.SetPosition(1, hook.transform.position);
         if (_lifeline != null)
         {
             _lifeline.doLineUpdate = false;
@@ -113,19 +119,26 @@ public class MovementScript : MonoBehaviour
         }
     }
 
+    private void UnHook()
+    {
+        _hooked = false;
+        _rigidbody.gravityScale = _gravityScale;
+        _rigidbody.velocity = new Vector2(0.0f, 0.0f);
+        Destroy(_lastHook);
+        if (_lifeline != null)
+        {
+            _lifeline.RemoveLastPoint();
+            _lifeline.doLineUpdate = true;
+        }
+    }
+
+    #region OnTriggers
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.tag == "Hook")
         {
-            _hooked = false;
-            _rigidbody.gravityScale = _gravityScale;
-            _rigidbody.velocity = new Vector2(0.0f, 0.0f);
-            if (_lifeline != null)
-            {
-                _lifeline.AddPoint(transform.position);
-                _lifeline.doLineUpdate = true;
-            }
-            Destroy(other.gameObject);
+            UnHook();
         }
         if (other.tag == "SafeZone")
         {
@@ -168,16 +181,16 @@ public class MovementScript : MonoBehaviour
         }
     }
 
+    #endregion
+
+    #region OnCollisions
     private void OnCollisionEnter2D(Collision2D coll)
-    { 
+    {
         if (coll.collider.tag == "Terrain")
         {
             if (_hooked)
             {
-                _hooked = false;
-                _rigidbody.gravityScale = _gravityScale;
-                _rigidbody.velocity = new Vector2(0.0f, 0.0f);
-                Destroy(_lastHook);
+                UnHook();
             }
         }
         if (coll.collider.tag == "Enemy")
@@ -195,10 +208,7 @@ public class MovementScript : MonoBehaviour
         }
     }
 
-    public void SetLifeLine(LifelineScript life)
-    {
-        _lifeline = life;
-    }
+    #endregion
 
     public static GameObject GetPlayer()
     {

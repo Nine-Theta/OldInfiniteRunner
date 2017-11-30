@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MovementScript : MonoBehaviour
 {
@@ -17,7 +18,7 @@ public class MovementScript : MonoBehaviour
     //private LineRenderer _hookLine; //And sinker
     private bool _safe = false;
     private GameObject _lastHook;
-    private HealthBarScript healthBar;
+    private HealthBarScript _healthBar;
     private static GameObject _singletonInstance;
 
     public bool isHooked { get { return _hooked; } }
@@ -30,14 +31,17 @@ public class MovementScript : MonoBehaviour
             _singletonInstance = this.gameObject;
         _rigidbody = gameObject.GetComponent<Rigidbody2D>();
         _gravityScale = _rigidbody.gravityScale;
-        healthBar = gameObject.GetComponentInChildren<HealthBarScript>();
+        _healthBar = gameObject.GetComponentInChildren<HealthBarScript>();
         _lifeline = gameObject.GetComponentInChildren<LifelineScript>();
         //_hookLine = gameObject.GetComponentInChildren<LineRenderer>();
     }
 
     private void Update()
     {
-        MovementUpdate();
+        if (_healthBar.isAlive)
+            MovementUpdate();
+        else if (Input.GetKeyDown(KeyCode.R))
+            SceneManager.LoadScene(0);
         //FixHookLine();
     }
 
@@ -114,7 +118,7 @@ public class MovementScript : MonoBehaviour
         //_hookLine.SetPosition(1, hook.transform.position);
         if (_lifeline != null)
         {
-            _lifeline.doLineUpdate = false;
+            _lifeline.isUnhooked = false;
             _lifeline.AddPoint(hook.transform.position);
         }
     }
@@ -128,7 +132,7 @@ public class MovementScript : MonoBehaviour
         if (_lifeline != null)
         {
             _lifeline.RemoveLastPoint();
-            _lifeline.doLineUpdate = true;
+            _lifeline.isUnhooked = true;
         }
     }
 
@@ -146,11 +150,11 @@ public class MovementScript : MonoBehaviour
         }
         if (other.tag == "EnemyExplosion")
         {
-            healthBar.TakeDamage();
+            _healthBar.TakeDamage();
         }
         if (other.tag == "FogField")
         {
-            other.GetComponent<FogFieldScript>().EnterFog(healthBar);
+            other.GetComponent<FogFieldScript>().EnterFog(_healthBar);
         }
     }
 
@@ -195,7 +199,7 @@ public class MovementScript : MonoBehaviour
         }
         if (coll.collider.tag == "Enemy")
         {
-            healthBar.TakeDamage(1);
+            _healthBar.TakeDamage(1);
         }
     }
 
@@ -218,6 +222,12 @@ public class MovementScript : MonoBehaviour
     public void Ground()
     {
         _jumps = 2;
+        _grounded = true;
+    }
+
+    public void StepOnEnemy()
+    {
+        _jumps = 1;
         _grounded = true;
     }
 }

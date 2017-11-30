@@ -6,11 +6,11 @@ public class LifelineScript : MonoBehaviour
 {
     private Transform _player;
     private LineRenderer _lineRenderer;
-    private bool doUpdate = true;
+    private bool _unhooked = true;
 
-    public bool doLineUpdate
+    public bool isUnhooked
     {
-        set { doUpdate = value; }
+        set { _unhooked = value; }
     }
 
 
@@ -23,8 +23,10 @@ public class LifelineScript : MonoBehaviour
 
     private void Update()
     {
-        if (doUpdate)
+        if (_unhooked)
             _lineRenderer.SetPosition(_lineRenderer.positionCount - 1, _player.transform.position);
+        else
+            _lineRenderer.SetPosition(_lineRenderer.positionCount - 2, _player.transform.position);
     }
 
     public void AddPoint(Vector3 point)
@@ -35,6 +37,7 @@ public class LifelineScript : MonoBehaviour
 
     public void RemoveLastPoint()
     {
-        _lineRenderer.positionCount--;
+        if (_lineRenderer.positionCount > 2)
+            _lineRenderer.positionCount--;
     }
 }

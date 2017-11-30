@@ -20,5 +20,7 @@ public class FootScript : MonoBehaviour
     {
         if (coll.collider.tag == "Terrain")
             _movementScript.Ground();
+        if (coll.collider.tag == "Enemy")
+            _movementScript.StepOnEnemy();
     }
 }

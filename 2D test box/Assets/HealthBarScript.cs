@@ -8,6 +8,16 @@ public class HealthBarScript : MonoBehaviour
     private float _hp = 10;
     private float maxWidth = 0.4f;
 
+    public bool isAlive
+    {
+        get
+        {
+            if (_hp < 0)
+                GetComponentInParent<Rigidbody2D>().simulated = false;
+            return _hp > 0;
+        }
+    }
+
     private void Start()
     {
         _hp = maxHP;

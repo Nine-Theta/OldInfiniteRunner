@@ -24,7 +24,7 @@ public class BomberScript : MonoBehaviour
     private Rigidbody2D _playerBody;
     private Vector2 _offset;
     private HealthBarScript _healthBar;
-
+    private Animator _animator;
     private float _thinkTimer = 3.0f;
 
     private void Start()
@@ -37,6 +37,7 @@ public class BomberScript : MonoBehaviour
         _playerBody = player.gameObject.GetComponent<Rigidbody2D>();
         _offset = new Vector2(followOffset.x, followOffset.y);
         _healthBar = GetComponentInChildren<HealthBarScript>();
+        _animator = GetComponent<Animator>();
     }
 
     /// <summary> Creates a copy of an Object and flings it at the target. </summary>
@@ -104,7 +105,17 @@ public class BomberScript : MonoBehaviour
         if (other.tag == "Explosion")
         {
             if (!_healthBar.TakeDamage())
-                Destroy(gameObject);
+                _animator.SetBool("Dead", true);
         }
+    }
+
+    public void DestroyObject()
+    {
+        Destroy(gameObject);
+    }
+
+    public void SetAnimFalse()
+    {
+        _animator.SetBool("Dead", false);
     }
 }

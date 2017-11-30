@@ -38,10 +38,10 @@ public class MovementScript : MonoBehaviour
 
     private void Update()
     {
-        if (_healthBar.isAlive)
+        //if (_healthBar.isAlive)
             MovementUpdate();
-        else if (Input.GetKeyDown(KeyCode.R))
-            SceneManager.LoadScene(0);
+        //else if (Input.GetKeyDown(KeyCode.R))
+        //    SceneManager.LoadScene(0);
         //FixHookLine();
     }
 

@@ -1,0 +1,1855 @@
+fileFormatVersion: 2
+guid: 839c580cd70c47a459a52d0a58c05c74
+timeCreated: 1512120975
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Good main character spritesheet_02_0
+    21300002: Good main character spritesheet_02_1
+    21300004: Good main character spritesheet_02_2
+    21300006: Good main character spritesheet_02_3
+    21300008: Good main character spritesheet_02_4
+    21300010: Good main character spritesheet_02_5
+    21300012: Good main character spritesheet_02_6
+    21300014: Good main character spritesheet_02_7
+    21300016: Good main character spritesheet_02_8
+    21300018: Good main character spritesheet_02_9
+    21300020: Good main character spritesheet_02_10
+    21300022: Good main character spritesheet_02_11
+    21300024: Good main character spritesheet_02_12
+    21300026: Good main character spritesheet_02_13
+    21300028: Good main character spritesheet_02_14
+    21300030: Good main character spritesheet_02_15
+    21300032: Good main character spritesheet_02_16
+    21300034: Good main character spritesheet_02_17
+    21300036: Good main character spritesheet_02_18
+    21300038: Good main character spritesheet_02_19
+    21300040: Good main character spritesheet_02_20
+    21300042: Good main character spritesheet_02_21
+    21300044: Good main character spritesheet_02_22
+    21300046: Good main character spritesheet_02_23
+    21300048: Good main character spritesheet_02_24
+    21300050: Good main character spritesheet_02_25
+    21300052: Good main character spritesheet_02_26
+    21300054: Good main character spritesheet_02_27
+    21300056: Good main character spritesheet_02_28
+    21300058: Good main character spritesheet_02_29
+    21300060: Good main character spritesheet_02_30
+    21300062: Good main character spritesheet_02_31
+    21300064: Good main character spritesheet_02_32
+    21300066: Good main character spritesheet_02_33
+    21300068: Good main character spritesheet_02_34
+    21300070: Good main character spritesheet_02_35
+    21300072: Good main character spritesheet_02_36
+    21300074: Good main character spritesheet_02_37
+    21300076: Good main character spritesheet_02_38
+    21300078: Good main character spritesheet_02_39
+    21300080: Good main character spritesheet_02_40
+    21300082: Good main character spritesheet_02_41
+    21300084: Good main character spritesheet_02_42
+    21300086: Good main character spritesheet_02_43
+    21300088: Good main character spritesheet_02_44
+    21300090: Good main character spritesheet_02_45
+    21300092: Good main character spritesheet_02_46
+    21300094: Good main character spritesheet_02_47
+    21300096: Good main character spritesheet_02_48
+    21300098: Good main character spritesheet_02_49
+    21300100: Good main character spritesheet_02_50
+    21300102: Good main character spritesheet_02_51
+    21300104: Good main character spritesheet_02_52
+    21300106: Good main character spritesheet_02_53
+    21300108: Good main character spritesheet_02_54
+    21300110: Good main character spritesheet_02_55
+    21300112: Good main character spritesheet_02_56
+    21300114: Good main character spritesheet_02_57
+    21300116: Good main character spritesheet_02_58
+    21300118: Good main character spritesheet_02_59
+    21300120: Good main character spritesheet_02_60
+    21300122: Good main character spritesheet_02_61
+    21300124: Good main character spritesheet_02_62
+    21300126: Good main character spritesheet_02_63
+    21300128: Good main character spritesheet_02_64
+    21300130: Good main character spritesheet_02_65
+    21300132: Good main character spritesheet_02_66
+    21300134: Good main character spritesheet_02_67
+    21300136: Good main character spritesheet_02_68
+    21300138: Good main character spritesheet_02_69
+    21300140: Good main character spritesheet_02_70
+    21300142: Good main character spritesheet_02_71
+    21300144: Good main character spritesheet_02_72
+    21300146: Good main character spritesheet_02_73
+    21300148: Good main character spritesheet_02_74
+    21300150: Good main character spritesheet_02_75
+    21300152: Good main character spritesheet_02_76
+    21300154: Good main character spritesheet_02_77
+    21300156: Good main character spritesheet_02_78
+    21300158: Good main character spritesheet_02_79
+    21300160: Good main character spritesheet_02_80
+    21300162: Good main character spritesheet_02_81
+    21300164: Good main character spritesheet_02_82
+    21300166: Good main character spritesheet_02_83
+    21300168: Good main character spritesheet_02_84
+    21300170: Good main character spritesheet_02_85
+    21300172: Good main character spritesheet_02_86
+    21300174: Good main character spritesheet_02_87
+    21300176: Good main character spritesheet_02_88
+    21300178: Good main character spritesheet_02_89
+    21300180: Good main character spritesheet_02_90
+    21300182: Good main character spritesheet_02_91
+    21300184: Good main character spritesheet_02_92
+    21300186: Good main character spritesheet_02_93
+    21300188: Good main character spritesheet_02_94
+    21300190: Good main character spritesheet_02_95
+    21300192: Good main character spritesheet_02_96
+    21300194: Good main character spritesheet_02_97
+    21300196: Good main character spritesheet_02_98
+    21300198: Good main character spritesheet_02_99
+    21300200: Good main character spritesheet_02_100
+    21300202: Good main character spritesheet_02_101
+    21300204: Good main character spritesheet_02_102
+    21300206: Good main character spritesheet_02_103
+    21300208: Good main character spritesheet_02_104
+    21300210: Good main character spritesheet_02_105
+    21300212: Good main character spritesheet_02_106
+    21300214: Good main character spritesheet_02_107
+    21300216: Good main character spritesheet_02_108
+    21300218: Good main character spritesheet_02_109
+    21300220: Good main character spritesheet_02_110
+    21300222: Good main character spritesheet_02_111
+    21300224: Good main character spritesheet_02_112
+    21300226: Good main character spritesheet_02_113
+    21300228: Good main character spritesheet_02_114
+    21300230: Good main character spritesheet_02_115
+    21300232: Good main character spritesheet_02_116
+    21300234: Good main character spritesheet_02_117
+  externalObjects: {}
+  serializedVersion: 4
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -1
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Good main character spritesheet_02_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 6399.0386
+        width: 256
+        height: 255.96153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Good main character spritesheet_02_1
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 6399.0386
+        width: 256
+        height: 255.96153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Good main character spritesheet_02_2
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 6399.0386
+        width: 256
+        height: 255.96153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Good main character spritesheet_02_3
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 6399.0386
+        width: 256
+        height: 255.96153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Good main character spritesheet_02_4
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 6399.0386
+        width: 256
+        height: 255.96153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Good main character spritesheet_02_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 6144.0386
+        width: 256
+        height: 255.96153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Good main character spritesheet_02_6
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 6144.0386
+        width: 256
+        height: 255.96153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Good main character spritesheet_02_7
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 6144.0386
+        width: 256
+        height: 255.96153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Good main character spritesheet_02_8
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 6144.0386
+        width: 256
+        height: 255.96153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Good main character spritesheet_02_9
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 6144.0386
+        width: 256
+        height: 255.96153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Good main character spritesheet_02_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 5889.0386
+        width: 256
+        height: 255.96153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Good main character spritesheet_02_11
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 5889.0386
+        width: 256
+        height: 255.96153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Good main character spritesheet_02_12
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 5889.0386
+        width: 256
+        height: 255.96153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Good main character spritesheet_02_13
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 5889.0386
+        width: 256
+        height: 255.96153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Good main character spritesheet_02_14
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 5889.0386
+        width: 256
+        height: 255.96153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Good main character spritesheet_02_15
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 5634.0386
+        width: 256
+        height: 255.96153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Good main character spritesheet_02_16
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 5634.0386
+        width: 256
+        height: 255.96153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Good main character spritesheet_02_17
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 5634.0386
+        width: 256
+        height: 255.96153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Good main character spritesheet_02_18
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 5634.0386
+        width: 256
+        height: 255.96153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Good main character spritesheet_02_19
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 5634.0386
+        width: 256
+        height: 255.96153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Good main character spritesheet_02_20
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 5379.0386
+        width: 256
+        height: 255.96153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Good main character spritesheet_02_21
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 5379.0386
+        width: 256
+        height: 255.96153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Good main character spritesheet_02_22
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 5379.0386
+        width: 256
+        height: 255.96153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Good main character spritesheet_02_23
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 5379.0386
+        width: 256
+        height: 255.96153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Good main character spritesheet_02_24
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 5379.0386
+        width: 256
+        height: 255.96153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Good main character spritesheet_02_25
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 5124.0386
+        width: 256
+        height: 255.96153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Good main character spritesheet_02_26
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 5124.0386
+        width: 256
+        height: 255.96153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Good main character spritesheet_02_27
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 5124.0386
+        width: 256
+        height: 255.96153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Good main character spritesheet_02_28
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 5124.0386
+        width: 256
+        height: 255.96153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Good main character spritesheet_02_29
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 5124.0386
+        width: 256
+        height: 255.96153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Good main character spritesheet_02_30
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 4869.0386
+        width: 256
+        height: 255.96153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Good main character spritesheet_02_31
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 4869.0386
+        width: 256
+        height: 255.96153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Good main character spritesheet_02_32
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 4869.0386
+        width: 256
+        height: 255.96153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Good main character spritesheet_02_33
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 4869.0386
+        width: 256
+        height: 255.96153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Good main character spritesheet_02_34
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 4869.0386
+        width: 256
+        height: 255.96153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Good main character spritesheet_02_35
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 4614.0386
+        width: 256
+        height: 255.96153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Good main character spritesheet_02_36
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 4614.0386
+        width: 256
+        height: 255.96153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Good main character spritesheet_02_37
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 4614.0386
+        width: 256
+        height: 255.96153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Good main character spritesheet_02_38
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 4614.0386
+        width: 256
+        height: 255.96153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Good main character spritesheet_02_39
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 4614.0386
+        width: 256
+        height: 255.96153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Good main character spritesheet_02_40
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 4359.0386
+        width: 256
+        height: 255.96153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Good main character spritesheet_02_41
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 4359.0386
+        width: 256
+        height: 255.96153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Good main character spritesheet_02_42
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 4359.0386
+        width: 256
+        height: 255.96153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Good main character spritesheet_02_43
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 4359.0386
+        width: 256
+        height: 255.96153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Good main character spritesheet_02_44
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 4359.0386
+        width: 256
+        height: 255.96153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Good main character spritesheet_02_45
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 4104.0386
+        width: 256
+        height: 255.96153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Good main character spritesheet_02_46
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 4104.0386
+        width: 256
+        height: 255.96153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Good main character spritesheet_02_47
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 4104.0386
+        width: 256
+        height: 255.96153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Good main character spritesheet_02_48
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 4104.0386
+        width: 256
+        height: 255.96153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Good main character spritesheet_02_49
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 4104.0386
+        width: 256
+        height: 255.96153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Good main character spritesheet_02_50
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3849.0386
+        width: 256
+        height: 255.96153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Good main character spritesheet_02_51
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 3849.0386
+        width: 256
+        height: 255.96153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Good main character spritesheet_02_52
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 3849.0386
+        width: 256
+        height: 255.96153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Good main character spritesheet_02_53
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 3849.0386
+        width: 256
+        height: 255.96153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Good main character spritesheet_02_54
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 3849.0386
+        width: 256
+        height: 255.96153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Good main character spritesheet_02_55
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3594.0386
+        width: 256
+        height: 255.96153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Good main character spritesheet_02_56
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 3594.0386
+        width: 256
+        height: 255.96153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Good main character spritesheet_02_57
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 3594.0386
+        width: 256
+        height: 255.96153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Good main character spritesheet_02_58
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 3594.0386
+        width: 256
+        height: 255.96153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Good main character spritesheet_02_59
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 3594.0386
+        width: 256
+        height: 255.96153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Good main character spritesheet_02_60
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3339.0386
+        width: 256
+        height: 255.96153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Good main character spritesheet_02_61
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 3339.0386
+        width: 256
+        height: 255.96153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Good main character spritesheet_02_62
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 3339.0386
+        width: 256
+        height: 255.96153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Good main character spritesheet_02_63
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 3339.0386
+        width: 256
+        height: 255.96153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Good main character spritesheet_02_64
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 3339.0386
+        width: 256
+        height: 255.96153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Good main character spritesheet_02_65
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3084.0386
+        width: 256
+        height: 255.96153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Good main character spritesheet_02_66
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 3084.0386
+        width: 256
+        height: 255.96153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Good main character spritesheet_02_67
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 3084.0386
+        width: 256
+        height: 255.96153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Good main character spritesheet_02_68
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 3084.0386
+        width: 256
+        height: 255.96153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Good main character spritesheet_02_69
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 3084.0386
+        width: 256
+        height: 255.96153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Good main character spritesheet_02_70
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2829.0386
+        width: 256
+        height: 255.96153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Good main character spritesheet_02_71
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 2829.0386
+        width: 256
+        height: 255.96153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Good main character spritesheet_02_72
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 2829.0386
+        width: 256
+        height: 255.96153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Good main character spritesheet_02_73
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 2829.0386
+        width: 256
+        height: 255.96153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Good main character spritesheet_02_74
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 2829.0386
+        width: 256
+        height: 255.96153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Good main character spritesheet_02_75
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2574.0386
+        width: 256
+        height: 255.96153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Good main character spritesheet_02_76
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 2574.0386
+        width: 256
+        height: 255.96153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Good main character spritesheet_02_77
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 2574.0386
+        width: 256
+        height: 255.96153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Good main character spritesheet_02_78
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 2574.0386
+        width: 256
+        height: 255.96153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Good main character spritesheet_02_79
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 2574.0386
+        width: 256
+        height: 255.96153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Good main character spritesheet_02_80
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2319.0386
+        width: 256
+        height: 255.96153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Good main character spritesheet_02_81
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 2319.0386
+        width: 256
+        height: 255.96153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Good main character spritesheet_02_82
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 2319.0386
+        width: 256
+        height: 255.96153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Good main character spritesheet_02_83
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 2319.0386
+        width: 256
+        height: 255.96153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Good main character spritesheet_02_84
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 2319.0386
+        width: 256
+        height: 255.96153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Good main character spritesheet_02_85
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2064.0386
+        width: 256
+        height: 255.96153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Good main character spritesheet_02_86
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1809.0385
+        width: 256
+        height: 255.96153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Good main character spritesheet_02_87
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 1809.0385
+        width: 256
+        height: 255.96153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Good main character spritesheet_02_88
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 1809.0385
+        width: 256
+        height: 255.96153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Good main character spritesheet_02_89
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 1809.0385
+        width: 256
+        height: 255.96153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Good main character spritesheet_02_90
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 1809.0385
+        width: 256
+        height: 255.96153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Good main character spritesheet_02_91
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1554.0385
+        width: 256
+        height: 255.96153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Good main character spritesheet_02_92
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 1554.0385
+        width: 256
+        height: 255.96153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Good main character spritesheet_02_93
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 1554.0385
+        width: 256
+        height: 255.96153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Good main character spritesheet_02_94
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 1554.0385
+        width: 256
+        height: 255.96153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Good main character spritesheet_02_95
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 1554.0385
+        width: 256
+        height: 255.96153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Good main character spritesheet_02_96
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1299.0385
+        width: 256
+        height: 255.96153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Good main character spritesheet_02_97
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 1299.0385
+        width: 256
+        height: 255.96153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Good main character spritesheet_02_98
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1044.0385
+        width: 256
+        height: 255.96153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Good main character spritesheet_02_99
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 1044.0385
+        width: 256
+        height: 255.96153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Good main character spritesheet_02_100
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 1044.0385
+        width: 256
+        height: 255.96153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Good main character spritesheet_02_101
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 1044.0385
+        width: 256
+        height: 255.96153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Good main character spritesheet_02_102
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 1044.0385
+        width: 256
+        height: 255.96153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Good main character spritesheet_02_103
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 789.03845
+        width: 256
+        height: 255.96153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Good main character spritesheet_02_104
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 789.03845
+        width: 256
+        height: 255.96153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Good main character spritesheet_02_105
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 789.03845
+        width: 256
+        height: 255.96153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Good main character spritesheet_02_106
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 789.03845
+        width: 256
+        height: 255.96153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Good main character spritesheet_02_107
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 789.03845
+        width: 256
+        height: 255.96153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Good main character spritesheet_02_108
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 534.03845
+        width: 256
+        height: 255.96153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Good main character spritesheet_02_109
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 534.03845
+        width: 256
+        height: 255.96153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Good main character spritesheet_02_110
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 534.03845
+        width: 256
+        height: 255.96153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Good main character spritesheet_02_111
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 534.03845
+        width: 256
+        height: 255.96153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Good main character spritesheet_02_112
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 279.03845
+        width: 256
+        height: 255.96153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Good main character spritesheet_02_113
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 279.03845
+        width: 256
+        height: 255.96153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Good main character spritesheet_02_114
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 279.03845
+        width: 256
+        height: 255.96153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Good main character spritesheet_02_115
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 279.03845
+        width: 256
+        height: 255.96153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Good main character spritesheet_02_116
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 279.03845
+        width: 256
+        height: 255.96153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Good main character spritesheet_02_117
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 24.038467
+        width: 256
+        height: 255.96153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    outline: []
+    physicsShape: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

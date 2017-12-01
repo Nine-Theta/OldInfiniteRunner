@@ -59,7 +59,7 @@ public class MovementScript : MonoBehaviour
     {
         if (!_hooked)
         {
-            if (Input.GetKeyDown(KeyCode.Space))
+            if (Input.GetKeyDown(KeyCode.W))
             {
                 Jump();
             }
@@ -102,7 +102,7 @@ public class MovementScript : MonoBehaviour
         }
         else
         {
-            if (Input.GetKeyDown(KeyCode.Space))
+            if (Input.GetKeyDown(KeyCode.W))
             {
                 UnHook(false);
                 Jump();
@@ -157,7 +157,7 @@ public class MovementScript : MonoBehaviour
     {
         if (other.tag == "Hook")
         {
-            UnHook();
+            UnHook(false);
         }
         if (other.tag == "SafeZone")
         {

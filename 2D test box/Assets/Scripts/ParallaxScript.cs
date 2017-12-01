@@ -16,7 +16,7 @@ public class ParallaxScript : MonoBehaviour {
     public float foregroundTwoSpeed = 2.0f;
     public float foregroundThreeSpeed = 2.5f;
 
-    void Start () {
+    private void Start () {
 		
 	}
 	

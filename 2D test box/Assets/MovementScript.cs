@@ -39,7 +39,7 @@ public class MovementScript : MonoBehaviour
     private void Update()
     {
         //if (_healthBar.isAlive)
-            MovementUpdate();
+        MovementUpdate();
         //else if (Input.GetKeyDown(KeyCode.R))
         //    SceneManager.LoadScene(0);
         //FixHookLine();
@@ -59,13 +59,9 @@ public class MovementScript : MonoBehaviour
     {
         if (!_hooked)
         {
-            if ((Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.W)) && _jumps > 0)
+            if (Input.GetKeyDown(KeyCode.Space))
             {
-                //other substraction is in OnCollisionExit
-                if (_jumps == 1)
-                    _jumps--;
-                _rigidbody.velocity = new Vector3(_rigidbody.velocity.x, 0, 0);
-                _rigidbody.AddForce(Vector2.up * jumpHeight);
+                Jump();
             }
             //if (Input.GetKeyDown(KeyCode.S))
             //{
@@ -104,8 +100,26 @@ public class MovementScript : MonoBehaviour
             }
             _rigidbody.velocity = vel;
         }
+        else
+        {
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                UnHook(false);
+                Jump();
+            }
+        }
     }
 
+    private void Jump()
+    {
+        if (_jumps <= 0)
+            return;
+        //other substraction is in OnCollisionExit
+        if (_jumps == 1)
+            _jumps--;
+        _rigidbody.velocity = new Vector2(_rigidbody.velocity.x, 0);
+        _rigidbody.AddForce(Vector2.up * jumpHeight);
+    }
 
     public void Hook(Vector2 direction, GameObject hook)
     {
@@ -123,11 +137,12 @@ public class MovementScript : MonoBehaviour
         }
     }
 
-    private void UnHook()
+    private void UnHook(bool resetVelocity = true)
     {
         _hooked = false;
         _rigidbody.gravityScale = _gravityScale;
-        _rigidbody.velocity = new Vector2(0.0f, 0.0f);
+        if (resetVelocity)
+            _rigidbody.velocity = new Vector2(_rigidbody.velocity.x, 0.0f);
         Destroy(_lastHook);
         if (_lifeline != null)
         {

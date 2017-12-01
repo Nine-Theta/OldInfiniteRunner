@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 114637041857503734}
   - component: {fileID: 50027813975682950}
   - component: {fileID: 70127790323069336}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Black_Explosion
   m_TagString: EnemyExplosion
   m_Icon: {fileID: 0}

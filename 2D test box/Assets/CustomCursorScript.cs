@@ -53,10 +53,9 @@ public class CustomCursorScript : MonoBehaviour
     {
         _potionTimer = potionCooldown;
         GameObject potion = Instantiate(potionPrefab, player.transform.position, transform.rotation);
-        potion.GetComponent<PotionScript>().SetForce(_mouseDistance.normalized);
-        potion.GetComponent<PotionScript>().SetPlayer(player.gameObject);
+        potion.GetComponent<PotionScript>().SetForce(_mouseDistance.normalized, player.GetComponent<Rigidbody2D>().velocity);
         Physics2D.IgnoreCollision(potion.GetComponent<Collider2D>(), player.GetComponent<Collider2D>());
-        Physics2D.IgnoreCollision(potion.GetComponent<Collider2D>(), player.GetComponentInChildren<CircleCollider2D>());
+        Physics2D.IgnoreCollision(potion.GetComponent<Collider2D>(), player.GetComponentInChildren<CapsuleCollider2D>());
     }
 
     private void HookTarget()

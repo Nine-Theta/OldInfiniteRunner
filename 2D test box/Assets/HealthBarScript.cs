@@ -31,6 +31,8 @@ public class HealthBarScript : MonoBehaviour
 
     public bool TakeDamage()
     {
+        if (_hp <= 0)
+            return false;
         _hp--;
         if (_hp < 0)
             _hp = 0;

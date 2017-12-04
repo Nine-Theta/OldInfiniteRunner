@@ -4,49 +4,49 @@ using UnityEngine;
 
 public class PathfinderScript : MonoBehaviour
 {
-    public int mapWidth = 0;
-    public int mapHeight = 0;
-    public int tileSize = 0;
+    private NodeGraph _graph;
+    private SearchGraph _search;
 
-    public GameObject debugnode;
+    private List<Node> _path = new List<Node>();
+
+    private Vector2 _mapOffset;
+
+    private int _tileSize = 1;
+    private int _colums = 0;
 
     private void Start()
     {
-        int[,] map = new int[mapWidth, mapHeight];
+        _graph = GraphGenerator.GeneratorObject().GetComponent<GraphGenerator>().GetNodeGraph();
 
-        for (int row = 0; row < mapHeight; row++)
+        _search = GraphGenerator.GeneratorObject().GetComponent<GraphGenerator>().GetSearchGraph();
+
+        _mapOffset = GraphGenerator.GeneratorObject().GetComponent<GraphGenerator>().mapOffset;
+
+        _tileSize = _graph.GetTileSize();
+        _colums = GraphGenerator.GeneratorObject().GetComponent<GraphGenerator>().mapWidth;
+    }
+
+    public void FindPath(Vector2 pPosition, Vector2 pTarget)
+    {
+        int start = (int)(_colums * ((pPosition.x / _tileSize) - _mapOffset.x) + (pPosition.y / _tileSize) - _mapOffset.y);
+        int end = (int)(_colums * ((pTarget.x / _tileSize) - _mapOffset.x) + (pTarget.y / _tileSize) - _mapOffset.y);
+
+        _search.Start(_graph.nodes[start], _graph.nodes[end]);
+
+        while (!_search.IsDone())
         {
-            for (int col = 0; col < mapWidth; col++)
-            {
-                Vector2 point = new Vector2(row * tileSize, col * tileSize);
-                Collider2D hitCollider = Physics2D.OverlapPoint(point);
-                if (hitCollider != null && hitCollider.CompareTag("Terrain")) map[row, col] = 1;
-                else map[row, col] = 0;
-
-                GameObject newNode = Instantiate(debugnode, new Vector3(row * tileSize, col * tileSize, -10), Quaternion.Euler(0,0,0));
-                if (map[row, col] == 1) newNode.GetComponent<SpriteRenderer>().color = Color.red;
-            }
+            _search.Step();
+        }
+        if (_search.IsDone())
+        {
+            _path = _search.GetLastFoundPath();
         }
 
-        NodeGraph graph = new NodeGraph(map, tileSize);
-        SearchGraph search = new SearchGraph(graph);
-        search.Start(graph.nodes[0], graph.nodes[7]);
+        Debug.Log("Search done. Path lenth: " + _search.GetLastFoundPath().Count + " iterations: ");
+    }
 
-        while (!search.IsDone())
-        {
-            search.Step();
-        }
-        if (search.IsDone())
-        {
-            string t = ", ";
-            for(int i = 0; i < search.GetLastFoundPath().Count; i++)
-            {
-                t += search.GetLastFoundPath()[i].Label + ", ";
-            }
-
-            Debug.Log(t);
-        }
-
-        Debug.Log("Search done. Path lenth: " + search.GetLastFoundPath().Count + " iterations: " + search.iterations);
+    public List<Node> GetPath()
+    {
+        return _path;
     }
 }

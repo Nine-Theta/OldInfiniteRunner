@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NodeGraph : MonoBehaviour
+public class NodeGraph
 {
     public Node[] nodes;
 
@@ -24,7 +24,6 @@ public class NodeGraph : MonoBehaviour
             node.Label = (i).ToString();
             nodes[i] = node;
         }
-
 
         for (int row = 0; row < _rows; row++)
         {
@@ -65,4 +64,8 @@ public class NodeGraph : MonoBehaviour
         }
     }
 
+    public int GetTileSize()
+    {
+       return _tileSize;
+    }
 }

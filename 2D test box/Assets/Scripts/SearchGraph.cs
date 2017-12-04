@@ -14,7 +14,7 @@ public class SearchGraph
     private Node _endNode;
     private Node _currentNode;
 
-    public int iterations = 0;
+    //public int iterations = 0;
     private bool _done = false;
 
     public SearchGraph(NodeGraph pGraph)
@@ -32,7 +32,6 @@ public class SearchGraph
 
         _doneList = new List<Node>();
         _path = new List<Node>();
-        iterations = 0;
 
         for (int i = 0; i < _graph.nodes.Length; i++)
         {
@@ -114,18 +113,8 @@ public class SearchGraph
                 Node connectedNode = _currentNode.GetConnectionAt(i);
                 /**/ //A* Fixed
 
-                Debug.Log("_currentNodeNull: " + (_currentNode == null));
-                Debug.Log("_currentcostNull: " + _currentNode.costCurrent);
-                Debug.Log("_currentposNull: " + _currentNode.Position);
-                Debug.Log("_connectedNodeNull: " + connectedNode == null);
-                Debug.Log("_connectedPosNull: " + connectedNode.Position);
-
-                float newCostCurrent = _currentNode.costCurrent 
-                    + (_currentNode.Position - 
-                    connectedNode.Position).magnitude;
-
-                float newCostEstimate = (connectedNode.Position - 
-                    _endNode.Position).magnitude;
+                float newCostCurrent = _currentNode.costCurrent + (_currentNode.Position - connectedNode.Position).magnitude;
+                float newCostEstimate = (connectedNode.Position - _endNode.Position).magnitude;
 
                 /**/
 

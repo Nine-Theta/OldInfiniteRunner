@@ -4,15 +4,17 @@ using System.Collections;
 public class ParallaxScroller : MonoBehaviour
 {
     public float scrollSpeed = 0.01f;
-    public float tileSizeZ;
+    //public float tileSizeZ;
+    public Transform cameraWisp;
 
     private Vector3 _startPosition;
     private Vector3 _playerStartPosition;
     private Transform _player;
+    
 
     void Start()
     {
-        tileSizeZ = Mathf.Abs(tileSizeZ);
+        //tileSizeZ = Mathf.Abs(tileSizeZ);
         _startPosition = transform.position;
         _player = MovementScript.GetPlayer().transform;
         _playerStartPosition = _player.position;
@@ -24,7 +26,7 @@ public class ParallaxScroller : MonoBehaviour
         //if (_player.position.x > _playerStartPosition.x)
         //    newPosition *= -1;
         Vector3 addPos = new Vector3(newPosition, 0.0f);
-        addPos.y = _player.position.y;
+        addPos.y = cameraWisp.position.y;
         transform.position = _startPosition + addPos;
     }
 }

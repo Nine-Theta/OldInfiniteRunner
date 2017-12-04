@@ -11,7 +11,7 @@ public class PathfinderScript : MonoBehaviour
 
     private Vector2 _mapOffset;
 
-    private int _tileSize = 1;
+    private float _tileSize = 1;
     private int _colums = 0;
 
     private void Start()
@@ -26,23 +26,41 @@ public class PathfinderScript : MonoBehaviour
         _colums = GraphGenerator.GeneratorObject().GetComponent<GraphGenerator>().mapWidth;
     }
 
-    public void FindPath(Vector2 pPosition, Vector2 pTarget)
+    public bool CanFindPath(Vector3 pPosition, Vector3 pTarget, int pMaxIterations)
+    {
+        return CanFindPath (new Vector2(pPosition.x, pPosition.y), new Vector2(pTarget.x, pTarget.y), pMaxIterations);
+    }
+
+    public bool CanFindPath(Vector2 pPosition, Vector2 pTarget, int pMaxIterations)
     {
         int start = (int)(_colums * ((pPosition.x / _tileSize) - _mapOffset.x) + (pPosition.y / _tileSize) - _mapOffset.y);
-        int end = (int)(_colums * ((pTarget.x / _tileSize) - _mapOffset.x) + (pTarget.y / _tileSize) - _mapOffset.y);
+        Debug.Log("pTarget: "+ pTarget);
+        Debug.Log("start: " + start + " startpos: " + _graph.nodes[start].Position);
+        Debug.Log((int)pTarget.y/_tileSize);
+        int end = (int)(_colums * (((int)pTarget.x / _tileSize) - _mapOffset.x) + ((int)pTarget.y / _tileSize) - _mapOffset.y);
+        Debug.Log("end: " + end + " endpos: " + _graph.nodes[end].Position);
 
+        Debug.Log("length: " + _graph.nodes.Length);
         _search.Start(_graph.nodes[start], _graph.nodes[end]);
 
-        while (!_search.IsDone())
+        while(!_search.IsDone() || _search.GetIteration() <= pMaxIterations)
         {
             _search.Step();
         }
+
         if (_search.IsDone())
         {
             _path = _search.GetLastFoundPath();
+            _search.ResetPathFinder();
+            return true;
+        }
+        else
+        {
+            _search.ResetPathFinder();
+            return false;
         }
 
-        Debug.Log("Search done. Path lenth: " + _search.GetLastFoundPath().Count + " iterations: ");
+        Debug.Log("Search done. Path lenth: " + _search.GetLastFoundPath().Count);
     }
 
     public List<Node> GetPath()

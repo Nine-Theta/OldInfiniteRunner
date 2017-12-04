@@ -7,9 +7,9 @@ public class GraphGenerator : MonoBehaviour
     public Vector2 mapOffset;
     public int mapWidth = 0;
     public int mapHeight = 0;
-    public int tileSize = 0;
+    public float tileSize = 0;
 
-    //public GameObject debugnode;
+    public GameObject debugnode;
     
     private NodeGraph _graph;
     private SearchGraph _search;
@@ -22,10 +22,7 @@ public class GraphGenerator : MonoBehaviour
             Destroy(gameObject);
         else
             _singletonInstance = this.gameObject;
-    }
 
-    private void Start()
-    {
         int[,] map = new int[mapHeight, mapWidth];
 
         for (int row = 0; row < mapHeight; row++)
@@ -37,13 +34,19 @@ public class GraphGenerator : MonoBehaviour
                 if (hitCollider != null && hitCollider.CompareTag("Terrain")) map[row, col] = 1;
                 else map[row, col] = 0;
 
-                //GameObject newNode = Instantiate(debugnode, new Vector3((row + mapOffset.x) * tileSize, (col + mapOffset.y) * tileSize, -10), Quaternion.Euler(0,0,0));
-                //if (map[row, col] == 1) newNode.GetComponent<SpriteRenderer>().color = Color.red;
+                GameObject newNode = Instantiate(debugnode, new Vector3((row + mapOffset.x) * tileSize, (col + mapOffset.y) * tileSize, -10), Quaternion.Euler(0,0,0));
+                if (map[row, col] == 1) newNode.GetComponent<SpriteRenderer>().color = Color.red;
             }
         }
 
         _graph = new NodeGraph(map, tileSize);
+        Debug.Log("map length: " + map.Length);
         _search = new SearchGraph(_graph);
+    }
+
+    private void Start()
+    {
+        
     }
 
     public NodeGraph GetNodeGraph()

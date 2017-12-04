@@ -19,6 +19,7 @@ public class MovementScript : MonoBehaviour
     private bool _safe = false;
     private GameObject _lastHook;
     private HealthBarScript _healthBar;
+    private Animator _animator;
     private static GameObject _singletonInstance;
 
     public bool isHooked { get { return _hooked; } }
@@ -33,6 +34,7 @@ public class MovementScript : MonoBehaviour
         _gravityScale = _rigidbody.gravityScale;
         _healthBar = gameObject.GetComponentInChildren<HealthBarScript>();
         _lifeline = gameObject.GetComponentInChildren<LifelineScript>();
+        _animator = gameObject.GetComponent<Animator>();
         //_hookLine = gameObject.GetComponentInChildren<LineRenderer>();
     }
 
@@ -43,6 +45,7 @@ public class MovementScript : MonoBehaviour
         //else if (Input.GetKeyDown(KeyCode.R))
         //    SceneManager.LoadScene(0);
         //FixHookLine();
+        
     }
 
     //private void FixHookLine()
@@ -71,22 +74,26 @@ public class MovementScript : MonoBehaviour
             if (!_grounded && Input.GetKey(KeyCode.D) && _rigidbody.velocity.x < movementSpeed)
             {
                 _rigidbody.AddForce(Vector2.right);
+                _animator.SetBool("Running", true);
             }
             if (!_grounded && Input.GetKey(KeyCode.A) && _rigidbody.velocity.x > -movementSpeed)
             {
                 _rigidbody.AddForce(Vector2.left);
+                _animator.SetBool("Running", true);
             }
 
             Vector2 vel = _rigidbody.velocity;
             if (Input.GetKey(KeyCode.A) && _rigidbody.velocity.x > -movementSpeed && _grounded)
             {
                 vel.x -= 1;
+                _animator.SetBool("Running", true);
                 if (vel.x < -movementSpeed)
                     vel.x = -movementSpeed;
             }
             if (Input.GetKey(KeyCode.D) && _rigidbody.velocity.x < movementSpeed && _grounded)
             {
                 vel.x += 1;
+                _animator.SetBool("Running", true);
                 if (vel.x > movementSpeed)
                     vel.x = movementSpeed;
             }
@@ -97,6 +104,7 @@ public class MovementScript : MonoBehaviour
                     vel.x = 0.0f;
                 else
                     vel.x *= 0.8f;
+                _animator.SetBool("Running", false);
             }
             _rigidbody.velocity = vel;
         }
@@ -119,6 +127,7 @@ public class MovementScript : MonoBehaviour
             _jumps--;
         _rigidbody.velocity = new Vector2(_rigidbody.velocity.x, 0);
         _rigidbody.AddForce(Vector2.up * jumpHeight);
+        _animator.SetBool("Jumping", true);
     }
 
     public void Hook(Vector2 direction, GameObject hook)
@@ -128,13 +137,12 @@ public class MovementScript : MonoBehaviour
         _rigidbody.AddForce(direction.normalized * hookVelocity);
         _rigidbody.gravityScale = 0;
         _lastHook = hook;
-        //if (_hookLine != null)
-        //_hookLine.SetPosition(1, hook.transform.position);
         if (_lifeline != null)
         {
             _lifeline.isUnhooked = false;
             _lifeline.AddPoint(hook.transform.position);
         }
+        _animator.SetBool("Hooking", true);
     }
 
     private void UnHook(bool resetVelocity = true)
@@ -149,6 +157,7 @@ public class MovementScript : MonoBehaviour
             _lifeline.RemoveLastPoint();
             _lifeline.isUnhooked = true;
         }
+        _animator.SetBool("Hooking", false);
     }
 
     #region OnTriggers
@@ -224,6 +233,7 @@ public class MovementScript : MonoBehaviour
         {
             _jumps--;
             _grounded = false;
+            _animator.SetBool("Falling", true);
         }
     }
 
@@ -238,11 +248,29 @@ public class MovementScript : MonoBehaviour
     {
         _jumps = 2;
         _grounded = true;
+        _animator.SetBool("Jumping", false);
+        _animator.SetBool("Falling", false);
     }
 
     public void StepOnEnemy()
     {
         _jumps = 1;
         _grounded = true;
+        _animator.SetBool("Jumping", false);
+        _animator.SetBool("Falling", false);
+    }
+
+    public void StopThrowing()
+    {
+        _animator.SetBool("Throwing", false);
+    }
+    public void StopJumping()
+    {
+        _animator.SetBool("Jumping", false);
+        _animator.SetBool("Falling", false);
+    }
+    public void StopPulling()
+    {
+        _animator.SetBool("PulledBack", false);
     }
 }

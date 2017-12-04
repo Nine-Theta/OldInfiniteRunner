@@ -14,7 +14,7 @@ public class SearchGraph
     private Node _endNode;
     private Node _currentNode;
 
-    //public int iterations = 0;
+    private int iterations = 0;
     private bool _done = false;
 
     public SearchGraph(NodeGraph pGraph)
@@ -35,6 +35,7 @@ public class SearchGraph
 
         for (int i = 0; i < _graph.nodes.Length; i++)
         {
+            if (_graph.nodes[i] == null) continue;
             _graph.nodes[i].ResetNode();
         }
     }
@@ -87,8 +88,8 @@ public class SearchGraph
 
         //check if we were already processing nodes, if so color the last processed node as black because it is on the closed list
 
-        Debug.Log("conncount: " + _todoList[0].GetConnectionCount());
-        Debug.Log("conneclabel: " + _todoList[0].GetConnectionAt(0).Label);
+        //Debug.Log("conncount: " + _todoList[0].GetConnectionCount());
+        //Debug.Log("conneclabel: " + _todoList[0].GetConnectionAt(0).Label);
 
         //get a node from the open list
         _currentNode = _todoList[0];
@@ -132,6 +133,7 @@ public class SearchGraph
             }
 
             _todoList.Sort();
+            iterations++;
         }
 
         return _done;
@@ -140,6 +142,11 @@ public class SearchGraph
     public bool IsDone()
     {
         return _done;
+    }
+
+    public int GetIteration()
+    {
+        return iterations;
     }
 
     public List<Node> GetLastFoundPath()
@@ -158,10 +165,10 @@ public class SearchGraph
             node = node.Parent;
         }
 
-        _lastPathFound.Reverse();
+        //_lastPathFound.Reverse();
     }
 
-    private void resetPathFinder()
+    public void ResetPathFinder()
     {
         if (_todoList != null) _todoList.ForEach(resetNode);
         if (_doneList != null) _doneList.ForEach(resetNode);
@@ -171,6 +178,7 @@ public class SearchGraph
         _done = false;
         _lastPathFound = null;
         _currentNode = null;
+        iterations = 0;
 
         //setup for next path
         if (_startNode != null)

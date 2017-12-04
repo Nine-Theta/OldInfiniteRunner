@@ -25,12 +25,25 @@ public class BomberScript : MonoBehaviour
     private Vector2 _offset;
     private HealthBarScript _healthBar;
     private Animator _animator;
+
+    private PathfinderScript _pathFinder = null;
+    private Stack<Node> _path;
+    private Node _currentNode;
+    private Vector3 _lastKnownPlayerPos = Vector3.zero;
+
     private float _thinkTimer = 3.0f;
+    private bool _usePathfinding = false;
 
     private void Start()
     {
         if (player == null)
             player = MovementScript.GetPlayer().transform;
+
+        if (this.gameObject.GetComponent<PathfinderScript>() != null)
+        {
+            _usePathfinding = true;
+            _pathFinder = gameObject.GetComponent<PathfinderScript>();
+        }
 
         _thinkTimer = Random.Range(0.0f, thinkSpeed);
         _body = this.gameObject.GetComponent<Rigidbody2D>();
@@ -70,6 +83,35 @@ public class BomberScript : MonoBehaviour
 
     private void UpdatePosition()
     {
+        if (_usePathfinding)
+        {
+            //if (_path.Count == 0) _path = null;
+
+            if (_path == null || _path.Count == 0)
+            {
+                if (_pathFinder.CanFindPath(gameObject.transform.position, player.position, 20))
+                {
+                    _path = new Stack<Node>();
+                    foreach (Node node in _pathFinder.GetPath())
+                        _path.Push(node);
+                    _currentNode = _path.Pop();
+                }
+            }
+
+            if (_currentNode != null)
+            {
+                Vector2 position = new Vector2(gameObject.transform.position.x, gameObject.transform.position.y);
+                if (position.x < _currentNode.Position.x + 0.5f && position.x > _currentNode.Position.x - 0.5f && position.y < _currentNode.Position.y + 0.5f && position.y > _currentNode.Position.y - 0.5f)
+                    _currentNode = _path.Pop();
+
+                Debug.Log("currentNode pos: " + _currentNode.Position);
+                gameObject.transform.position += new Vector3(_currentNode.Position.x - position.x, _currentNode.Position.y - position.y).normalized * 0.1f;
+                return;
+            }
+        }
+
+        Debug.Log("Not using path finding");
+
         Vector2 subtracted = new Vector2(player.position.x - gameObject.transform.position.x + _offset.x, player.position.y - gameObject.transform.position.y + _offset.y);
 
         if (Mathf.Abs(player.position.x - gameObject.transform.position.x) < _offset.x)
@@ -82,9 +124,9 @@ public class BomberScript : MonoBehaviour
     private void Step()
     {
         if (throwArc)
-            flingItem( new Vector2(player.position.x + _playerBody.velocity.x, player.position.y), throwSpeedMult, throwHeightMult, true, gravityScale);
+            flingItem(new Vector2(player.position.x + _playerBody.velocity.x, player.position.y), throwSpeedMult, throwHeightMult, true, gravityScale);
         else
-            flingItem( new Vector2(player.position.x + _playerBody.velocity.x, player.position.y), throwSpeedMult);
+            flingItem(new Vector2(player.position.x + _playerBody.velocity.x, player.position.y), throwSpeedMult);
 
         _thinkTimer = thinkSpeed;
     }

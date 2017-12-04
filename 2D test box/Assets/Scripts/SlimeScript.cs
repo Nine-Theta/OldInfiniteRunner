@@ -73,24 +73,27 @@ public class SlimeScript : MonoBehaviour
 
     private void Update()
     {
-        float distance = (player.position - gameObject.transform.position).magnitude;
-        if (!_jumping && distance < detectionRange)
+        if(_healthBar.isAlive)
         {
-            if (_thinkTimer <= 0)
-                Step();
-            else
-                _thinkTimer -= Time.deltaTime;
-        }
-        if(_woundUp && gameObject.GetComponent<Rigidbody2D>().velocity.y < 0.0f)
-        {
-            _woundUp = false;
-            _animator.SetBool("Fall", true);
-        }
-        else if (_animator.GetBool("Fall") && gameObject.GetComponent<Rigidbody2D>().velocity.y >= 0.0f)
-        {
-            _animator.SetBool("Fall", false);
-            _animator.SetBool("Land", true);
-            _jumping = false;
+            float distance = (player.position - gameObject.transform.position).magnitude;
+            if (!_jumping && distance < detectionRange)
+            {
+                if (_thinkTimer <= 0)
+                    Step();
+                else
+                    _thinkTimer -= Time.deltaTime;
+            }
+            if (_woundUp && gameObject.GetComponent<Rigidbody2D>().velocity.y < 0.0f)
+            {
+                _woundUp = false;
+                _animator.SetBool("Fall", true);
+            }
+            else if (_animator.GetBool("Fall") && gameObject.GetComponent<Rigidbody2D>().velocity.y >= 0.0f)
+            {
+                _animator.SetBool("Fall", false);
+                _animator.SetBool("Land", true);
+                _jumping = false;
+            }
         }
     }
 
@@ -98,7 +101,7 @@ public class SlimeScript : MonoBehaviour
     {
         if (coll.tag == "Explosion")
         {
-            if (!_healthBar.TakeDamage())
+            if (_healthBar.isAlive & !_healthBar.TakeDamage())
             {
                 _animator.SetBool("Fall", false);
                 _animator.SetBool("Land", false);

@@ -21,11 +21,16 @@ public class ParallaxScript : MonoBehaviour {
 	}
 	
 	private void Update () {
+        ScrollLayers();
 
-        background.position = new Vector3(cameraWisp.position.x * backgroundSpeed, cameraWisp.position.y, background.position.z);
-        foregroundOne.position = new Vector3(cameraWisp.position.x * foregroundOneSpeed, cameraWisp.position.y, foregroundOne.position.z);
-        foregroundTwo.position = new Vector3(cameraWisp.position.x * foregroundTwoSpeed, cameraWisp.position.y, foregroundTwo.position.z);
-        foregroundThree.position = new Vector3(cameraWisp.position.x * foregroundThreeSpeed, cameraWisp.position.y, foregroundThree.position.z);
+    }
 
+    private void ScrollLayers()
+    {
+
+        background.position = new Vector3(-cameraWisp.position.x * backgroundSpeed, cameraWisp.position.y, background.position.z);
+        foregroundOne.position = new Vector3(-cameraWisp.position.x * foregroundOneSpeed, cameraWisp.position.y, foregroundOne.position.z);
+        foregroundTwo.position = new Vector3(-cameraWisp.position.x * foregroundTwoSpeed, cameraWisp.position.y, foregroundTwo.position.z);
+        foregroundThree.position = new Vector3(-cameraWisp.position.x * foregroundThreeSpeed, cameraWisp.position.y, foregroundThree.position.z);
     }
 }

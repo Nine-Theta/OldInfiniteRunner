@@ -5,9 +5,9 @@ using UnityEngine;
 public class PotionScript : MonoBehaviour
 {
     public float projectileSpeed = 5.0f;
+    public float playerVelocityMultiplier = 5.0f;
     public GameObject explosion;
     private Rigidbody2D _rigidbody;
-    private GameObject _player;
 
     private void Awake()
     {
@@ -57,14 +57,9 @@ public class PotionScript : MonoBehaviour
         }
     }
 
-    public void SetForce(Vector2 pDirection)
+    public void SetForce(Vector2 pDirection, Vector2 playerVelocity)
     {
-        _rigidbody.AddForce(pDirection * projectileSpeed, ForceMode2D.Impulse);
+        Vector2 playVel = new Vector2(playerVelocity.x, 0.0f);
+        _rigidbody.AddForce((pDirection * projectileSpeed) + (playVel.normalized * playerVelocityMultiplier), ForceMode2D.Impulse);
     }
-
-    public void SetPlayer(GameObject pPlayer)
-    {
-        _player = pPlayer;
-    }
-
 }

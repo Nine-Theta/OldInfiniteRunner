@@ -78,7 +78,6 @@ public class EnemyTest : MonoBehaviour {
         }
 
 
-        Debug.Log("called step");
         _thinkTimer = thinkSpeed;
     }
 

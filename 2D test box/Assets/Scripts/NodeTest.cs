@@ -66,10 +66,10 @@ public class NodeTest
 
     #region IComparable implementation
 
-    public int CompareTo(NodeTest pOther)
-    {
-        return (costEstimate + costCurrent).CompareTo(pOther.costCurrent + pOther.costEstimate);
-    }
+    //public int CompareTo(NodeTest pOther)
+    //{
+        //return (costEstimate + costCurrent).CompareTo(pOther.costCurrent + pOther.costEstimate);
+    //}
 
     #endregion
 

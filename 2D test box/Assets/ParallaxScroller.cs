@@ -24,6 +24,7 @@ public class ParallaxScroller : MonoBehaviour
         //if (_player.position.x > _playerStartPosition.x)
         //    newPosition *= -1;
         Vector3 addPos = new Vector3(newPosition, 0.0f);
+        addPos.y = _player.position.y;
         transform.position = _startPosition + addPos;
     }
 }

@@ -21,6 +21,7 @@ public class MovementScript : MonoBehaviour
     private HealthBarScript _healthBar;
     private Animator _animator;
     private static GameObject _singletonInstance;
+    private bool _FacingRight;
 
     public bool isHooked { get { return _hooked; } }
 
@@ -42,6 +43,7 @@ public class MovementScript : MonoBehaviour
     {
         //if (_healthBar.isAlive)
         MovementUpdate();
+        Flip();
         //else if (Input.GetKeyDown(KeyCode.R))
         //    SceneManager.LoadScene(0);
         //FixHookLine();
@@ -89,6 +91,7 @@ public class MovementScript : MonoBehaviour
                 _animator.SetBool("Running", true);
                 if (vel.x < -movementSpeed)
                     vel.x = -movementSpeed;
+                _FacingRight = false;
             }
             if (Input.GetKey(KeyCode.D) && _rigidbody.velocity.x < movementSpeed && _grounded)
             {
@@ -96,6 +99,7 @@ public class MovementScript : MonoBehaviour
                 _animator.SetBool("Running", true);
                 if (vel.x > movementSpeed)
                     vel.x = movementSpeed;
+                _FacingRight = true;
             }
 
             if (!Input.GetKey(KeyCode.A) && !Input.GetKey(KeyCode.D))
@@ -271,5 +275,16 @@ public class MovementScript : MonoBehaviour
     public void StopPulling()
     {
         _animator.SetBool("PulledBack", false);
+    }
+    private void Flip()
+    {
+        if (_FacingRight == false)
+        {
+            transform.localRotation = Quaternion.Euler(0, 180, 0);
+        }
+        else
+        {
+            transform.localRotation = Quaternion.Euler(0, 0, 0);
+        }
     }
 }

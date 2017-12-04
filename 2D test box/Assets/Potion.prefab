@@ -37,7 +37,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1386306552851392}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 43.913223, y: 41.243385, z: 0}
+  m_LocalPosition: {x: -62.242004, y: -65.58801, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -100,6 +100,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectileSpeed: 5
+  playerVelocityMultiplier: 1
   explosion: {fileID: 1400134059964942, guid: 6b444381c2b8a904692dea7fce3f35c1, type: 2}
 --- !u!212 &212900342340946958
 SpriteRenderer:
@@ -135,8 +136,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: d2dfcca2badfca847ba3ffd9428c3cb5, type: 3}
-  m_Color: {r: 0.18982674, g: 0.12164791, b: 0.5514706, a: 1}
+  m_Sprite: {fileID: 21300000, guid: ae643e11f233d934e867c84fa4fa6954, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

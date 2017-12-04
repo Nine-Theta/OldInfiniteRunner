@@ -62,7 +62,7 @@ public class MovementScript : MonoBehaviour
     {
         if (!_hooked)
         {
-            if (Input.GetKeyDown(KeyCode.W))
+            if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.Space))
             {
                 Jump();
             }

@@ -267,7 +267,6 @@ public class MovementScript : MonoBehaviour
     public void StopJumping()
     {
         _animator.SetBool("Jumping", false);
-        _animator.SetBool("Falling", false);
     }
     public void StopPulling()
     {

@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class Parallaxing : MonoBehaviour {
-
+    public int tiling = 10;
 	public Transform[] backgrounds;		//array (list) of all back- and forgrounds to be parallaxed
 	public float[] parallaxScales;	//the proportion of the camera's movement to move the backgrounds by
 	public float smoothing = 1f;	//how smooth the parallax is going to be, Must be above 0 otherwize the parallax will not work
@@ -22,12 +22,16 @@ public class Parallaxing : MonoBehaviour {
 		previousCamPos = cam.position;
 
 		//declares the length of the array
-		parallaxScales = new float[backgrounds.Length];
+		//parallaxScales = new float[backgrounds.Length];
 
 		//assigning coresponding parallaxScales
 		for (int i = 0; i < backgrounds.Length; i++) {
-			parallaxScales[i] = backgrounds[i].position.z * -1;
-		}
+            //parallaxScales[i] = backgrounds[i].position.z * -1;
+            for (int j = 1; j < tiling; j++)
+            {
+                InstantiateExtras(i, j);
+            }
+        }
 	}
 
 	// Update is called once per frame
@@ -54,6 +58,16 @@ public class Parallaxing : MonoBehaviour {
 		previousCamPos = cam.position;
 
 	}
+
+    private void InstantiateExtras(int index, int offset = 1)
+    {
+        //Create a clone for filling rest of the screen
+        GameObject objectCopy = Instantiate(backgrounds[index].gameObject);
+        //Set clone parent and position
+        objectCopy.transform.localPosition = new Vector3(backgrounds[index].GetComponent<SpriteRenderer>().bounds.size.x * offset, backgrounds[index].position.y, backgrounds[index].position.z);
+        objectCopy.transform.SetParent(backgrounds[index]);
+        objectCopy.transform.localScale = new Vector3(1, 1, 1);
+    }
 }
 
 /*

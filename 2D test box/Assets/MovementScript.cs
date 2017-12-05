@@ -69,11 +69,13 @@ public class MovementScript : MonoBehaviour
             {
                 _rigidbody.AddForce(Vector2.right);
                 _animator.SetBool("Running", true);
+                _FacingRight = true;
             }
             if (!_grounded && Input.GetKey(KeyCode.A) && _rigidbody.velocity.x > -movementSpeed)
             {
                 _rigidbody.AddForce(Vector2.left);
                 _animator.SetBool("Running", true);
+                _FacingRight = false;
             }
 
             Vector2 vel = _rigidbody.velocity;

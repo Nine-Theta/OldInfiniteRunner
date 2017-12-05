@@ -4,18 +4,29 @@ using UnityEngine;
 
 public class BomberScript : MonoBehaviour
 {
-    public GameObject thrownItem;
-    public Transform player;
-    public Vector2 followOffset = new Vector2(0, 0);
+    [SerializeField]
+    private GameObject thrownItem;
 
-    public float thinkSpeed = 3.0f;
-    public float detectionRange = 5.0f;
-    public float followSpeedMult = 1.0f;
-    public float throwSpeedMult = 1.0f;
-    public float throwHeightMult = 1.0f;
-    public float gravityScale = 1.0f;
+    private Transform player;
 
-    public bool throwArc = true;
+    [SerializeField]
+    private Vector2 followOffset = new Vector2(0, 0);
+
+    [SerializeField]
+    private float thinkSpeed = 3.0f;
+    [SerializeField]
+    private float detectionRange = 5.0f;
+    [SerializeField]
+    private float followSpeedMult = 1.0f;
+    [SerializeField]
+    private float throwSpeedMult = 1.0f;
+    [SerializeField]
+    private float throwHeightMult = 1.0f;
+    [SerializeField]
+    private float gravityScale = 1.0f;
+
+    [SerializeField]
+    private bool throwArc = true;
 
     private enum EnemyStates { PATROL, CHASE }
     private EnemyStates behaviourState = EnemyStates.PATROL;
@@ -38,8 +49,7 @@ public class BomberScript : MonoBehaviour
 
     private void Start()
     {
-        if (player == null)
-            player = MovementScript.GetPlayer().transform;
+        player = MovementScript.GetPlayer().transform;
 
         if (this.gameObject.GetComponent<PathfinderScript>() != null)
         {

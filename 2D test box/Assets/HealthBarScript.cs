@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class HealthBarScript : MonoBehaviour
 {
-    public int maxHP = 10;
+    [SerializeField]
+    private int maxHP = 10;
     private float _hp = 10;
     private float maxWidth = 0.4f;
     private bool _isEnemy = false;
@@ -14,8 +15,13 @@ public class HealthBarScript : MonoBehaviour
     {
         get
         {
-            if (_hp < 0)
+            if (_hp <= 0)
+            {
                 GetComponentInParent<Rigidbody2D>().simulated = false;
+                GetComponentInParent<Rigidbody2D>().GetComponent<SpriteRenderer>().color = Color.red;
+                CustomCursorScript.GetCursor().SetActive(false);
+                FadeToBlackScript.GetScript().fade = true;
+            }
             return _hp > 0;
         }
     }
@@ -26,9 +32,6 @@ public class HealthBarScript : MonoBehaviour
         maxWidth = GetComponent<SpriteRenderer>().size.x;
         _isEnemy = !GetComponent<SpriteRenderer>().enabled;
         _initialColor = GetComponentInParent<SpriteRenderer>().color;
-
-        if (_isEnemy)
-            Debug.Log(GetComponentInParent<Rigidbody2D>().name);
     }
 
     private void Update()

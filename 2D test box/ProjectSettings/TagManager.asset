@@ -16,6 +16,7 @@ TagManager:
   - SafeZone
   - EnemyExplosion
   - EnemyPotion
+  - BackgroundChanger
   layers:
   - Default
   - TransparentFX

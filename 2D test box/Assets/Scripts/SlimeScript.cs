@@ -4,14 +4,19 @@ using UnityEngine;
 
 public class SlimeScript : MonoBehaviour
 {
-    public Transform player;
+    private Transform player;
 
-    public float thinkSpeed = 3.0f;
-    public float detectionRange = 5.0f;
-    public float useMagnitudeRange = 2.0f;
+    [SerializeField]
+    private float thinkSpeed = 3.0f;
+    [SerializeField]
+    private float detectionRange = 5.0f;
+    [SerializeField]
+    private float useMagnitudeRange = 2.0f;
 
-    public float jumpDistance = 1.0f;
-    public float jumpHeight = 1.0f;
+    [SerializeField]
+    private float jumpDistance = 1.0f;
+    [SerializeField]
+    private float jumpHeight = 1.0f;
 
     private float _thinkTimer = 3.0f;
     private Animator _animator;
@@ -24,10 +29,7 @@ public class SlimeScript : MonoBehaviour
     {
         _thinkTimer = Random.Range(0.0f, thinkSpeed);
         _animator = GetComponent<Animator>();
-        if (player == null)
-        {
-            player = MovementScript.GetPlayer().transform;
-        }
+        player = MovementScript.GetPlayer().transform;
         _healthBar = GetComponentInChildren<HealthBarScript>();
         _initialColor = GetComponent<SpriteRenderer>().color;
         GetComponent<SpriteRenderer>().color = Color.black;
@@ -49,10 +51,10 @@ public class SlimeScript : MonoBehaviour
         _woundUp = true;
         //if (distance < detectionRange)
         //{
-            if (distance < useMagnitudeRange)
-                jumpAttack(player.position, distance, jumpHeight);
-            else
-                jumpAttack(player.position, jumpDistance, jumpHeight);
+        if (distance < useMagnitudeRange)
+            jumpAttack(player.position, distance, jumpHeight);
+        else
+            jumpAttack(player.position, jumpDistance, jumpHeight);
         //}
     }
 
@@ -76,7 +78,7 @@ public class SlimeScript : MonoBehaviour
 
     private void Update()
     {
-        if(_healthBar.isAlive)
+        if (_healthBar.isAlive)
         {
             float distance = (player.position - gameObject.transform.position).magnitude;
             if (!_jumping && distance < detectionRange)

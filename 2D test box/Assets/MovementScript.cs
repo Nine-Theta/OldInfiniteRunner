@@ -5,9 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class MovementScript : MonoBehaviour
 {
-    public float jumpHeight = 5.0f;
-    public float movementSpeed = 3.0f;
-    public float hookVelocity = 3.0f;
+    [SerializeField]
+    private float jumpHeight = 5.0f;
+    [SerializeField]
+    private float movementSpeed = 3.0f;
+    [SerializeField]
+    private float hookVelocity = 3.0f;
 
     private int _jumps = 2;
     private bool _grounded = false;
@@ -33,17 +36,17 @@ public class MovementScript : MonoBehaviour
         _rigidbody = gameObject.GetComponent<Rigidbody2D>();
         _gravityScale = _rigidbody.gravityScale;
         _healthBar = gameObject.GetComponentInChildren<HealthBarScript>();
-        _lifeline = gameObject.GetComponentInChildren<LifelineScript>();
+        //_lifeline = gameObject.GetComponentInChildren<LifelineScript>();
         _animator = gameObject.GetComponent<Animator>();
     }
 
     private void Update()
     {
-        //if (_healthBar.isAlive)
-        MovementUpdate();
-        Flip();
+        if (_healthBar.isAlive)
+            MovementUpdate();
         //else if (Input.GetKeyDown(KeyCode.R))
-        //    SceneManager.LoadScene(0);
+          //  SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        Flip();
     }
 
 
@@ -123,6 +126,8 @@ public class MovementScript : MonoBehaviour
 
     public void Hook(Vector2 direction, GameObject hook)
     {
+        if (!_healthBar.isAlive)
+            return;
         _hooked = true;
         _rigidbody.velocity = new Vector2(0.0f, 0.0f);
         _rigidbody.AddForce(direction.normalized * hookVelocity);
@@ -138,6 +143,8 @@ public class MovementScript : MonoBehaviour
 
     private void UnHook(bool resetVelocity = true)
     {
+        if (!_healthBar.isAlive)
+            return;
         _hooked = false;
         _rigidbody.gravityScale = _gravityScale;
         if (resetVelocity)
@@ -170,6 +177,10 @@ public class MovementScript : MonoBehaviour
         if (other.tag == "FogField")
         {
             other.GetComponent<FogFieldScript>().EnterFog(_healthBar);
+        }
+        if(other.tag == "BackgroundChanger")
+        {
+            other.GetComponent<BackgroundChangeScript>().Activate();
         }
     }
 

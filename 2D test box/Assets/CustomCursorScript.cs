@@ -4,21 +4,32 @@ using UnityEngine;
 
 public class CustomCursorScript : MonoBehaviour
 {
-    public MovementScript player;
-    public GameObject hookPrefab;
-    public GameObject potionPrefab;
-    public float hookRange = 7.0f;
-    public float hookCooldown = 1.0f;
-    public float potionCooldown = 1.0f;
+    private MovementScript player;
+    [SerializeField]
+    private GameObject hookPrefab;
+    [SerializeField]
+    private GameObject potionPrefab;
+    [SerializeField]
+    private float hookRange = 7.0f;
+    [SerializeField]
+    private float hookCooldown = 1.0f;
+    [SerializeField]
+    private float potionCooldown = 1.0f;
     //Distance between mouse and player
     private Vector2 _mouseDistance;
     private GameObject _prevHook;
     private float _hookTimer = 0.0f;
     private float _potionTimer = 0.0f;
+    private static GameObject _singletonInstance;
 
     private void Start()
     {
+        if (_singletonInstance != null && _singletonInstance != this.gameObject)
+            Destroy(gameObject);
+        else
+            _singletonInstance = this.gameObject;
         Cursor.visible = false;
+        player = MovementScript.GetPlayer().GetComponent<MovementScript>();
     }
 
     private void Update()
@@ -85,5 +96,10 @@ public class CustomCursorScript : MonoBehaviour
         color.b = b;
         color.a = a;
         GetComponent<SpriteRenderer>().color = color;
+    }
+
+    public static GameObject GetCursor()
+    {
+        return _singletonInstance;
     }
 }

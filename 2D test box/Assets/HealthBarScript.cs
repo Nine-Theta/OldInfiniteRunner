@@ -18,9 +18,12 @@ public class HealthBarScript : MonoBehaviour
             if (_hp <= 0)
             {
                 GetComponentInParent<Rigidbody2D>().simulated = false;
-                GetComponentInParent<Rigidbody2D>().GetComponent<SpriteRenderer>().color = Color.red;
-                CustomCursorScript.GetCursor().SetActive(false);
-                FadeToBlackScript.GetScript().fade = true;
+                if (!_isEnemy)
+                {
+                    GetComponentInParent<Rigidbody2D>().GetComponent<SpriteRenderer>().color = Color.red;
+                    CustomCursorScript.GetCursor().SetActive(false);
+                    FadeToBlackScript.GetScript().fade = true;
+                }
             }
             return _hp > 0;
         }

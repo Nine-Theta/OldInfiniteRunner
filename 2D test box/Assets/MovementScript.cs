@@ -23,7 +23,7 @@ public class MovementScript : MonoBehaviour
     private HealthBarScript _healthBar;
     private Animator _animator;
     private static GameObject _singletonInstance;
-    private bool _FacingRight;
+    private bool _FacingRight = true;
 
     public bool isHooked { get { return _hooked; } }
 

@@ -31,6 +31,7 @@ public class BomberScript : MonoBehaviour
     private Node _currentNode;
     private Vector3 _lastKnownPlayerPos = Vector3.zero;
     private Vector2 _mapOffset;
+    private Color _initialColor;
 
     private float _thinkTimer = 3.0f;
     private bool _usePathfinding = false;
@@ -46,8 +47,8 @@ public class BomberScript : MonoBehaviour
             _pathFinder = gameObject.GetComponent<PathfinderScript>();
         }
 
-        _mapOffset = GraphGenerator.GeneratorObject().gameObject.GetComponent<GraphGenerator>().GetMapOffset();
-        Debug.Log("mapoffset: " + _mapOffset);
+        //_mapOffset = GraphGenerator.GeneratorObject().gameObject.GetComponent<GraphGenerator>().GetMapOffset();
+        //Debug.Log("mapoffset: " + _mapOffset);
 
         _thinkTimer = Random.Range(0.0f, thinkSpeed);
         _body = this.gameObject.GetComponent<Rigidbody2D>();
@@ -55,6 +56,8 @@ public class BomberScript : MonoBehaviour
         _offset = new Vector2(followOffset.x, followOffset.y);
         _healthBar = GetComponentInChildren<HealthBarScript>();
         _animator = GetComponent<Animator>();
+        _initialColor = GetComponent<SpriteRenderer>().color;
+        GetComponent<SpriteRenderer>().color = Color.black;
     }
 
     /// <summary> Creates a copy of an Object and flings it at the target. </summary>
@@ -113,13 +116,13 @@ public class BomberScript : MonoBehaviour
                 if (position.x < _currentNode.Position.x + _mapOffset.x + 0.5f && position.x > _currentNode.Position.x + _mapOffset.x - 0.5f && position.y < _currentNode.Position.y + _mapOffset.y + 0.5f && position.y > _currentNode.Position.y + _mapOffset.y - 0.5f)
                     _currentNode = _path.Pop();
 
-                Debug.Log("currentNode pos: " + _currentNode.Position);
+                //Debug.Log("currentNode pos: " + _currentNode.Position);
                 gameObject.transform.position += new Vector3(_currentNode.Position.x - position.x + _mapOffset.x, _currentNode.Position.y - position.y + _mapOffset.y).normalized * 0.1f;
                 return;
             }
         }
 
-        Debug.Log("Not using path finding");
+        //Debug.Log("Not using path finding");
 
         Vector2 subtracted = new Vector2(player.position.x - gameObject.transform.position.x + _offset.x, player.position.y - gameObject.transform.position.y + _offset.y);
 
@@ -147,6 +150,8 @@ public class BomberScript : MonoBehaviour
 
         if ((player.position - gameObject.transform.position).magnitude < detectionRange)
         {
+            if (GetComponent<SpriteRenderer>().color == Color.black)
+                GetComponent<SpriteRenderer>().color = _initialColor;
             UpdatePosition();
 
             if (_thinkTimer <= 0) Step();

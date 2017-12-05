@@ -15,7 +15,6 @@ public class MovementScript : MonoBehaviour
     private float _gravityScale = 1.0f;
     private Rigidbody2D _rigidbody;
     private LifelineScript _lifeline;
-    //private LineRenderer _hookLine; //And sinker
     private bool _safe = false;
     private GameObject _lastHook;
     private HealthBarScript _healthBar;
@@ -36,7 +35,6 @@ public class MovementScript : MonoBehaviour
         _healthBar = gameObject.GetComponentInChildren<HealthBarScript>();
         _lifeline = gameObject.GetComponentInChildren<LifelineScript>();
         _animator = gameObject.GetComponent<Animator>();
-        //_hookLine = gameObject.GetComponentInChildren<LineRenderer>();
     }
 
     private void Update()
@@ -46,19 +44,8 @@ public class MovementScript : MonoBehaviour
         Flip();
         //else if (Input.GetKeyDown(KeyCode.R))
         //    SceneManager.LoadScene(0);
-        //FixHookLine();
-        
     }
 
-    //private void FixHookLine()
-    //{
-    //    //if (_hookLine != null)
-    //    //{
-    //    //    _hookLine.SetPosition(0, transform.position);
-    //    //    if (!_hooked)
-    //    //        _hookLine.SetPosition(1, transform.position);
-    //    //}
-    //}
 
     private void MovementUpdate()
     {

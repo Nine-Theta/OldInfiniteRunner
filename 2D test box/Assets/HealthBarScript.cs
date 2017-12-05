@@ -7,6 +7,8 @@ public class HealthBarScript : MonoBehaviour
     public int maxHP = 10;
     private float _hp = 10;
     private float maxWidth = 0.4f;
+    private bool _isEnemy = false;
+    private Color _initialColor;
 
     public bool isAlive
     {
@@ -22,6 +24,11 @@ public class HealthBarScript : MonoBehaviour
     {
         _hp = maxHP;
         maxWidth = GetComponent<SpriteRenderer>().size.x;
+        _isEnemy = !GetComponent<SpriteRenderer>().enabled;
+        _initialColor = GetComponentInParent<SpriteRenderer>().color;
+
+        if (_isEnemy)
+            Debug.Log(GetComponentInParent<Rigidbody2D>().name);
     }
 
     private void Update()
@@ -67,8 +74,19 @@ public class HealthBarScript : MonoBehaviour
 
     private void AdjustBar()
     {
-        Vector2 size = GetComponent<SpriteRenderer>().size;
-        size.x = (maxWidth * (_hp / maxHP));
-        GetComponent<SpriteRenderer>().size = size;
+        if (_isEnemy)
+        {
+            Color newColor = _initialColor;
+            newColor.r = 1 - (_hp / maxHP);
+            newColor.g = (_hp / maxHP);
+            newColor.b = (_hp / maxHP);
+            GetComponentInParent<Rigidbody2D>().GetComponent<SpriteRenderer>().color = newColor;
+        }
+        else
+        {
+            Vector2 size = GetComponent<SpriteRenderer>().size;
+            size.x = (maxWidth * (_hp / maxHP));
+            GetComponent<SpriteRenderer>().size = size;
+        }
     }
 }

@@ -18,6 +18,7 @@ public class SlimeScript : MonoBehaviour
     private HealthBarScript _healthBar;
     private bool _woundUp = false;
     private bool _jumping = false;
+    private Color _initialColor;
 
     private void Start()
     {
@@ -28,6 +29,8 @@ public class SlimeScript : MonoBehaviour
             player = MovementScript.GetPlayer().transform;
         }
         _healthBar = GetComponentInChildren<HealthBarScript>();
+        _initialColor = GetComponent<SpriteRenderer>().color;
+        GetComponent<SpriteRenderer>().color = Color.black;
     }
 
     private void jumpAttack(Vector3 pTarget, float pXVelocity = 1.0f, float pYVelocity = 1.0f)
@@ -78,6 +81,8 @@ public class SlimeScript : MonoBehaviour
             float distance = (player.position - gameObject.transform.position).magnitude;
             if (!_jumping && distance < detectionRange)
             {
+                if (GetComponent<SpriteRenderer>().color == Color.black)
+                    GetComponent<SpriteRenderer>().color = _initialColor;
                 if (_thinkTimer <= 0)
                     Step();
                 else

@@ -47,6 +47,7 @@ public class BomberScript : MonoBehaviour
         }
 
         _mapOffset = GraphGenerator.GeneratorObject().gameObject.GetComponent<GraphGenerator>().GetMapOffset();
+        Debug.Log("mapoffset: " + _mapOffset);
 
         _thinkTimer = Random.Range(0.0f, thinkSpeed);
         _body = this.gameObject.GetComponent<Rigidbody2D>();
@@ -92,12 +93,17 @@ public class BomberScript : MonoBehaviour
 
             if (_path == null || _path.Count == 0)
             {
-                if (_pathFinder.CanFindPath(gameObject.transform.position, player.position, 20))
+                _currentNode = null;
+                if (_pathFinder.CanFindPath(gameObject.transform.position, player.position, 15))
                 {
                     _path = new Stack<Node>();
-                    foreach (Node node in _pathFinder.GetPath())
-                        _path.Push(node);
-                    _currentNode = _path.Pop();
+                    if (_pathFinder.GetPath() != null)
+                    {
+                        foreach (Node node in _pathFinder.GetPath())
+                            _path.Push(node);
+
+                        _currentNode = _path.Pop();
+                    }
                 }
             }
 

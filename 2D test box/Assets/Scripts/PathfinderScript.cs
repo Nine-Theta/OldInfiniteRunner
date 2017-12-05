@@ -33,6 +33,7 @@ public class PathfinderScript : MonoBehaviour
 
     public bool CanFindPath(Vector2 pPosition, Vector2 pTarget, int pMaxIterations)
     {
+        _path = null;
         int start = (int)(_colums * ((pPosition.x / _tileSize) - _mapOffset.x) + (pPosition.y / _tileSize) - _mapOffset.y);
         //Debug.Log("pTarget: "+ pTarget);
         //Debug.Log("start: " + start + " startpos: " + _graph.nodes[start].Position);

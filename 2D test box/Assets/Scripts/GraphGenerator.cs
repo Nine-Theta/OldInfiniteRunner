@@ -9,7 +9,7 @@ public class GraphGenerator : MonoBehaviour
     public int mapHeight = 0;
     public float tileSize = 0;
 
-    public GameObject debugnode;
+    public GameObject debugNode;
     
     private NodeGraph _graph;
     private SearchGraph _search;
@@ -34,8 +34,11 @@ public class GraphGenerator : MonoBehaviour
                 if (hitCollider != null && hitCollider.CompareTag("Terrain")) map[row, col] = 1;
                 else map[row, col] = 0;
 
-                GameObject newNode = Instantiate(debugnode, new Vector3((row + mapOffset.x) * tileSize, (col + mapOffset.y) * tileSize, -10), Quaternion.Euler(0,0,0));
-                if (map[row, col] == 1) newNode.GetComponent<SpriteRenderer>().color = Color.red;
+                if (debugNode != null)
+                {
+                    GameObject newNode = Instantiate(debugNode, new Vector3((row + mapOffset.x) * tileSize, (col + mapOffset.y) * tileSize, -10), Quaternion.Euler(0, 0, 0));
+                    if (map[row, col] == 1) newNode.GetComponent<SpriteRenderer>().color = Color.red;
+                }
             }
         }
 

@@ -9,10 +9,12 @@ public class BackgroundChangeScript : MonoBehaviour
     [SerializeField]
     private bool _destroyGameObjectAfterwards = false;
     [SerializeField]
+    private bool _stayAtEnable = true;
+    [SerializeField]
     [Tooltip("The maximum time in the random float that returns the glitchy effect")]
     private float _glitchTimeMax = 1.0f;
     [SerializeField]
-    private float _amountOfBlinks = 5.0f;
+    private float _blinkTime = 5.0f;
     [SerializeField]
     private List<GameObject> _disableList;
     [SerializeField]
@@ -31,6 +33,7 @@ public class BackgroundChangeScript : MonoBehaviour
     {
         if (_activated)
         {
+            _blinkTime -= Time.deltaTime;
             _glitchTimer -= Time.deltaTime;
             if (_glitchTimer <= 0.0f)
             {
@@ -58,14 +61,17 @@ public class BackgroundChangeScript : MonoBehaviour
         _activated = true;
         _glitchTimer = Random.Range(0.0f, _glitchTimeMax);
         _flipped = !_flipped;
-        _amountOfBlinks -= Time.deltaTime;
-        if (_fadeToBlack && _amountOfBlinks <= 0)
+        if (_fadeToBlack && _blinkTime <= 0)
         {
             FadeToBlackScript.GetScript().fade = true;
             _activated = false;
         }
-        else if (_amountOfBlinks <= 0)
+        else if (_blinkTime <= 0)
+        {
             _activated = false;
+            if (_stayAtEnable && !_enableList[0].activeSelf)
+                Activate();
+        }
         if (_destroyGameObjectAfterwards)
             Destroy(this.gameObject);
     }

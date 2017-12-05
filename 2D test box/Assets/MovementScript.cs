@@ -18,6 +18,7 @@ public class MovementScript : MonoBehaviour
     private float _gravityScale = 1.0f;
     private Rigidbody2D _rigidbody;
     private LifelineScript _lifeline;
+    private LineRenderer _hookLine; //And sinker
     private bool _safe = false;
     private GameObject _lastHook;
     private HealthBarScript _healthBar;
@@ -37,6 +38,7 @@ public class MovementScript : MonoBehaviour
         _gravityScale = _rigidbody.gravityScale;
         _healthBar = gameObject.GetComponentInChildren<HealthBarScript>();
         //_lifeline = gameObject.GetComponentInChildren<LifelineScript>();
+        _hookLine = GetComponentInChildren<LineRenderer>();
         _animator = gameObject.GetComponent<Animator>();
     }
 
@@ -133,6 +135,7 @@ public class MovementScript : MonoBehaviour
         _rigidbody.AddForce(direction.normalized * hookVelocity);
         _rigidbody.gravityScale = 0;
         _lastHook = hook;
+        _hookLine.SetPosition(1, hook.transform.position - transform.position);
         if (_lifeline != null)
         {
             _lifeline.isUnhooked = false;
@@ -150,6 +153,7 @@ public class MovementScript : MonoBehaviour
         if (resetVelocity)
             _rigidbody.velocity = new Vector2(_rigidbody.velocity.x, 0.0f);
         Destroy(_lastHook);
+        _hookLine.SetPosition(1, Vector3.zero);
         if (_lifeline != null)
         {
             _lifeline.RemoveLastPoint();

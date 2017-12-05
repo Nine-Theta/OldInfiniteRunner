@@ -2,17 +2,20 @@
 using System.Collections;
 using UnityEngine.SceneManagement;
 
-public class ButtonManager : MonoBehaviour 
+public class ButtonManager : MonoBehaviour
 {
 
-	public void StartButton (string newGameLevel)
-	{
-		SceneManager.LoadScene(newGameLevel);
-	}
+    public void LoadScene(string pScene)
+    {
+        SceneManager.LoadScene(pScene);
+    }
 
-	public void ExitButton()
-	{
-		Application.Quit ();
-	}
-
+    public void ExitGame()
+    {
+#if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+#else
+        Application.Quit();
+#endif
+    }
 }

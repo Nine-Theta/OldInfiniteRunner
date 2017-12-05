@@ -30,7 +30,7 @@ public class BackgroundChangeScript : MonoBehaviour
         foreach (GameObject disable in _disableList)
             disable.SetActive(false);
         foreach (GameObject enable in _enableList)
-            enable.SetActive(false);
+            enable.SetActive(true);
 
         if (_destroyGameObjectAfterwards)
             Destroy(this.gameObject);

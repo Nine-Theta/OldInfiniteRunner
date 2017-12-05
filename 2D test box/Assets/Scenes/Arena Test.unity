@@ -658,6 +658,11 @@ Prefab:
       propertyPath: mapOffset.y
       value: -50
       objectReference: {fileID: 0}
+    - target: {fileID: 114859080937277706, guid: 6e504c0cdec1bbe4cab12f6701b29966,
+        type: 2}
+      propertyPath: debugNode
+      value: 
+      objectReference: {fileID: 2003024882}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6e504c0cdec1bbe4cab12f6701b29966, type: 2}
   m_IsPrefabParent: 0

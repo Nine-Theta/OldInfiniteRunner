@@ -154,6 +154,19 @@ public class SearchGraph
         return _lastPathFound;
     }
 
+    public void GeneratePartialPath()
+    {
+        _lastPathFound = new List<Node>();
+        Node node = _currentNode;
+
+        while (node != null)
+        {
+            _lastPathFound.Add(node);
+            node = node.Parent;
+        }
+        _done = true;
+    }
+
     private void generatePath()
     {
         _lastPathFound = new List<Node>();

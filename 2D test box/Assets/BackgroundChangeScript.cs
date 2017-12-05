@@ -8,10 +8,16 @@ public class BackgroundChangeScript : MonoBehaviour
     private bool _fadeToBlack = false;
     [SerializeField]
     private bool _destroyGameObjectAfterwards = false;
+    [SerializeField][Tooltip("The maximum time in the random float that returns the glitchy effect")]
+    private float _glitchTimeMax = 1.0f;
     [SerializeField]
     private List<GameObject> _disableList;
     [SerializeField]
     private List<GameObject> _enableList;
+
+    private bool _activated = false;
+    private float _glitchTimer;
+    private bool _flipped = false;
 
     private void Start()
     {
@@ -20,19 +26,38 @@ public class BackgroundChangeScript : MonoBehaviour
 
     private void Update()
     {
-
+        if(_activated)
+        {
+            _glitchTimer -= Time.deltaTime;
+            if(_glitchTimer <= 0.0f)
+            {
+                Activate();
+            }
+        }
     }
 
     public void Activate()
     {
-        if (_fadeToBlack)
-            FadeToBlackScript.GetScript().fade = true;
-        foreach (GameObject disable in _disableList)
-            disable.SetActive(false);
-        foreach (GameObject enable in _enableList)
-            enable.SetActive(true);
-
-        if (_destroyGameObjectAfterwards)
-            Destroy(this.gameObject);
+        if (_flipped)
+        {
+            foreach (GameObject disable in _disableList)
+                disable.SetActive(true);
+            foreach (GameObject enable in _enableList)
+                enable.SetActive(false);
+            if (_fadeToBlack)
+                FadeToBlackScript.GetScript().fade = true;
+        }
+        else
+        {
+            foreach (GameObject disable in _disableList)
+                disable.SetActive(false);
+            foreach (GameObject enable in _enableList)
+                enable.SetActive(true);
+        }
+        _activated = true;
+        _glitchTimer = Random.Range(0.0f, _glitchTimeMax);
+        _flipped = !_flipped;
+        //if (_destroyGameObjectAfterwards)
+        //Destroy(this.gameObject);
     }
 }

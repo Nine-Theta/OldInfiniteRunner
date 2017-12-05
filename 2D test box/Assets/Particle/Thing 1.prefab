@@ -71,8 +71,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _fadeToBlack: 0
   _destroyGameObjectAfterwards: 0
-  _disableList: []
-  _enableList: []
+  _glitchTimeMax: 1
+  _disableList:
+  - {fileID: 0}
+  _enableList:
+  - {fileID: 0}
 --- !u!198 &198345731039864506
 ParticleSystem:
   m_ObjectHideFlags: 1
@@ -133,7 +136,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 1978197969
+  randomSeed: 518611442
   InitialModule:
     serializedVersion: 3
     enabled: 1

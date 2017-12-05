@@ -59,6 +59,11 @@ public class GraphGenerator : MonoBehaviour
         return _search;
     }
 
+    public Vector2 GetMapOffset()
+    {
+        return mapOffset;
+    }
+
     public static GameObject GeneratorObject()
     {
         return _singletonInstance;

@@ -34,13 +34,13 @@ public class PathfinderScript : MonoBehaviour
     public bool CanFindPath(Vector2 pPosition, Vector2 pTarget, int pMaxIterations)
     {
         int start = (int)(_colums * ((pPosition.x / _tileSize) - _mapOffset.x) + (pPosition.y / _tileSize) - _mapOffset.y);
-        Debug.Log("pTarget: "+ pTarget);
-        Debug.Log("start: " + start + " startpos: " + _graph.nodes[start].Position);
-        Debug.Log((int)pTarget.y/_tileSize);
+        //Debug.Log("pTarget: "+ pTarget);
+        //Debug.Log("start: " + start + " startpos: " + _graph.nodes[start].Position);
+        //Debug.Log((int)pTarget.y/_tileSize);
         int end = (int)(_colums * (((int)pTarget.x / _tileSize) - _mapOffset.x) + ((int)pTarget.y / _tileSize) - _mapOffset.y);
-        Debug.Log("end: " + end + " endpos: " + _graph.nodes[end].Position);
+        //Debug.Log("end: " + end + " endpos: " + _graph.nodes[end].Position);
 
-        Debug.Log("length: " + _graph.nodes.Length);
+        //Debug.Log("length: " + _graph.nodes.Length);
         _search.Start(_graph.nodes[start], _graph.nodes[end]);
 
         while(!_search.IsDone() || _search.GetIteration() <= pMaxIterations)
@@ -66,5 +66,10 @@ public class PathfinderScript : MonoBehaviour
     public List<Node> GetPath()
     {
         return _path;
+    }
+
+    public Vector2 GetMapOffset()
+    {
+        return _mapOffset;
     }
 }

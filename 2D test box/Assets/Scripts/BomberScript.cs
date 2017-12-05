@@ -30,6 +30,7 @@ public class BomberScript : MonoBehaviour
     private Stack<Node> _path;
     private Node _currentNode;
     private Vector3 _lastKnownPlayerPos = Vector3.zero;
+    private Vector2 _mapOffset;
 
     private float _thinkTimer = 3.0f;
     private bool _usePathfinding = false;
@@ -44,6 +45,8 @@ public class BomberScript : MonoBehaviour
             _usePathfinding = true;
             _pathFinder = gameObject.GetComponent<PathfinderScript>();
         }
+
+        _mapOffset = GraphGenerator.GeneratorObject().gameObject.GetComponent<GraphGenerator>().GetMapOffset();
 
         _thinkTimer = Random.Range(0.0f, thinkSpeed);
         _body = this.gameObject.GetComponent<Rigidbody2D>();
@@ -101,11 +104,11 @@ public class BomberScript : MonoBehaviour
             if (_currentNode != null)
             {
                 Vector2 position = new Vector2(gameObject.transform.position.x, gameObject.transform.position.y);
-                if (position.x < _currentNode.Position.x + 0.5f && position.x > _currentNode.Position.x - 0.5f && position.y < _currentNode.Position.y + 0.5f && position.y > _currentNode.Position.y - 0.5f)
+                if (position.x < _currentNode.Position.x + _mapOffset.x + 0.5f && position.x > _currentNode.Position.x + _mapOffset.x - 0.5f && position.y < _currentNode.Position.y + _mapOffset.y + 0.5f && position.y > _currentNode.Position.y + _mapOffset.y - 0.5f)
                     _currentNode = _path.Pop();
 
                 Debug.Log("currentNode pos: " + _currentNode.Position);
-                gameObject.transform.position += new Vector3(_currentNode.Position.x - position.x, _currentNode.Position.y - position.y).normalized * 0.1f;
+                gameObject.transform.position += new Vector3(_currentNode.Position.x - position.x + _mapOffset.x, _currentNode.Position.y - position.y + _mapOffset.y).normalized * 0.1f;
                 return;
             }
         }
@@ -133,6 +136,9 @@ public class BomberScript : MonoBehaviour
 
     private void Update()
     {
+        if (_path != null)
+            Debug.Log(_path.Count);
+
         if ((player.position - gameObject.transform.position).magnitude < detectionRange)
         {
             UpdatePosition();

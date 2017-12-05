@@ -37,8 +37,8 @@ public class NodeGraph
 
                 if (pGrid[row, col] == 1)
                 {
-                    node = null;
-                    nodes[count] = null;
+                    //node = null;
+                    //nodes[count] = null;
                     continue;
                 }
 

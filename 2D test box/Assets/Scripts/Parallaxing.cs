@@ -27,7 +27,7 @@ public class Parallaxing : MonoBehaviour {
 		//assigning coresponding parallaxScales
 		for (int i = 0; i < backgrounds.Length; i++) {
             //parallaxScales[i] = backgrounds[i].position.z * -1;
-            for (int j = 1; j < tiling; j++)
+            for (int j = 0; j < tiling; j++)
             {
                 InstantiateExtras(i, j);
             }
@@ -61,6 +61,7 @@ public class Parallaxing : MonoBehaviour {
 
     private void InstantiateExtras(int index, int offset = 1)
     {
+        offset++;
         //Create a clone for filling rest of the screen
         GameObject objectCopy = Instantiate(backgrounds[index].gameObject);
         //Set clone parent and position
@@ -71,7 +72,7 @@ public class Parallaxing : MonoBehaviour {
 }
 
 /*
-
+**Parts of this code
 Code written by joedanhol, find this on GitHub at https://github.com/joedanhol/Parallax2D :D Last test done 27/04/15
 Feel free to edit this at your own will, this code was made to be compleatly hackable, and feel free to message me at
 joedanhol@gmail.com for any help required.

@@ -8,8 +8,11 @@ public class BackgroundChangeScript : MonoBehaviour
     private bool _fadeToBlack = false;
     [SerializeField]
     private bool _destroyGameObjectAfterwards = false;
-    [SerializeField][Tooltip("The maximum time in the random float that returns the glitchy effect")]
+    [SerializeField]
+    [Tooltip("The maximum time in the random float that returns the glitchy effect")]
     private float _glitchTimeMax = 1.0f;
+    [SerializeField]
+    private float _amountOfBlinks = 5.0f;
     [SerializeField]
     private List<GameObject> _disableList;
     [SerializeField]
@@ -26,10 +29,10 @@ public class BackgroundChangeScript : MonoBehaviour
 
     private void Update()
     {
-        if(_activated)
+        if (_activated)
         {
             _glitchTimer -= Time.deltaTime;
-            if(_glitchTimer <= 0.0f)
+            if (_glitchTimer <= 0.0f)
             {
                 Activate();
             }
@@ -44,8 +47,6 @@ public class BackgroundChangeScript : MonoBehaviour
                 disable.SetActive(true);
             foreach (GameObject enable in _enableList)
                 enable.SetActive(false);
-            if (_fadeToBlack)
-                FadeToBlackScript.GetScript().fade = true;
         }
         else
         {
@@ -57,7 +58,15 @@ public class BackgroundChangeScript : MonoBehaviour
         _activated = true;
         _glitchTimer = Random.Range(0.0f, _glitchTimeMax);
         _flipped = !_flipped;
-        //if (_destroyGameObjectAfterwards)
-        //Destroy(this.gameObject);
+        _amountOfBlinks -= Time.deltaTime;
+        if (_fadeToBlack && _amountOfBlinks <= 0)
+        {
+            FadeToBlackScript.GetScript().fade = true;
+            _activated = false;
+        }
+        else if (_amountOfBlinks <= 0)
+            _activated = false;
+        if (_destroyGameObjectAfterwards)
+            Destroy(this.gameObject);
     }
 }

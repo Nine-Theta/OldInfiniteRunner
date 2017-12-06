@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.01.10.00">
+    <object class="ParameterPreset" id="{fc3a9eef-27c0-47d2-bcf4-51387bf35e22}">
+        <property name="name">
+            <value>Icy</value>
+        </property>
+        <relationship name="folder">
+            <destination>{5ae4e3a3-4cde-45ba-bf34-4ecfda167752}</destination>
+        </relationship>
+        <relationship name="parameter">
+            <destination>{84e9db0b-2d20-4296-9e29-e2b6e8569db7}</destination>
+        </relationship>
+    </object>
+    <object class="GameParameter" id="{84e9db0b-2d20-4296-9e29-e2b6e8569db7}">
+        <property name="initialValue">
+            <value>0</value>
+        </property>
+        <property name="seekSpeed">
+            <value>0.32000002264976501</value>
+        </property>
+    </object>
+</objects>

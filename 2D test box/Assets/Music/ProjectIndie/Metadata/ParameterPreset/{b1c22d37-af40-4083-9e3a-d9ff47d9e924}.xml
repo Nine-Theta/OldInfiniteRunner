@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.01.10.00">
+    <object class="ParameterPreset" id="{b1c22d37-af40-4083-9e3a-d9ff47d9e924}">
+        <property name="name">
+            <value>Jungle</value>
+        </property>
+        <relationship name="folder">
+            <destination>{5ae4e3a3-4cde-45ba-bf34-4ecfda167752}</destination>
+        </relationship>
+        <relationship name="parameter">
+            <destination>{e0ed8b99-22f6-4f1a-b352-a03e4972197b}</destination>
+        </relationship>
+    </object>
+    <object class="GameParameter" id="{e0ed8b99-22f6-4f1a-b352-a03e4972197b}">
+        <property name="initialValue">
+            <value>0</value>
+        </property>
+        <property name="seekSpeed">
+            <value>0.33000001311302185</value>
+        </property>
+    </object>
+</objects>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.01.10.00">
+    <object class="AudioFile" id="{798924a7-e946-4f1d-8fe8-8e9a9c5f9346}">
+        <property name="assetPath">
+            <value>Monk_Bg.wav</value>
+        </property>
+        <property name="isStreaming">
+            <value>true</value>
+        </property>
+        <property name="frequencyInKHz">
+            <value>44.0999985</value>
+        </property>
+        <property name="channelCount">
+            <value>2</value>
+        </property>
+        <property name="length">
+            <value>24.648639455782313</value>
+        </property>
+        <relationship name="masterAssetFolder">
+            <destination>{7821e401-113e-42d8-be00-319cfb5a629d}</destination>
+        </relationship>
+    </object>
+</objects>

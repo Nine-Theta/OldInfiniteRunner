@@ -137,17 +137,17 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 84326784}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -237.99997, y: -55, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -250, y: -66, z: 0}
+  m_LocalScale: {x: 0.34, y: 0.26, z: 1}
   m_Children:
   - {fileID: 328866192}
   m_Father: {fileID: 1464656204}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.5}
-  m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 162, y: -55}
-  m_SizeDelta: {x: 220, y: 100}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -250, y: -66}
+  m_SizeDelta: {x: 675, y: 482}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &84326786
 MonoBehaviour:
@@ -168,9 +168,9 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 0, g: 0, b: 0, a: 0.247}
-    m_HighlightedColor: {r: 0, g: 0, b: 0, a: 0.222}
-    m_PressedColor: {r: 0.5803922, g: 0.69803923, b: 0.64705884, a: 0.297}
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 0.491}
+    m_HighlightedColor: {r: 1, g: 1, b: 1, a: 0.841}
+    m_PressedColor: {r: 1, g: 1, b: 1, a: 1}
     m_DisabledColor: {r: 1, g: 0, b: 1, a: 1}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -220,7 +220,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: f5ae1ac791f767f4eaeb78864e88c656, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 80912058fb700c144a10a1604ebeaf44, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -258,7 +258,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 328866191}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 110, y: 50, z: 0}
+  m_LocalPosition: {x: 337.5, y: 241, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 84326785}

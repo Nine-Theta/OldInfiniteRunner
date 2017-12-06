@@ -57198,7 +57198,7 @@ MonoBehaviour:
   Preload: 0
   Params:
   - Name: Icy
-    Value: 0.303
+    Value: 0.612
   OverrideAttenuation: 0
   OverrideMinDistance: 0
   OverrideMaxDistance: 0

@@ -95,15 +95,16 @@ public class SlimeScript : MonoBehaviour
     {
         if (_healthBar.isAlive)
         {
-            _idleTimer -= Time.deltaTime;
-            if (_idleTimer <= 0.0f)
-            {
-                _audio.PlayOneShot(_idleSound);
-                _idleTimer = _idleDelay;
-            }
+            
             float distance = (player.position - gameObject.transform.position).magnitude;
             if (!_jumping && distance < detectionRange)
             {
+                _idleTimer -= Time.deltaTime;
+                if (_idleTimer <= 0.0f)
+                {
+                    _audio.PlayOneShot(_idleSound);
+                    _idleTimer = _idleDelay;
+                }
                 if (GetComponent<SpriteRenderer>().color == Color.black)
                     GetComponent<SpriteRenderer>().color = _initialColor;
                 if (_thinkTimer <= 0)

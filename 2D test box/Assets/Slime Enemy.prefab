@@ -129,7 +129,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1092944182827476}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 27.01, y: -61.32, z: 2}
+  m_LocalPosition: {x: 10.97, y: 31.112103, z: 1.79}
   m_LocalScale: {x: 0.8000003, y: 0.79999995, z: 1}
   m_Children:
   - {fileID: 4529287870643348}
@@ -170,7 +170,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.14176247, y: -0.37852514}
+  m_Offset: {x: -0.1417625, y: -0.30810255}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -181,7 +181,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.2664752, y: 1.2329497}
+  m_Size: {x: 1.2664752, y: 1.0921044}
   m_EdgeRadius: 0
 --- !u!82 &82713170567364378
 AudioSource:

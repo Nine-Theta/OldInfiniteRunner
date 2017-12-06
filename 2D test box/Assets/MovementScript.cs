@@ -228,6 +228,7 @@ public class MovementScript : MonoBehaviour
         if (other.tag == "FogField")
         {
             other.GetComponent<FogFieldScript>().EnterFog(_healthBar);
+            gameObject.GetComponent<SpriteRenderer>().color = Color.red;
         }
         if (other.tag == "BackgroundChanger")
         {
@@ -245,6 +246,7 @@ public class MovementScript : MonoBehaviour
         if (other.tag == "FogField")
         {
             other.GetComponent<FogFieldScript>().LeaveFog();
+            gameObject.GetComponent<SpriteRenderer>().color = Color.white;
         }
     }
 

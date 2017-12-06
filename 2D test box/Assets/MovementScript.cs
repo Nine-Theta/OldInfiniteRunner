@@ -250,7 +250,10 @@ public class MovementScript : MonoBehaviour
         }
         if (coll.collider.tag == "Enemy")
         {
-            _healthBar.TakeDamage(1);
+            if (_healthBar.TakeDamage())
+                _audio.PlayOneShot(_deathSound);
+            else
+                _audio.PlayOneShot(_damageSound);
         }
     }
 

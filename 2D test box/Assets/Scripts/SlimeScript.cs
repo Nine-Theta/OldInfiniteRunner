@@ -27,6 +27,8 @@ public class SlimeScript : MonoBehaviour
     private AudioClip _damageSound;
     [SerializeField]
     private AudioClip _deathSound;
+    [SerializeField]
+    private AudioClip _alertSound;
 
     private float _thinkTimer = 3.0f;
     private float _idleTimer = 5.0f;
@@ -106,7 +108,10 @@ public class SlimeScript : MonoBehaviour
                     _idleTimer = _idleDelay;
                 }
                 if (GetComponent<SpriteRenderer>().color == Color.black)
+                {
+                    _audio.PlayOneShot(_alertSound);
                     GetComponent<SpriteRenderer>().color = _initialColor;
+                }
                 if (_thinkTimer <= 0)
                     Step();
                 else

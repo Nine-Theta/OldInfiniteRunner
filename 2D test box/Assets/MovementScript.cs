@@ -193,7 +193,7 @@ public class MovementScript : MonoBehaviour
         }
         if (other.tag == "EnemyExplosion")
         {
-            if (_healthBar.TakeDamage())
+            if (!_healthBar.TakeDamage())
                 _audio.PlayOneShot(_deathSound);
             else
                 _audio.PlayOneShot(_damageSound);
@@ -250,7 +250,7 @@ public class MovementScript : MonoBehaviour
         }
         if (coll.collider.tag == "Enemy")
         {
-            if (_healthBar.TakeDamage())
+            if (!_healthBar.TakeDamage())
                 _audio.PlayOneShot(_deathSound);
             else
                 _audio.PlayOneShot(_damageSound);

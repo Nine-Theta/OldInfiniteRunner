@@ -50,6 +50,7 @@ public class MovementScript : MonoBehaviour
         //_lifeline = gameObject.GetComponentInChildren<LifelineScript>();
         _hookLine = GetComponentInChildren<LineRenderer>();
         _animator = gameObject.GetComponent<Animator>();
+        _audio = GetComponent<AudioSource>();
     }
 
     private void Update()

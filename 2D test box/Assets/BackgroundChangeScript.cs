@@ -19,6 +19,8 @@ public class BackgroundChangeScript : MonoBehaviour
     private List<GameObject> _disableList;
     [SerializeField]
     private List<GameObject> _enableList;
+    [SerializeField]
+    private string nextSceneName = "";
 
     private bool _activated = false;
     private float _glitchTimer;
@@ -64,6 +66,8 @@ public class BackgroundChangeScript : MonoBehaviour
         if (_fadeToBlack && _blinkTime <= 0)
         {
             FadeToBlackScript.GetScript().fade = true;
+            if (nextSceneName != "")
+                FadeToBlackScript.GetScript().SetNextScene(nextSceneName);
             _activated = false;
         }
         else if (_blinkTime <= 0)

@@ -170,7 +170,7 @@ public class BomberScript : MonoBehaviour
             flingItem(new Vector2(player.position.x + _playerBody.velocity.x, player.position.y), throwSpeedMult, throwHeightMult, true, gravityScale);
         else
             flingItem(new Vector2(player.position.x + _playerBody.velocity.x, player.position.y), throwSpeedMult);
-
+        _audio.PlayOneShot(_attackSound);
         _thinkTimer = thinkSpeed;
     }
 

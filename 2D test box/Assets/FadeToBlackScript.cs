@@ -8,6 +8,7 @@ public class FadeToBlackScript : MonoBehaviour
     private static FadeToBlackScript _singletonInstance;
     private bool _fade = false;
     private SpriteRenderer _sprite;
+    private string nextScene = "Lab";
 
     public bool fade
     { set { _fade = value; } }
@@ -31,9 +32,14 @@ public class FadeToBlackScript : MonoBehaviour
             _sprite.color = color;
             if(color.a >= 1.0f)
             {
-                SceneManager.LoadScene("Lab");
+                SceneManager.LoadScene(nextScene);
             }
         }
+    }
+
+    public void SetNextScene(string sceneName)
+    {
+        nextScene = sceneName;
     }
 
     public static FadeToBlackScript GetScript()

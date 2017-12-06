@@ -13,3 +13,6 @@ Obj/
 Greybox/Clients call greybox/Assets/JMO Assets/Editor.meta
 Greybox/Clients call greybox/TempBuilds/
 Art/
+2D test box/Assets/Plugins/x86_64/fmodstudiol.dll
+2D test box/Assets/Plugins/x86_64/gvraudio.dll
+2D test box/fmod_editor.log

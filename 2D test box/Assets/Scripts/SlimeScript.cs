@@ -17,13 +17,25 @@ public class SlimeScript : MonoBehaviour
     private float jumpDistance = 1.0f;
     [SerializeField]
     private float jumpHeight = 1.0f;
+    [SerializeField]
+    private float _idleDelay = 5.0f;
+    [SerializeField]
+    private AudioClip _idleSound;
+    [SerializeField]
+    private AudioClip _attackSound;
+    [SerializeField]
+    private AudioClip _damageSound;
+    [SerializeField]
+    private AudioClip _deathSound;
 
     private float _thinkTimer = 3.0f;
+    private float _idleTimer = 5.0f;
     private Animator _animator;
     private HealthBarScript _healthBar;
     private bool _woundUp = false;
     private bool _jumping = false;
     private Color _initialColor;
+    private AudioSource _audio;
 
     private void Start()
     {
@@ -33,6 +45,8 @@ public class SlimeScript : MonoBehaviour
         _healthBar = GetComponentInChildren<HealthBarScript>();
         _initialColor = GetComponent<SpriteRenderer>().color;
         GetComponent<SpriteRenderer>().color = Color.black;
+        _audio = GetComponent<AudioSource>();
+        _idleTimer = Random.Range(0.0f, _idleDelay);
     }
 
     private void jumpAttack(Vector3 pTarget, float pXVelocity = 1.0f, float pYVelocity = 1.0f)
@@ -74,12 +88,19 @@ public class SlimeScript : MonoBehaviour
         _animator.SetBool("Land", false);
         _jumping = true;
         _thinkTimer = thinkSpeed;
+        _audio.PlayOneShot(_attackSound);
     }
 
     private void Update()
     {
         if (_healthBar.isAlive)
         {
+            _idleTimer -= Time.deltaTime;
+            if (_idleTimer <= 0.0f)
+            {
+                _audio.PlayOneShot(_idleSound);
+                _idleTimer = _idleDelay;
+            }
             float distance = (player.position - gameObject.transform.position).magnitude;
             if (!_jumping && distance < detectionRange)
             {
@@ -108,12 +129,14 @@ public class SlimeScript : MonoBehaviour
     {
         if (coll.tag == "Explosion")
         {
+            _audio.PlayOneShot(_damageSound);
             if (_healthBar.isAlive & !_healthBar.TakeDamage())
             {
                 _animator.SetBool("Fall", false);
                 _animator.SetBool("Land", false);
                 _animator.SetBool("JumpWindup", false);
                 _animator.SetBool("Dead", true);
+                _audio.PlayOneShot(_deathSound);
             }
         }
     }

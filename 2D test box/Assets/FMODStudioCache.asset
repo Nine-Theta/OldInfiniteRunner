@@ -13,12 +13,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EditorBanks:
   - {fileID: 114455196228214448}
-  - {fileID: 114139969759470688}
+  - {fileID: 114680350705294824}
   EditorEvents:
   - {fileID: 114922806901370134}
-  MasterBankRef: {fileID: 114139969759470688}
+  - {fileID: 114581506125310464}
+  MasterBankRef: {fileID: 114680350705294824}
   StringsBankRef: {fileID: 114455196228214448}
-  stringsBankWriteTime: 636481651710601180
+  stringsBankWriteTime: 636481775234375160
   cacheVersion: 2
 --- !u!114 &114009100056807916
 MonoBehaviour:
@@ -32,6 +33,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: Icy
+  Min: 0
+  Max: 1
+  Default: 0
+--- !u!114 &114014124883447752
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Desert
   Min: 0
   Max: 1
   Default: 0
@@ -96,6 +112,21 @@ MonoBehaviour:
   - Name: Desktop
     Value: 10100224
   Exists: 1
+--- !u!114 &114095894182088962
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Intensity
+  Min: 0
+  Max: 1
+  Default: 0
 --- !u!114 &114103591051375860
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -108,6 +139,36 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: Jungle
+  Min: 0
+  Max: 1
+  Default: 0
+--- !u!114 &114105254028464928
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Icy
+  Min: 0
+  Max: 1
+  Default: 0
+--- !u!114 &114134658350734102
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Intensity
   Min: 0
   Max: 1
   Default: 0
@@ -161,6 +222,21 @@ MonoBehaviour:
   Max: 1
   Default: 0
 --- !u!114 &114158329867335930
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Jungle
+  Min: 0
+  Max: 1
+  Default: 0
+--- !u!114 &114172930682804574
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
@@ -235,6 +311,21 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
+--- !u!114 &114233828868421996
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Electricity
+  Min: 0
+  Max: 1
+  Default: 0
 --- !u!114 &114239890019776060
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -290,6 +381,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: Icy
+  Min: 0
+  Max: 1
+  Default: 0
+--- !u!114 &114252726911897538
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Desert
   Min: 0
   Max: 1
   Default: 0
@@ -369,6 +475,21 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 0
+--- !u!114 &114332037924728304
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Intensity
+  Min: 0
+  Max: 1
+  Default: 0
 --- !u!114 &114333191046128642
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -599,12 +720,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Path: Assets\Music\ProjectIndie\Build\Desktop\Master Bank.strings.bank
-  lastModified: 636481651710601180
+  lastModified: 636481775234375160
   LoadResult: 0
   FileSizes:
   - Name: Desktop
-    Value: 718
+    Value: 764
   Exists: 1
+--- !u!114 &114466015662982314
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Electricity
+  Min: 0
+  Max: 1
+  Default: 0
 --- !u!114 &114472972566530966
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -738,6 +874,29 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
+--- !u!114 &114581506125310464
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/lab
+  guid: 8fadcbe459bac249bfc7b5db40df3c28
+  Banks:
+  - {fileID: 114680350705294824}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters:
+  - {fileID: 114622778525369530}
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 24648
 --- !u!114 &114584080542755754
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -765,6 +924,51 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: Desert
+  Min: 0
+  Max: 1
+  Default: 0
+--- !u!114 &114620384724591418
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Glitch
+  Min: 0
+  Max: 1
+  Default: 0
+--- !u!114 &114620392290137564
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Glitch
+  Min: 0
+  Max: 1
+  Default: 0
+--- !u!114 &114622778525369530
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: on/off
   Min: 0
   Max: 1
   Default: 0
@@ -813,6 +1017,21 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
+--- !u!114 &114658545224120828
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Icy
+  Min: 0
+  Max: 1
+  Default: 0
 --- !u!114 &114663780012153318
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -840,6 +1059,40 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: Icy
+  Min: 0
+  Max: 1
+  Default: 0
+--- !u!114 &114680350705294824
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: D:\Sisi\Documents\saxion lectures\Project Indie\unity projeect\2D test box\Assets\Music\ProjectIndie\Build\Desktop\Master
+    Bank.bank
+  lastModified: 636481775234349982
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 10388864
+  Exists: 1
+--- !u!114 &114692242272523662
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Jungle
   Min: 0
   Max: 1
   Default: 0
@@ -1034,6 +1287,21 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
+--- !u!114 &114857576461213036
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Icy
+  Min: 0
+  Max: 1
+  Default: 0
 --- !u!114 &114869188255939332
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1053,6 +1321,21 @@ MonoBehaviour:
   - Name: Desktop
     Value: 718
   Exists: 1
+--- !u!114 &114870009010161058
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Jungle
+  Min: 0
+  Max: 1
+  Default: 0
 --- !u!114 &114872161219720854
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1098,6 +1381,21 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
+--- !u!114 &114905146374617060
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Desert
+  Min: 0
+  Max: 1
+  Default: 0
 --- !u!114 &114905604171969376
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1127,17 +1425,17 @@ MonoBehaviour:
   Path: event:/Ambient
   guid: 61d5151683adb24bafa3e2bbfaeab52d
   Banks:
-  - {fileID: 114139969759470688}
+  - {fileID: 114680350705294824}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: 114663780012153318}
-  - {fileID: 114436211774369374}
-  - {fileID: 114801209111962400}
-  - {fileID: 114344392681562000}
-  - {fileID: 114900906184303028}
-  - {fileID: 114287056852844060}
+  - {fileID: 114105254028464928}
+  - {fileID: 114252726911897538}
+  - {fileID: 114979887088443284}
+  - {fileID: 114233828868421996}
+  - {fileID: 114332037924728304}
+  - {fileID: 114172930682804574}
   MinDistance: 0
   MaxDistance: 0
   Length: 4000
@@ -1160,6 +1458,36 @@ MonoBehaviour:
   - Name: Desktop
     Value: 10098784
   Exists: 1
+--- !u!114 &114979887088443284
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Glitch
+  Min: 0
+  Max: 1
+  Default: 0
+--- !u!114 &114992187997578800
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Electricity
+  Min: 0
+  Max: 1
+  Default: 0
 --- !u!114 &114993587623761748
 MonoBehaviour:
   m_ObjectHideFlags: 0

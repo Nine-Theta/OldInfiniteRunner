@@ -52,7 +52,7 @@ public class Parallaxing : MonoBehaviour
     {
         offset++;
         GameObject objectCopy = Instantiate(backgrounds[index].gameObject);
-        objectCopy.transform.localPosition = new Vector3(backgrounds[index].GetComponent<SpriteRenderer>().bounds.size.x * offset, backgrounds[index].position.y, backgrounds[index].position.z);
+        objectCopy.transform.localPosition = new Vector3(backgrounds[index].position.x + (backgrounds[index].GetComponent<SpriteRenderer>().bounds.size.x * offset), backgrounds[index].position.y, backgrounds[index].position.z);
         objectCopy.transform.SetParent(backgrounds[index]);
         objectCopy.transform.localScale = new Vector3(1, 1, 1);
     }

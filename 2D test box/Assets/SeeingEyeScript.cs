@@ -4,13 +4,21 @@ using UnityEngine;
 
 public class SeeingEyeScript : MonoBehaviour
 {
-    public float fov = 30;
+    [SerializeField]
+    private float fov = 30;
     [Tooltip("If true will spawn Enemies, will enable fog field otherwise")]
-    public bool spawnEnemies = true;
-    public GameObject[] spawnMinions;
-    public FogFieldScript fogField;
-    public float checkTime = 1.0f;
-    public float eyeRange = 10;
+    [SerializeField]
+    private bool spawnEnemies = true;
+    [SerializeField]
+    private GameObject[] spawnMinions;
+    [SerializeField]
+    private FogFieldScript fogField;
+    [SerializeField]
+    private float checkTime = 1.0f;
+    [SerializeField]
+    private float eyeRange = 10;
+    [SerializeField]
+    private Color _detectedColor = Color.white;
     private Transform _player;
 
     private bool _detected = false;
@@ -65,6 +73,6 @@ public class SeeingEyeScript : MonoBehaviour
             fogField.ActivateFog();
             GetComponent<Animator>().speed = 0.0f;
         }
-        GetComponent<SpriteRenderer>().color = Color.magenta;
+        GetComponent<SpriteRenderer>().color = _detectedColor;
     }
 }

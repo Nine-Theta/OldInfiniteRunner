@@ -9,6 +9,6 @@ public class MenuConvenienceScript : MonoBehaviour
 
     public void EnableObject()
     {
-        objectToEnable.SetActive(true);//!objectToEnable.activeSelf);
+        objectToEnable.SetActive(!objectToEnable.activeSelf);//!objectToEnable.activeSelf);
     }
 }

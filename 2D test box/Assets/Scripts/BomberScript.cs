@@ -27,10 +27,23 @@ public class BomberScript : MonoBehaviour
 
     [SerializeField]
     private bool throwArc = true;
+    [SerializeField]
+    private float _idleDelay = 5.0f;
+    [SerializeField]
+    private AudioClip _idleSound;
+    [SerializeField]
+    private AudioClip _attackSound;
+    [SerializeField]
+    private AudioClip _damageSound;
+    [SerializeField]
+    private AudioClip _deathSound;
+
+    private float _idleTimer = 5.0f;
 
     private enum EnemyStates { PATROL, CHASE }
     private EnemyStates behaviourState = EnemyStates.PATROL;
 
+    private AudioSource _audio;
     private Rigidbody2D _body;
     private Rigidbody2D _playerBody;
     private Vector2 _offset;
@@ -68,6 +81,7 @@ public class BomberScript : MonoBehaviour
         _animator = GetComponent<Animator>();
         _initialColor = GetComponent<SpriteRenderer>().color;
         GetComponent<SpriteRenderer>().color = Color.black;
+        _idleTimer = Random.Range(0.0f, _idleDelay);
     }
 
     /// <summary> Creates a copy of an Object and flings it at the target. </summary>
@@ -100,6 +114,7 @@ public class BomberScript : MonoBehaviour
 
     private void UpdatePosition()
     {
+        #region pathfinding
         if (_usePathfinding)
         {
             //if (_path.Count == 0) _path = null;
@@ -131,9 +146,14 @@ public class BomberScript : MonoBehaviour
                 return;
             }
         }
-
+        #endregion
         //Debug.Log("Not using path finding");
-
+        _idleTimer -= Time.deltaTime;
+        if (_idleTimer <= 0.0f)
+        {
+            _idleTimer = _idleDelay;
+            _audio.PlayOneShot(_idleSound);
+        }
         Vector2 subtracted = new Vector2(player.position.x - gameObject.transform.position.x + _offset.x, player.position.y - gameObject.transform.position.y + _offset.y);
 
         if (Mathf.Abs(player.position.x - gameObject.transform.position.x) < _offset.x)
@@ -173,8 +193,12 @@ public class BomberScript : MonoBehaviour
     {
         if (other.tag == "Explosion")
         {
+            _audio.PlayOneShot(_damageSound);
             if (!_healthBar.TakeDamage())
+            {
                 _animator.SetBool("Dead", true);
+                _audio.PlayOneShot(_deathSound);
+            }
         }
     }
 

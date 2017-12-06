@@ -25,6 +25,7 @@ public class MovementScript : MonoBehaviour
     private Animator _animator;
     private static GameObject _singletonInstance;
     private bool _FacingRight = true;
+    private Vector3 _hookPos;
 
     public bool isHooked { get { return _hooked; } }
 
@@ -108,6 +109,7 @@ public class MovementScript : MonoBehaviour
         }
         else
         {
+            _hookLine.SetPosition(1, _hookPos - transform.position);
             if (Input.GetKeyDown(KeyCode.W))
             {
                 UnHook(false);
@@ -137,6 +139,7 @@ public class MovementScript : MonoBehaviour
         _rigidbody.AddForce(direction.normalized * hookVelocity);
         _rigidbody.gravityScale = 0;
         _lastHook = hook;
+        _hookPos = hook.transform.position;
         _hookLine.SetPosition(1, hook.transform.position - transform.position);
         if (_lifeline != null)
         {

@@ -4,6 +4,11 @@ using UnityEngine.SceneManagement;
 
 public class ButtonManager : MonoBehaviour
 {
+    private void Start()
+    {
+        Cursor.visible = true;
+    }
+
 
     public void LoadScene(string pScene)
     {

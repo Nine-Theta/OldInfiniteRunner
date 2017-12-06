@@ -11,6 +11,7 @@ public class MovementScript : MonoBehaviour
     private float movementSpeed = 3.0f;
     [SerializeField]
     private float hookVelocity = 3.0f;
+
     [SerializeField]
     private AudioClip _damageSound;
     [SerializeField]
@@ -20,21 +21,27 @@ public class MovementScript : MonoBehaviour
     [SerializeField]
     private AudioClip _pickupSound;
 
-    private int _jumps = 2;
-    private bool _grounded = false;
-    private bool _hooked = false;
-    private float _gravityScale = 1.0f;
+    private static GameObject _singletonInstance;
+
     private Rigidbody2D _rigidbody;
     private LifelineScript _lifeline;
     private LineRenderer _hookLine; //And sinker
-    private bool _safe = false;
     private GameObject _lastHook;
+    private Vector3 _hookPos;
     private HealthBarScript _healthBar;
     private Animator _animator;
-    private static GameObject _singletonInstance;
-    private bool _FacingRight = true;
-    private Vector3 _hookPos;
     private AudioSource _audio;
+
+    private int _jumps = 2;
+    private float _gravityScale = 1.0f;
+    private float _redTimer = 1.0f;
+    private float _redTimerValue = 1.0f;
+
+    private bool _grounded = false;
+    private bool _hooked = false;
+    private bool _safe = false;
+    private bool _FacingRight = true;
+    private bool _gotHit = false;
 
     public bool isHooked { get { return _hooked; } }
 
@@ -55,6 +62,16 @@ public class MovementScript : MonoBehaviour
 
     private void Update()
     {
+        if (_gotHit){
+            if (_redTimer <= 0.0f){
+                gameObject.GetComponent<SpriteRenderer>().color = Color.white;
+                _gotHit = false;
+                _redTimer = _redTimerValue;
+            }
+            else
+                _redTimer -= Time.deltaTime;
+        }
+
         if (_healthBar.isAlive)
             MovementUpdate();
         //else if (Input.GetKeyDown(KeyCode.R))
@@ -202,7 +219,11 @@ public class MovementScript : MonoBehaviour
             if (!_healthBar.TakeDamage())
                 _audio.PlayOneShot(_deathSound);
             else
+            {
                 _audio.PlayOneShot(_damageSound);
+                this.gameObject.GetComponent<SpriteRenderer>().color = Color.red;
+                _gotHit = true;
+            }
         }
         if (other.tag == "FogField")
         {
@@ -245,6 +266,7 @@ public class MovementScript : MonoBehaviour
     #endregion
 
     #region OnCollisions
+
     private void OnCollisionEnter2D(Collision2D coll)
     {
         if (coll.collider.tag == "Terrain")
@@ -261,7 +283,11 @@ public class MovementScript : MonoBehaviour
                 _audio.PlayOneShot(_deathSound);
             }
             else
+            {
                 _audio.PlayOneShot(_damageSound);
+                this.gameObject.GetComponent<SpriteRenderer>().color = Color.red;
+                _gotHit = true;
+            }
         }
     }
 

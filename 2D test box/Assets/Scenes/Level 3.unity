@@ -1750,6 +1750,11 @@ Prefab:
       propertyPath: _stayAtEnable
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114178130896003682, guid: 64b9a8d84375dfe4da17ca25c5d6921d,
+        type: 2}
+      propertyPath: nextSceneName
+      value: Lab
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 64b9a8d84375dfe4da17ca25c5d6921d, type: 2}
   m_IsPrefabParent: 0
@@ -130567,6 +130572,8 @@ MonoBehaviour:
   hookRange: 10
   hookCooldown: 1
   potionCooldown: 0.32
+  _cursorColor: {r: 1, g: 1, b: 1, a: 1}
+  _disableColor: {r: 1, g: 0, b: 0, a: 1}
 --- !u!212 &1009622444
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -132641,6 +132648,8 @@ MonoBehaviour:
   hookRange: 10
   hookCooldown: 1
   potionCooldown: 0.32
+  _cursorColor: {r: 1, g: 1, b: 1, a: 1}
+  _disableColor: {r: 1, g: 0, b: 0, a: 1}
 --- !u!212 &1619106468
 SpriteRenderer:
   m_ObjectHideFlags: 0

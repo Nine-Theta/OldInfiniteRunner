@@ -251,7 +251,9 @@ public class MovementScript : MonoBehaviour
         if (coll.collider.tag == "Enemy")
         {
             if (!_healthBar.TakeDamage())
+            {
                 _audio.PlayOneShot(_deathSound);
+            }
             else
                 _audio.PlayOneShot(_damageSound);
         }
@@ -312,5 +314,10 @@ public class MovementScript : MonoBehaviour
         {
             transform.localRotation = Quaternion.Euler(0, 0, 0);
         }
+    }
+
+    public void PlayDeathSound()
+    {
+        _audio.PlayOneShot(_deathSound);
     }
 }

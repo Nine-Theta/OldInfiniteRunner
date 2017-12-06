@@ -27,7 +27,11 @@ public class FogFieldScript : MonoBehaviour
         _damageTimer -= Time.deltaTime;
         if (_damageTimer <= 0.0f)
         {
-            _healthRef.TakeDamage();
+            if (!_healthRef.TakeDamage())
+            {
+                _healthRef.GetComponentInParent<MovementScript>().PlayDeathSound();
+                _healthRef = null;
+            }
             _damageTimer = damageCooldown;
         }
     }

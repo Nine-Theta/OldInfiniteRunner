@@ -71,9 +71,9 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1930964740515184}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 343.89548, y: 32.31213, z: 0}
-  m_LocalScale: {x: 0.8, y: 0.8, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 95.89, y: -50.14, z: 1.79}
+  m_LocalScale: {x: 0.8000003, y: 0.79999995, z: 1}
   m_Children:
   - {fileID: 4267356631690804}
   - {fileID: 4661661639376738}
@@ -182,7 +182,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thrownItem: {fileID: 1203989636596998, guid: 28d4f10eac9f5a54c845a6b0d50a8ae2, type: 2}
-  player: {fileID: 0}
   followOffset: {x: 4, y: 2}
   thinkSpeed: 2
   detectionRange: 10
@@ -191,6 +190,11 @@ MonoBehaviour:
   throwHeightMult: 1
   gravityScale: 1
   throwArc: 1
+  _idleDelay: 5
+  _idleSound: {fileID: 8300000, guid: 072467d95ace10a4b9249d5145579257, type: 3}
+  _attackSound: {fileID: 8300000, guid: 0b3749a1b534ce84098c39d659642175, type: 3}
+  _damageSound: {fileID: 8300000, guid: 51275322d8ba91a47a19d6bcffd89657, type: 3}
+  _deathSound: {fileID: 8300000, guid: f5872d5dd2fbd8949859dded68b9704f, type: 3}
 --- !u!198 &198965178429322396
 ParticleSystem:
   m_ObjectHideFlags: 1

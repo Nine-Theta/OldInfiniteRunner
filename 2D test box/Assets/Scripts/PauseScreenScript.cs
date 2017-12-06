@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class PauseScreenScript : MonoBehaviour
 {
-    [SerializeField] private GameObject _pausePrefab;
+    [SerializeField] private GameObject _pauseCanvas;
 
     public void LoadScene(string pScene)
     {
@@ -22,11 +22,16 @@ public class PauseScreenScript : MonoBehaviour
 #endif
     }
 
+    public void ToggleCanvas()
+    {
+        _pauseCanvas.SetActive(!_pauseCanvas.activeSelf);
+    }
+
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-
+            ToggleCanvas();
         }
     }
 }

@@ -153,6 +153,12 @@ public class MovementScript : MonoBehaviour
         _lastHook = hook;
         _hookPos = hook.transform.position;
         _hookLine.SetPosition(1, hook.transform.position - transform.position);
+        if (!_FacingRight)
+        {
+            Vector3 flippedPos = _hookLine.GetPosition(1);
+            flippedPos.x *= -1;
+            _hookLine.SetPosition(1, flippedPos);
+        }
         if (_lifeline != null)
         {
             _lifeline.isUnhooked = false;
@@ -306,9 +312,15 @@ public class MovementScript : MonoBehaviour
     }
     private void Flip()
     {
-        if (_FacingRight == false)
+        if (!_FacingRight)
         {
             transform.localRotation = Quaternion.Euler(0, 180, 0);
+            if (_hooked)
+            {
+                Vector3 flippedPos = _hookLine.GetPosition(1);
+                flippedPos.x *= -1;
+                _hookLine.SetPosition(1, flippedPos);
+            }
         }
         else
         {

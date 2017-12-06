@@ -11,6 +11,14 @@ public class MovementScript : MonoBehaviour
     private float movementSpeed = 3.0f;
     [SerializeField]
     private float hookVelocity = 3.0f;
+    [SerializeField]
+    private AudioClip _damageSound;
+    [SerializeField]
+    private AudioClip _deathSound;
+    [SerializeField]
+    private AudioClip _jumpSound;
+    [SerializeField]
+    private AudioClip _pickupSound;
 
     private int _jumps = 2;
     private bool _grounded = false;
@@ -26,6 +34,7 @@ public class MovementScript : MonoBehaviour
     private static GameObject _singletonInstance;
     private bool _FacingRight = true;
     private Vector3 _hookPos;
+    private AudioSource _audio;
 
     public bool isHooked { get { return _hooked; } }
 
@@ -48,7 +57,7 @@ public class MovementScript : MonoBehaviour
         if (_healthBar.isAlive)
             MovementUpdate();
         //else if (Input.GetKeyDown(KeyCode.R))
-          //  SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        //  SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         Flip();
     }
 
@@ -128,6 +137,8 @@ public class MovementScript : MonoBehaviour
         _rigidbody.velocity = new Vector2(_rigidbody.velocity.x, 0);
         _rigidbody.AddForce(Vector2.up * jumpHeight);
         _animator.SetBool("Jumping", true);
+        if (_audio != null)
+            _audio.PlayOneShot(_jumpSound);
     }
 
     public void Hook(Vector2 direction, GameObject hook)
@@ -181,15 +192,19 @@ public class MovementScript : MonoBehaviour
         }
         if (other.tag == "EnemyExplosion")
         {
-            _healthBar.TakeDamage();
+            if (_healthBar.TakeDamage())
+                _audio.PlayOneShot(_deathSound);
+            else
+                _audio.PlayOneShot(_damageSound);
         }
         if (other.tag == "FogField")
         {
             other.GetComponent<FogFieldScript>().EnterFog(_healthBar);
         }
-        if(other.tag == "BackgroundChanger")
+        if (other.tag == "BackgroundChanger")
         {
             other.GetComponent<BackgroundChangeScript>().Activate();
+            _audio.PlayOneShot(_pickupSound);
         }
     }
 

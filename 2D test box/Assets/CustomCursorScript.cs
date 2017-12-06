@@ -16,6 +16,10 @@ public class CustomCursorScript : MonoBehaviour
     [SerializeField]
     private float potionCooldown = 1.0f;
     //Distance between mouse and player
+    [SerializeField]
+    private Color _cursorColor = Color.white;
+    [SerializeField]
+    private Color _disableColor = Color.red;
     private Vector2 _mouseDistance;
     private GameObject _prevHook;
     private float _hookTimer = 0.0f;
@@ -79,12 +83,14 @@ public class CustomCursorScript : MonoBehaviour
         {
             _prevHook = Instantiate(hookPrefab, info.point, transform.rotation);
             player.Hook(_mouseDistance, _prevHook);
-            SetCursorColor(1.0f, 1.0f, 1.0f);
+            GetComponent<SpriteRenderer>().color = _cursorColor;
+            //SetCursorColor(1.0f, 1.0f, 1.0f);
             _hookTimer = hookCooldown;
         }
         else
         {
-            SetCursorColor(1.0f, 0.0f, 0.0f);
+            GetComponent<SpriteRenderer>().color = _disableColor;
+            //SetCursorColor(1.0f, 0.0f, 0.0f);
         }
     }
 

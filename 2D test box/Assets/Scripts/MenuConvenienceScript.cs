@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class MenuConvenienceScript : MonoBehaviour
 {
     public GameObject objectToEnable;
+    public GameObject otherObjectToEnable;
     public Image image;
     public Sprite spriteOne;
     public Sprite spriteTwo;
@@ -16,9 +17,15 @@ public class MenuConvenienceScript : MonoBehaviour
     public void EnableObject()
     {
         if (objectToEnable != null)
-            objectToEnable.SetActive(!objectToEnable.activeSelf);//!objectToEnable.activeSelf);
+            objectToEnable.SetActive(!objectToEnable.activeSelf);
     }
-
+    
+    public void EnableOtherObject()
+    {
+        if (otherObjectToEnable != null)
+            otherObjectToEnable.SetActive(!otherObjectToEnable.activeSelf);
+    }
+    
     public void SwitchSprites()
     {
         if (image != null && spriteOne != null && spriteTwo != null)

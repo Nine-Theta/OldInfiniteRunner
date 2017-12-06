@@ -13,9 +13,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HasSourceProject: 1
   HasPlatforms: 1
-  sourceProjectPath: D:\Sisi\Documents\saxion lectures\Project Indie\music\ProjectIndie\ProjectIndie.fspro
-  SourceProjectPathUnformatted: D:\Sisi\Documents\saxion lectures\Project Indie\music\ProjectIndie\ProjectIndie.fspro
-  SourceBankPathUnformatted: D:\Sisi\Documents\saxion lectures\Project Indie\music\ProjectIndie\Build
+  sourceProjectPath: Assets\Music\ProjectIndie\ProjectIndie.fspro
+  SourceProjectPathUnformatted: Assets\Music\ProjectIndie\ProjectIndie.fspro
+  SourceBankPathUnformatted: Assets\Music\ProjectIndie\Build
   AutomaticEventLoading: 1
   AutomaticSampleLoading: 0
   ImportType: 0

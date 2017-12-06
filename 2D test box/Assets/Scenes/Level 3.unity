@@ -1312,7 +1312,8 @@ Prefab:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 114130694909984874, guid: 10196c1e03341714b9d95b2cb0983f1d, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 10196c1e03341714b9d95b2cb0983f1d, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &267226283 stripped
@@ -1344,12 +1345,6 @@ MonoBehaviour:
   OverrideAttenuation: 0
   OverrideMinDistance: 0
   OverrideMaxDistance: 0
---- !u!114 &267226285 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 114130694909984874, guid: 10196c1e03341714b9d95b2cb0983f1d,
-    type: 2}
-  m_PrefabInternal: {fileID: 267226282}
-  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
 --- !u!1 &268943844
 GameObject:
   m_ObjectHideFlags: 0
@@ -2529,7 +2524,7 @@ MonoBehaviour:
   Emitters:
   - Target: {fileID: 267226284}
     Params: []
-  - Target: {fileID: 267226285}
+  - Target: {fileID: 0}
     Params:
     - Name: Electricity
       Value: 0.259
@@ -130567,6 +130562,8 @@ MonoBehaviour:
   hookRange: 10
   hookCooldown: 1
   potionCooldown: 0.32
+  _cursorColor: {r: 1, g: 1, b: 1, a: 1}
+  _disableColor: {r: 1, g: 0, b: 0, a: 1}
 --- !u!212 &1009622444
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -132641,6 +132638,8 @@ MonoBehaviour:
   hookRange: 10
   hookCooldown: 1
   potionCooldown: 0.32
+  _cursorColor: {r: 1, g: 1, b: 1, a: 1}
+  _disableColor: {r: 1, g: 0, b: 0, a: 1}
 --- !u!212 &1619106468
 SpriteRenderer:
   m_ObjectHideFlags: 0

@@ -19,6 +19,10 @@ public class SeeingEyeScript : MonoBehaviour
     private float eyeRange = 10;
     [SerializeField]
     private Color _detectedColor = Color.white;
+    [SerializeField]
+    private AudioClip _spottedSound;
+
+    private AudioSource _audio;
     private Transform _player;
 
     private bool _detected = false;
@@ -27,6 +31,7 @@ public class SeeingEyeScript : MonoBehaviour
 
     private void Start()
     {
+        _audio = GetComponent<AudioSource>();
         _cooldownTimer = checkTime;
     }
 
@@ -66,13 +71,17 @@ public class SeeingEyeScript : MonoBehaviour
 
     public void DetectPlayer(Transform pTransform)
     {
+        if (_detected)
+            return;
         _player = pTransform;
         _detected = true;
-        if(!spawnEnemies)
+        if (!spawnEnemies)
         {
             fogField.ActivateFog();
             GetComponent<Animator>().speed = 0.0f;
         }
         GetComponent<SpriteRenderer>().color = _detectedColor;
+        if (_audio != null && _spottedSound != null)
+            _audio.PlayOneShot(_spottedSound);
     }
 }

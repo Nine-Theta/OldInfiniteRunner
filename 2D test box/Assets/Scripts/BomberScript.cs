@@ -80,6 +80,7 @@ public class BomberScript : MonoBehaviour
         _healthBar = GetComponentInChildren<HealthBarScript>();
         _animator = GetComponent<Animator>();
         _initialColor = GetComponent<SpriteRenderer>().color;
+        _audio = GetComponent<AudioSource>();
         GetComponent<SpriteRenderer>().color = Color.black;
         _idleTimer = Random.Range(0.0f, _idleDelay);
     }
@@ -197,7 +198,8 @@ public class BomberScript : MonoBehaviour
             if (!_healthBar.TakeDamage())
             {
                 _animator.SetBool("Dead", true);
-                _audio.PlayOneShot(_deathSound);
+                if (_audio != null)
+                    _audio.PlayOneShot(_deathSound);
             }
         }
     }

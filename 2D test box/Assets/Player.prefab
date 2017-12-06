@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 114002797156716840}
   - component: {fileID: 61702606505881672}
   - component: {fileID: 95854755311600592}
+  - component: {fileID: 114130694909984874}
   m_Layer: 2
   m_Name: Player
   m_TagString: Player
@@ -137,8 +138,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1776618030911122}
   m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: -0.1930008, y: -0.619, z: 0}
-  m_LocalScale: {x: 1.2550087, y: 0.43851495, z: 0.7795823}
+  m_LocalPosition: {x: -0.198, y: -0.619, z: 0}
+  m_LocalScale: {x: 1.2550087, y: 0.4758511, z: 0.7795823}
   m_Children: []
   m_Father: {fileID: 4414636798202452}
   m_RootOrder: 4
@@ -150,7 +151,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1019027316172172}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -15.78, y: 12.98, z: 0}
+  m_LocalPosition: {x: -16.49, y: 11.52, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4020972356558730}
@@ -439,6 +440,30 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHP: 20
+--- !u!114 &114130694909984874
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1019027316172172}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: event:/Ambient
+  PlayEvent: 1
+  StopEvent: 0
+  CollisionTag: 
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params:
+  - Name: Jungle
+    Value: 0.468
+  OverrideAttenuation: 0
+  OverrideMinDistance: 0
+  OverrideMaxDistance: 0
 --- !u!114 &114863731379051350
 MonoBehaviour:
   m_ObjectHideFlags: 1

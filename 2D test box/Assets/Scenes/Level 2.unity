@@ -64958,7 +64958,7 @@ Prefab:
     - target: {fileID: 114130694909984874, guid: 10196c1e03341714b9d95b2cb0983f1d,
         type: 2}
       propertyPath: Params.Array.size
-      value: 1
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4414636798202452, guid: 10196c1e03341714b9d95b2cb0983f1d, type: 2}
       propertyPath: m_LocalPosition.x
@@ -65006,6 +65006,11 @@ Prefab:
         type: 2}
       propertyPath: Params.Array.data[0].Value
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114130694909984874, guid: 10196c1e03341714b9d95b2cb0983f1d,
+        type: 2}
+      propertyPath: StopEvent
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114422689242398526, guid: 10196c1e03341714b9d95b2cb0983f1d, type: 2}

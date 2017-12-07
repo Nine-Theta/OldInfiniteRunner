@@ -26,7 +26,6 @@ GameObject:
   - component: {fileID: 95854755311600592}
   - component: {fileID: 114130694909984874}
   - component: {fileID: 82789000844424420}
-  - component: {fileID: 114422689242398526}
   m_Layer: 2
   m_Name: Player
   m_TagString: Player
@@ -153,7 +152,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1019027316172172}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 201.3, y: 41.6, z: 0}
+  m_LocalPosition: {x: 70.4, y: -35.9, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4020972356558730}
@@ -525,7 +524,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e4e1d19c05fc9e47b4a18f9a8a8947d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHP: 20
+  maxHP: 30
 --- !u!114 &114130694909984874
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -539,38 +538,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Event: event:/Ambient
   PlayEvent: 1
-  StopEvent: 0
+  StopEvent: 2
   CollisionTag: 
   AllowFadeout: 1
   TriggerOnce: 0
   Preload: 0
   Params:
-  - Name: Jungle
-    Value: 0.468
-  OverrideAttenuation: 0
-  OverrideMinDistance: 0
-  OverrideMaxDistance: 0
---- !u!114 &114422689242398526
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1019027316172172}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Event: event:/Ambient
-  PlayEvent: 1
-  StopEvent: 0
-  CollisionTag: 
-  AllowFadeout: 1
-  TriggerOnce: 0
-  Preload: 0
-  Params:
-  - Name: Jungle
-    Value: 0.468
+  - Name: Desert
+    Value: 1
+  - Name: 
+    Value: 0
+  - Name: 
+    Value: 0
+  - Name: 
+    Value: 0
+  - Name: 
+    Value: 0
+  - Name: 
+    Value: 0
   OverrideAttenuation: 0
   OverrideMinDistance: 0
   OverrideMaxDistance: 0
@@ -713,7 +698,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 3
   m_Sprite: {fileID: 21300000, guid: c0f40fd2c52d45d43bd1d11267262211, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -757,7 +742,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 4
   m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
   m_Color: {r: 0.9852941, g: 0.9348303, b: 0.25356835, a: 1}
   m_FlipX: 0

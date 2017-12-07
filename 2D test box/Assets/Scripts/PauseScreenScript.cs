@@ -11,6 +11,7 @@ public class PauseScreenScript : MonoBehaviour
     public void LoadScene(string pScene)
     {
         SceneManager.LoadScene(pScene);
+        Time.timeScale = 1.0f;
     }
 
     public void ExitGame()
@@ -25,6 +26,10 @@ public class PauseScreenScript : MonoBehaviour
     public void ToggleCanvas()
     {
         _pauseCanvas.SetActive(!_pauseCanvas.activeSelf);
+        if (Time.timeScale > 0.0f)
+            Time.timeScale = 0.0f;
+        else
+            Time.timeScale = 1.0f;
     }
 
     private void Update()

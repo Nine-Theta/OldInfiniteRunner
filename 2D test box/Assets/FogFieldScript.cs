@@ -36,9 +36,10 @@ public class FogFieldScript : MonoBehaviour
         }
     }
 
-    public void EnterFog(HealthBarScript script)
+    public bool EnterFog(HealthBarScript script)
     {
         _healthRef = script;
+        return activeFog;
     }
 
     public void LeaveFog()

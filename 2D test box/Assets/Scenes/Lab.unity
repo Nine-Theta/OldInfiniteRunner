@@ -401,6 +401,48 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   profile: {fileID: 11400000, guid: 9c659b2670c9fd5488c93c96e5d4422f, type: 2}
+--- !u!1001 &557254636
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4473522016218936, guid: 3703e83ff02766940bcb9801c9ef1413, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4473522016218936, guid: 3703e83ff02766940bcb9801c9ef1413, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4473522016218936, guid: 3703e83ff02766940bcb9801c9ef1413, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4473522016218936, guid: 3703e83ff02766940bcb9801c9ef1413, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4473522016218936, guid: 3703e83ff02766940bcb9801c9ef1413, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4473522016218936, guid: 3703e83ff02766940bcb9801c9ef1413, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4473522016218936, guid: 3703e83ff02766940bcb9801c9ef1413, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4473522016218936, guid: 3703e83ff02766940bcb9801c9ef1413, type: 2}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 3703e83ff02766940bcb9801c9ef1413, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &697593408
 GameObject:
   m_ObjectHideFlags: 0
@@ -950,6 +992,7 @@ GameObject:
   - component: {fileID: 1464656202}
   - component: {fileID: 1464656201}
   - component: {fileID: 1464656205}
+  - component: {fileID: 1464656206}
   m_Layer: 0
   m_Name: Canvas
   m_TagString: Untagged
@@ -1021,8 +1064,8 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1464656200}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 271.5, y: 152.5, z: 0}
-  m_LocalScale: {x: 0.67875, y: 0.67875, z: 0.67875}
+  m_LocalPosition: {x: 290, y: 163, z: 0}
+  m_LocalScale: {x: 0.725, y: 0.725, z: 0.725}
   m_Children:
   - {fileID: 934150673}
   - {fileID: 84326785}
@@ -1057,6 +1100,17 @@ MonoBehaviour:
   OverrideAttenuation: 0
   OverrideMinDistance: -1
   OverrideMaxDistance: -1
+--- !u!114 &1464656206
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1464656200}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d77312b13e49ccd469385b0e4074a82e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1550673005
 GameObject:
   m_ObjectHideFlags: 0

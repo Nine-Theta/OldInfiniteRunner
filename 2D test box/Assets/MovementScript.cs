@@ -62,8 +62,10 @@ public class MovementScript : MonoBehaviour
 
     private void Update()
     {
-        if (_gotHit){
-            if (_redTimer <= 0.0f){
+        if (_gotHit)
+        {
+            if (_redTimer <= 0.0f)
+            {
                 gameObject.GetComponent<SpriteRenderer>().color = Color.white;
                 _gotHit = false;
                 _redTimer = _redTimerValue;
@@ -227,8 +229,8 @@ public class MovementScript : MonoBehaviour
         }
         if (other.tag == "FogField")
         {
-            other.GetComponent<FogFieldScript>().EnterFog(_healthBar);
-            gameObject.GetComponent<SpriteRenderer>().color = Color.red;
+            if (other.GetComponent<FogFieldScript>().EnterFog(_healthBar))
+                gameObject.GetComponent<SpriteRenderer>().color = Color.red;
         }
         if (other.tag == "BackgroundChanger")
         {

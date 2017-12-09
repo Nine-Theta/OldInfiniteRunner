@@ -1116,7 +1116,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _player: {fileID: 506854836}
-  followOffset: {x: 0, y: 0}
+  followOffset: {x: -5, y: 0}
   speedMultiplier: 5
 --- !u!50 &218954368
 Rigidbody2D:

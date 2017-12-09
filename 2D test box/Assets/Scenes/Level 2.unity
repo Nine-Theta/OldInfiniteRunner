@@ -58693,8 +58693,8 @@ MonoBehaviour:
   hookRange: 10
   hookCooldown: 1
   potionCooldown: 0.32
-  _cursorColor: {r: 1, g: 1, b: 1, a: 1}
-  _disableColor: {r: 1, g: 0, b: 0, a: 1}
+  _cursorColor: {r: 1, g: 0.94117653, b: 0.454902, a: 1}
+  _disableColor: {r: 0.6117647, g: 0.13725491, b: 0.13725491, a: 1}
 --- !u!212 &532123404
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -63193,6 +63193,10 @@ Prefab:
         type: 2}
       propertyPath: nextSceneName
       value: Level 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1345023806158434, guid: 64b9a8d84375dfe4da17ca25c5d6921d, type: 2}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 64b9a8d84375dfe4da17ca25c5d6921d, type: 2}

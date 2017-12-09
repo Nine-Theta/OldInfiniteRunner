@@ -563,8 +563,8 @@ MonoBehaviour:
   hookRange: 10
   hookCooldown: 1
   potionCooldown: 0.32
-  _cursorColor: {r: 1, g: 1, b: 1, a: 1}
-  _disableColor: {r: 1, g: 0, b: 0, a: 1}
+  _cursorColor: {r: 1, g: 0.94117653, b: 0.454902, a: 1}
+  _disableColor: {r: 0.6117647, g: 0.13725491, b: 0.13725491, a: 1}
 --- !u!212 &327310643
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1635,7 +1635,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _player: {fileID: 584630740}
-  followOffset: {x: 0, y: 0}
+  followOffset: {x: -5, y: 0}
   speedMultiplier: 5
 --- !u!50 &665642934
 Rigidbody2D:
